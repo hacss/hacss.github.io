@@ -1,0 +1,30 @@
+{
+  "name": "hacss.io",
+  "version": "1.0.0",
+  "description": "Hacss Web site",
+  "main": "index.html",
+  "scripts": {
+    "build": "hacss --output styles.css index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hacss/hacss.io.git"
+  },
+  "keywords": [
+    "hacss",
+    "atomic",
+    "css",
+    "inline",
+    "styles"
+  ],
+  "author": "Nick Saunders",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hacss/hacss.io/issues"
+  },
+  "homepage": "https://github.com/hacss/hacss.io#readme",
+  "devDependencies": {
+    "hacss": "^0.8.8"
+  }
+}
