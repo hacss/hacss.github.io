@@ -69,4 +69,5 @@ rimraf("./public")
   .then(() => mkdir("./public"))
   .then(buildSite)
   .then(files => Promise.all(Object.entries(files).map(([ file, contents ]) => writeFile(path.join("./public", file), contents))))
+  .then(() => console.log("Build succeeded."))
   .catch(err => console.error(err));
