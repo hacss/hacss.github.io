@@ -3,6 +3,7 @@ exports.page = ({ title, content }) => `
   <html class="H(100%)">
     <head>
       <title>Hacss${title ? `: ${title}` : ""}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,700" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=Inconsolata:400" rel="stylesheet" />
       <link href="styles.css" rel="stylesheet" />
