@@ -1,2 +1,4 @@
 node_modules
-styles.css
+public
+*.log
+*.swp
