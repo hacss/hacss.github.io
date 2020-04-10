@@ -16,8 +16,23 @@ exports.page = ({ title, content }) => `
       <link href="styles.css" rel="stylesheet" />
     </head>
     <body class="M(0) H(100%) Bgc(#201220)">
-      <div class="Mx(auto) W(100%) Maw(1180px) H(100%) Bxsh(page)">
-        <header class="H(64px) Bgc(#000) Px(16px) Bxz(bb) D(f) Fxd(r) Ai(c) Jc(sb)">
+      <div class="Mx(auto) Pt(64px) W(100%) Maw(1180px) H(calc(100%-64px)) Bxsh(page)">
+        ${content}
+      </div>
+      <div class="Pos(f) T(0) End(0) Start(0) H(64px)">
+        <header class="
+          Mx(auto)
+          W(100%)
+          Maw(1180px)
+          H(100%)
+          Bgc(#000)
+          Px(16px)
+          Bxz(bb)
+          D(f)
+          Fxd(r)
+          Ai(c)
+          Jc(sb)
+        ">
           <img src="logo-h.svg" alt="Hacss" class="H(32px)" />
           <button
             id="navOpener"
@@ -44,14 +59,13 @@ exports.page = ({ title, content }) => `
             }
           </nav>
         </header>
-        ${content}
       </div>
       <div
         id="popNav"
         class="
           D(n)
           D(b)--sm
-          Pos(a)
+          Pos(f)
           Z(-1)
           Op(0)
           Trsp(opacity)

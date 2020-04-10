@@ -2,7 +2,7 @@ const { page } = require("./common.js");
 
 module.exports = page({
   content: `
-    <div class="H(calc(100%-64px)) D(f) Fxd(c)">
+    <div class="H(100%) D(f) Fxd(c)">
       <div class="Fxg(1) D(f) Fxd(c) Jc(c) Ai(c) Bgi(linear-gradient(#323041,#7e7c8d)) C(#fff) Ff(ss) Fz(32px) Fz(24px)--sm Fw(300)">
         <img src="logo-hacss.svg" alt="Hacss" class="H(3em)" />
         <p class="Mt(8px) Mb(0) Lts(-1px)">Style like you mean it.</p>
