@@ -23,7 +23,7 @@ module.exports = page({
               `,
             },
             {
-              title: "Cut the BS out of CSS.",
+              title: "Increase your agility.",
               content: `
                 This direct approach to styling HTML makes code more transparent
                 and easier to change while eliminating context switches, code
