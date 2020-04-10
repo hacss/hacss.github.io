@@ -2,11 +2,11 @@ const { page } = require("./common.js");
 
 module.exports = page({
   content: `
-    <div class="H(calc(100vh-64px)) D(f) Fxd(c)">
+    <div class="H(calc(100%-64px)) D(f) Fxd(c)">
       <div class="Fxg(1) D(f) Fxd(c) Jc(c) Ai(c) Bgi(linear-gradient(#323041,#7e7c8d)) C(#fff) Ff(ss) Fz(32px) Fz(24px)--sm Fw(300)">
         <img src="logo-hacss.svg" alt="Hacss" class="H(3em)" />
         <p class="Mt(8px) Mb(0) Lts(-1px)">Style like you mean it.</p>
-        <button class="Bd(n) Bdrs(0.25em) Mt(1.5em) Py(0.375em) Px(0.5em) Fz(0.625em) Fw(200) Ff(ss) Bgc(#392b2d) Bgc(#201214):h C(#fff) D(if) Ai(c) Cur(p)">
+        <button class="Bd(n) Bdrs(0.25em) Mt(1.5em) M(1em)--sm Py(0.375em) Px(0.5em) Fz(0.625em) Fw(200) Ff(ss) Bgc(#392b2d) Bgc(#201214):h C(#fff) D(if) Ai(c) Cur(p)">
           <span class="D(ib) Mend(0.125em)">Start</span>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="W(0.75em)"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="#fff" /></svg>
         </button>
