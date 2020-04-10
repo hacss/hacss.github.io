@@ -12,31 +12,47 @@ module.exports = page({
         </button>
       </div>
       <div class="Bgc(#392b2d) D(f) Fxd(r) Fxw(w) Jc(c) P(4px)">
-        <div class="M(4px) P(24px) Bdrs(8px) Fxb(calc(1/3-8px)) Fxb(100%)--sm Bxz(bb) Ff(ss) Bgc(#d2c4c6) C(#392b2d)">
-          <header class="Ta(c)">
-            <h1 class="M(0) Fw(500) Fz(18px) Lh(1)">Cut the BS out of CSS.</h1>
-          </header>
-          <p class="Fz(14px) Fw(400) Mt(8px) Mb(0) Lh(1.4)">
-            The atomic CSS methodology avoids redundant abstractions, inconsistent or dead code, and surprising behaviors inherent to other approaches and methodologies.
-          </p>
-        </div>
-        <div class="M(4px) P(24px) Bdrs(8px) Fxb(calc(1/3-8px)) Fxb(100%)--sm Bxz(bb) Ff(ss) Bgc(#d2c4c6) C(#392b2d)">
-          <header class="Ta(c)">
-            <h1 class="M(0) Fw(500) Fz(18px) Lh(1)">Increase your agility.</h1>
-          </header>
-          <p class="Fz(14px) Fw(400) Mt(8px) Mb(0) Lh(1.4)">
-            This direct approach to styling HTML makes code more transparent and easier to change while eliminating context switches, code alignment issues, and naming challenges.
-          </p>
-        </div>
-        <div class="M(4px) P(24px) Bdrs(8px) Fxb(calc(1/3-8px)) Fxb(100%)--sm Bxz(bb) Ff(ss) Bgc(#d2c4c6) C(#392b2d)">
-          <header class="Ta(c)">
-            <h1 class="M(0) Fw(500) Fz(18px) Lh(1)">Set your own rules.</h1>
-          </header>
-          <p class="Fz(14px) Fw(400) Mt(8px) Mb(0) Lh(1.4)">
-            Rules are small functions that generate the CSS required for a given class, e. g. <code class="Ff(m)">W(100%)</code>. While many are bundled with Hacss, we prioritize your ability to redefine them and to add new ones.
-          </p>
-        </div>
+        ${
+          [
+            {
+              title: "Cut the BS out of CSS.",
+              content: `
+                The atomic CSS methodology avoids redundant abstractions,
+                inconsistent or dead code, and surprising behaviors inherent
+                to other approaches and methodologies.
+              `,
+            },
+            {
+              title: "Cut the BS out of CSS.",
+              content: `
+                This direct approach to styling HTML makes code more transparent
+                and easier to change while eliminating context switches, code
+                alignment issues, and naming challenges.
+              `,
+            },
+            {
+              title: "Set your own rules.",
+              content: `
+                Rules are small functions that generate the CSS required for a
+                given class, e. g. <code class="Ff(m)">W(100%)</code>. While
+                many are bundled with Hacss, we prioritize your ability to
+                redefine them and to add new ones.
+              `,
+            },
+          ]
+            .map(({ title, content }) => `
+              <div class="M(4px) P(24px) Bdrs(8px) Fxb(calc(1/3-8px)) Fxb(100%)--sm Bxz(bb) Ff(ss) Bgc(#d2c4c6) C(#392b2d)">
+                <header class="Ta(c)">
+                  <h1 class="M(0) Fw(500) Fz(18px) Lh(1)">${title}</h1>
+                </header>
+                <p class="Fz(14px) Fw(400) Mt(8px) Mb(0) Lh(1.4)">
+                  ${content}
+                </p>
+              </div>
+            `)
+            .join("")
+        }
       </div>
     </div>
-  `
+  `,
 });
