@@ -58,6 +58,7 @@ exports.page = ({ title, content }) => `
           Trsdu(300ms)
           T(56px)
           End(16px)
+          Bxsh(md,#000.5)
           Bgc(#fff)
           Px(0)
           Py(4px)
