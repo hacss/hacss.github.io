@@ -16,7 +16,7 @@ exports.page = ({ title, content }) => `
       <link href="styles.css" rel="stylesheet" />
     </head>
     <body class="M(0) H(100%) Bgc(#201220)">
-      <div class="Mx(auto) Pt(64px) W(100%) Maw(1180px) H(calc(100%-64px)) Bxsh(page)">
+      <div class="Mx(auto) Pt(64px) W(100%) Maw(1180px) H(calc(100%-64px)) Bxsh(page) Pos(r)">
         ${content}
       </div>
       <div class="Pos(f) T(0) End(0) Start(0) H(64px)">

@@ -3,7 +3,7 @@ const { page } = require("./common.js");
 module.exports = page({
   content: `
     <div class="H(100%) D(f) Fxd(c)">
-      <div class="Fxg(1) D(f) Fxd(c) Jc(c) Ai(c) Bgi(linear-gradient(#323041,#7e7c8d)) C(#fff) Ff(ss) Fz(32px) Fz(24px)--sm Fw(300)">
+      <div class="Fxg(1) Fxs(0) Bxz(bb) D(f) Fxd(c) Jc(c) Ai(c) Bgi(linear-gradient(#323041,#7e7c8d)) C(#fff) Ff(ss) Fz(32px) Fz(24px)--sm Fw(300) Py(32px)">
         <img src="logo-hacss.svg" alt="Hacss" class="H(3em)" />
         <p class="Mt(8px) Mb(0) Lts(-1px)">Style like you mean it.</p>
         <button class="Bd(n) Bdrs(0.25em) Mt(1.5em) M(1em)--sm Py(0.375em) Px(0.5em) Fz(0.625em) Fw(200) Ff(ss) Bgc(#392b2d) Bgc(#201214):h C(#fff) D(if) Ai(c) Cur(p)">
