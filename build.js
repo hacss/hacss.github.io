@@ -62,12 +62,17 @@ const buildSVG = () =>
 
 const buildSite = () =>
   Promise
-    .all([ buildCSS(), buildHTML(), buildSVG() ])
+    .all([
+      buildCSS(),
+      buildHTML(),
+      buildSVG()
+    ])
     .then(files => files.reduce((all, sub) => ({ ...all, ...sub }), {}));
 
 rimraf("./public")
   .then(() => mkdir("./public"))
   .then(buildSite)
   .then(files => Promise.all(Object.entries(files).map(([ file, contents ]) => writeFile(path.join("./public", file), contents))))
+  .then(() => writeFile("./public/CNAME", "hacss.io"))
   .then(() => console.log("Build succeeded."))
   .catch(err => console.error(err));
