@@ -6,7 +6,7 @@ module.exports = page({
       <div class="Fxg(1) Fxs(0) Bxz(bb) D(f) Fxd(c) Jc(c) Ai(c) Bgi(linear-gradient(blue700,blue400)) C(white) Ff(ss) Fz(32px) Fz(24px)--sm Fw(300) Py(32px)">
         <img src="logo-hacss.svg" alt="Hacss" class="H(3em)" />
         <p class="Mt(8px) Mb(0) Lts(-1px)">Style like you mean it.</p>
-        <button class="Bd(n) Bdrs(0.25em) Mt(1.5em) Mt(1em)--sm Py(0.6em) Pstart(0.8em) Pend(0.6em) Fz(0.625em) Fw(200) Ff(ss) Bgc(red700) Bgc(red800):h C(white) D(if) Ai(c) Cur(p)">
+        <button class="Bd(n) Bdrs(0.25em) Mt(1.5em) Mt(1em)--sm Py(0.6em) Pstart(0.8em) Pend(0.6em) Fz(0.625em) Fw(200) Ff(ss) Bgc(red700) Bgc(red800):h C(red100) D(if) Ai(c) Cur(p)">
           <span class="D(ib) Mend(0.2em)">Start</span>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="W(1.2em)"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="currentColor" /></svg>
         </button>

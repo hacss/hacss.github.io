@@ -105,7 +105,7 @@ exports.page = ({ title, content }) => `
           T(56px)
           End(16px)
           Bxsh(md,black.5)
-          Bgc(white)
+          Bgc(red100)
           Px(0)
           Py(4px)
           Bdrs(4px)
@@ -116,7 +116,7 @@ exports.page = ({ title, content }) => `
           Pos(a)::b
           T(-5px)::b
           End(8px)::b
-          Bgi(url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5cHgiIGhlaWdodD0iNXB4IiB2aWV3Qm94PSIwIDAgOSA1Ij48cG9seWdvbiBwb2ludHM9IjAsNSA1LDAgOSw1IiBmaWxsPSIjZmZmIiAvPjwvc3ZnPg==))::b
+          Bgi(url(popnav-pointer.svg))::b
           W(9px)::b
           H(5px)::b
         ">
@@ -125,7 +125,7 @@ exports.page = ({ title, content }) => `
             .map(({ href, title }) => `
               <a
                 href="${href}"
-                class="D(b) Px(8px) Py(4px) C(blue700) Td(n) Bgc(blue500):h C(white):h">
+                class="D(b) Px(8px) Py(4px) C(red700) Td(n) Bgc(red700):h C(red100):h">
                 ${title}
               </a>
             `)
