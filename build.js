@@ -51,12 +51,11 @@ const buildHTML = () =>
     .then(Object.fromEntries);
 
 const buildSVG = () =>
-  glob("./src/*.svg")
+  glob("./src/*.svg.js")
     .then(x => Promise.all(
       x.map(y =>
-        readFile(y, "utf8")
-          .then(z => svgo.optimize(z))
-          .then(({ data }) => [path.basename(y), data])
+        svgo.optimize(require(y))
+          .then(({ data }) => [path.basename(y).replace(/\.js$/, ""), data])
     )))
     .then(Object.fromEntries);
 

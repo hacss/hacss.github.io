@@ -1,4 +1,10 @@
+const { colors } = require("./src/common.js");
+
 module.exports = ({ rules }) => ({
+  globalMapArg: x => x.replace(
+    new RegExp(Object.keys(colors).join("|"), "g"),
+    k => colors[k]
+  ),
   rules: {
     Bxsh: (...args) => {
       switch (args.length) {
