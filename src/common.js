@@ -34,7 +34,7 @@ const navLinks = [
   { href: "#", title: "Getting Started" },
   { href: "#", title: "Guides" },
   { href: "#", title: "FAQ" },
-  { href: "#", title: "Playground" },
+  { href: "https://basement.hacss.io/", title: "Basement" },
 ];
 
 exports.page = ({ title, content }) => `
