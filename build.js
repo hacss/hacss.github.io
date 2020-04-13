@@ -20,6 +20,8 @@ const mkdir = promisify(fs.mkdir);
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
+const md = require("./src/md.js");
+
 const minifyHTMLOptions = {
   collapseBooleanAttributes: true,
   collapseInlineTagWhitespace: true,
@@ -57,6 +59,21 @@ const buildHTML = () =>
     ))
     .then(Object.fromEntries);
 
+const buildMarkdown = () =>
+  glob("./src/*.md")
+    .then(xs => Promise.all(
+      xs.map(
+        async x => {
+          const html = await md(x);
+          return [
+            path.basename(x).replace(/\.md$/, ".html"),
+            minifyHTML(html, minifyHTMLOptions)
+          ];
+        }
+      )
+    ))
+    .then(Object.fromEntries);
+
 const buildSVG = () =>
   glob("./src/*.svg.js")
     .then(x => Promise.all(
@@ -71,7 +88,8 @@ const buildSite = () =>
     .all([
       buildCSS(),
       buildHTML(),
-      buildSVG()
+      buildMarkdown(),
+      buildSVG(),
     ])
     .then(files => files.reduce((all, sub) => ({ ...all, ...sub }), {}));
 
