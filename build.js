@@ -44,10 +44,17 @@ const buildCSS = () =>
 
 const buildHTML = () =>
   glob("./src/*.html.js")
-    .then(x => x.map(y => [
-      path.basename(y.replace(/\.js$/, "")),
-      minifyHTML(require(y), minifyHTMLOptions)
-    ]))
+    .then(xs => Promise.all(
+      xs.map(
+        async x => {
+          const html = await require(x)();
+          return [
+            path.basename(x).replace(/\.js$/, ""),
+            minifyHTML(html, minifyHTMLOptions)
+          ];
+        }
+      )
+    ))
     .then(Object.fromEntries);
 
 const buildSVG = () =>

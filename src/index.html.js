@@ -1,6 +1,6 @@
 const { page } = require("./common.js");
 
-module.exports = page({
+module.exports = () => page({
   content: `
     <div class="H(100%) D(f) Fxd(c)">
       <div class="Fxg(1) Fxs(0) Bxz(bb) D(f) Fxd(c) Jc(c) Ai(c) Bgi(linear-gradient(blue700,blue400)) C(white) Ff(ss) Fz(32px) Fz(24px)--sm Fw(300) Py(32px)">
