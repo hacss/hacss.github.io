@@ -94,9 +94,9 @@ exports.page = ({ title, content }) => `
           Ai(c)
           Jc(sb)
         ">
-          <a href="index.html">
+          ${title ? `<a href="index.html">` : ""}
             <img src="logo-h.svg" alt="Hacss" class="Bd(n) H(32px)" />
-          </a>
+          ${title ? "</a>" : ""}
           <button
             id="navOpener"
             class="D(n) D(ib)--sm O(n) H(auto) Bgc(transparent) P(0) M(0) Bd(n) opener">
