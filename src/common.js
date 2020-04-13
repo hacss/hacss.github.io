@@ -31,7 +31,7 @@ exports.colors = {
 };
 
 const navLinks = [
-  { href: "#", title: "Getting Started" },
+  { href: "getting-started.html", title: "Getting Started" },
   { href: "#", title: "Guides" },
   { href: "faq.html", title: "FAQ" },
   { href: "http://basement.hacss.io/", title: "Basement" },
