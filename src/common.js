@@ -94,7 +94,9 @@ exports.page = ({ title, content }) => `
           Ai(c)
           Jc(sb)
         ">
-          <img src="logo-h.svg" alt="Hacss" class="H(32px)" />
+          <a href="index.html">
+            <img src="logo-h.svg" alt="Hacss" class="Bd(n) H(32px)" />
+          </a>
           <button
             id="navOpener"
             class="D(n) D(ib)--sm O(n) H(auto) Bgc(transparent) P(0) M(0) Bd(n) opener">
@@ -133,8 +135,11 @@ exports.page = ({ title, content }) => `
           Trsdu(300ms)
           T(56px)
           End(16px)
-          Bxsh(md,black.5)
-          Bgc(red100)
+          Bxsh(md,rgba(0,0,0,0.1))
+          Bdc(red700)
+          Bds(s)
+          Bdw(1px)
+          Bgc(purple100)
           Px(0)
           Py(4px)
           Bdrs(4px)
@@ -154,7 +159,7 @@ exports.page = ({ title, content }) => `
             .map(({ href, title }) => `
               <a
                 href="${href}"
-                class="D(b) Px(8px) Py(4px) C(red700) Td(n) Bgc(red700):h C(red100):h">
+                class="D(b) Px(8px) Py(4px) C(purple700) Td(n) Bgc(purple700):h C(purple100):h">
                 ${title}
               </a>
             `)
