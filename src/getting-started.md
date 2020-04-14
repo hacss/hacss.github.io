@@ -6,10 +6,10 @@ ready to take the next step, read on.
 
 ## Installation
 
-To use Hacss in a [Node.js](https://nodejs.org) project, ensure that you have
-Node.js version 11.0.0 or later installed. Hacss can be installed globally for
-CLI usage or locally in a project for usage via CLI, Node API, or Webpack. For
-now, we will suggest a global installation:
+To use Hacss in a [Node.js](https://nodejs.org) project, ensure that you are
+running Node.js version 11.0.0 or later. Hacss can be installed globally for CLI
+use or project-locally to use via the CLI, the Node API, or Webpack. The easiest
+way to get started is a global installation:
 
 ```bash
 npm install -g hacss
@@ -17,9 +17,8 @@ npm install -g hacss
 
 ## Testing It Out
 
-It is recommended to create a temporary working directory somewhere on your
-system as this introduction to Hacss will involve two files: an HTML document
-and the corresponding style sheet that Hacss will generate.
+This exercise will involve two files: an HTML document that you will create and
+a CSS file that you will generate with Hacss.
 
 First, create a file called `index.html` with the following content:
 
