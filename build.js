@@ -84,7 +84,7 @@ const buildSVG = () =>
     .then(Object.fromEntries);
 
 const copyLibs = () =>
-  readFile("./node_modules/highlight.js/styles/github.css", "utf8")
+  readFile("./node_modules/highlight.js/styles/mono-blue.css", "utf8")
     .then(x => writeFile("./public/hljs.css", x));
 
 const buildSite = () =>

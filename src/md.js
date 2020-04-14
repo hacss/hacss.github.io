@@ -7,18 +7,21 @@ const { page } = require("./common.js");
 
 const renderer = Object.assign(new Renderer(), {
   code: (code, lang) => `
-    <code class="mdblock">
-      ${hljs.highlight(lang, code).value.replace(/\n/g, "<br/>")}
-    </code>
+    <div class="mdblock P(8px) Bgc(#fff.2) Bd Bdc(blue200)">
+      <code>
+        ${hljs.highlight(lang, code).value.replace(/\n/g, "<br/>")}
+      </code>
+    </div>
   `,
   heading(text, level) {
     const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
     const fz = {
-      1: "Fz(32px)",
-      2: "Fz(24px)",
-      3: "Fz(20px)",
-      4: "Fz(16px)",
-      5: "Fz(12px)",
+      1: "Fz(36px)",
+      2: "Fz(28px)",
+      3: "Fz(24px)",
+      4: "Fz(20px)",
+      5: "Fz(16px)",
+      6: "Fz(12px)",
     }[level];
 
     return `
