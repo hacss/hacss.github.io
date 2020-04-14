@@ -7,7 +7,7 @@ const { page } = require("./common.js");
 
 const renderer = Object.assign(new Renderer(), {
   code: (code, lang) => `
-    <div class="mdblock P(8px) Bgc(#fff.2) Bd Bdc(blue200)">
+    <div class="mdblock P(8px) Bgc(#fff.2) Bd Bdc(#000.2)">
       <code>
         ${hljs.highlight(lang, code).value.replace(/\n/g, "<br/>")}
       </code>
