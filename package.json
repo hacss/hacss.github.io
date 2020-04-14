@@ -27,6 +27,7 @@
   "devDependencies": {
     "glob": "^7.1.6",
     "hacss": "^0.8.8",
+    "highlight.js": "^9.18.1",
     "html-minifier": "^4.0.0",
     "marked": "^0.8.2",
     "rimraf": "^3.0.2",

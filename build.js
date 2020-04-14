@@ -83,6 +83,10 @@ const buildSVG = () =>
     )))
     .then(Object.fromEntries);
 
+const copyLibs = () =>
+  readFile("./node_modules/highlight.js/styles/github.css", "utf8")
+    .then(x => writeFile("./public/hljs.css", x));
+
 const buildSite = () =>
   Promise
     .all([
@@ -90,6 +94,7 @@ const buildSite = () =>
       buildHTML(),
       buildMarkdown(),
       buildSVG(),
+      copyLibs(),
     ])
     .then(files => files.reduce((all, sub) => ({ ...all, ...sub }), {}));
 

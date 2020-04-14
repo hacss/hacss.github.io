@@ -2,9 +2,15 @@ const fs = require("fs");
 const { promisify } = require("util");
 const readFile = promisify(fs.readFile);
 const { Renderer, lexer, parser } = require("marked");
+const hljs = require("highlight.js");
 const { page } = require("./common.js");
 
 const renderer = Object.assign(new Renderer(), {
+  code: (code, lang) => `
+    <code class="mdblock">
+      ${hljs.highlight(lang, code).value.replace(/\n/g, "<br/>")}
+    </code>
+  `,
   heading(text, level) {
     const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
     const fz = {

@@ -46,6 +46,7 @@ exports.page = ({ title, content }) => `
       <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,700" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=Inconsolata:400" rel="stylesheet" />
       <link href="styles.css" rel="stylesheet" />
+      <link href="hljs.css" rel="stylesheet" />
     </head>
     <body class="M(0) H(100%) Bgc(purple800)">
       <div class="Mx(auto) Pt(64px) W(100%) Maw(1180px) H(calc(100%-64px)) Bxsh(page) Pos(r)">
