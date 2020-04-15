@@ -103,7 +103,13 @@ exports.page = ({ title, content, source }) => `
               navLinks
                 .map(({ href, title, active }) =>
                   active(source)
-                  ? `<span class="D(ib) Mstart(16px) C(white)">${title}</span>`
+                  ? `
+                      <a
+                        href="${href}"
+                        class="D(ib) Mstart(16px) C(white) Td(n)">
+                        ${title}
+                      </a>
+                    `
                   : `
                       <a
                         href="${href}"
@@ -152,7 +158,13 @@ exports.page = ({ title, content, source }) => `
           navLinks
             .map(({ href, title, active }) =>
               active(source)
-              ? `<span class="D(b) Px(8px) Py(4px) Bgc(purple200) C(purple900)">${title}</span>`
+              ? `
+                  <a
+                    href="${href}"
+                    class="D(b) Px(8px) Py(4px) Bgc(purple200) C(purple900) Td(n)">
+                    ${title}
+                  </a>
+                `
               : `
                   <a
                     href="${href}"
