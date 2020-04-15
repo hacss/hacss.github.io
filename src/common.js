@@ -1,3 +1,5 @@
+const path = require("path");
+
 exports.colors = {
   black: "black",
   blue100: "#eae8f9",
@@ -31,13 +33,29 @@ exports.colors = {
 };
 
 const navLinks = [
-  { href: "getting-started.html", title: "Getting Started" },
-  { href: "#", title: "Guides" },
-  { href: "faq.html", title: "FAQ" },
-  { href: "http://basement.hacss.io/", title: "Basement" },
+  {
+    href: "getting-started.html",
+    title: "Getting Started",
+    active: x => path.basename(x) === "getting-started.md",
+  },
+  {
+    href: "#",
+    title: "Guides",
+    active: x => x.includes("guide"),
+  },
+  {
+    href: "faq.html",
+    title: "FAQ",
+    active: x => path.basename(x) === "faq.md",
+  },
+  {
+    href: "http://basement.hacss.io/",
+    title: "Basement",
+    active: () => false,
+  },
 ];
 
-exports.page = ({ title, content }) => `
+exports.page = ({ title, content, source }) => `
   <!DOCTYPE html>
   <html class="H(100%)">
     <head>
@@ -83,13 +101,17 @@ exports.page = ({ title, content }) => `
           <nav class="Ff(ss) Fz(16px) C(blue200) D(if) D(n)--sm">
             ${
               navLinks
-                .map(({ href, title }) => `
-                  <a
-                    href="${href}"
-                    class="D(ib) Mstart(16px) C(blue300) C(white):h Td(n)">
-                    ${title}
-                  </a>
-                `)
+                .map(({ href, title, active }) =>
+                  active(source)
+                  ? `<span class="D(ib) Mstart(16px) C(white)">${title}</span>`
+                  : `
+                      <a
+                        href="${href}"
+                        class="D(ib) Mstart(16px) C(blue300) C(white):h Td(n)">
+                        ${title}
+                      </a>
+                    `
+                )
                 .join("")
             }
           </nav>
@@ -128,13 +150,17 @@ exports.page = ({ title, content }) => `
         ">
         ${
           navLinks
-            .map(({ href, title }) => `
-              <a
-                href="${href}"
-                class="D(b) Px(8px) Py(4px) C(purple700) Td(n) Bgc(purple700):h C(purple100):h">
-                ${title}
-              </a>
-            `)
+            .map(({ href, title, active }) =>
+              active(source)
+              ? `<span class="D(b) Px(8px) Py(4px) Bgc(purple200) C(purple900)">${title}</span>`
+              : `
+                  <a
+                    href="${href}"
+                    class="D(b) Px(8px) Py(4px) C(purple600) Td(n) Bgc(purple600):h C(purple100):h">
+                    ${title}
+                  </a>
+                `
+            )
             .join("")
         }
       </div>

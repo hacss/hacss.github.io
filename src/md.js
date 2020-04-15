@@ -52,6 +52,7 @@ module.exports = async path => {
     .map(({ text }) => text)[0];
 
   return page({
+    source: path,
     title,
     content: `
       <div class="Mih(100%) Bxz(bb) Bgc(blue100) C(blue800) P(16px) Ff(ss) Fz(16px) Fw(400) Lh(1.4)">
