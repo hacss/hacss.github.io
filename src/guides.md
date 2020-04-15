@@ -1,3 +1,4 @@
 # Guides
 
-* [Webpack Integration](webpack-guide.html)
+* [Configuration](configuration-guide.md)
+* [Webpack Integration](webpack-guide.md)

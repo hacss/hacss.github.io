@@ -33,7 +33,7 @@ const renderer = Object.assign(new Renderer(), {
   },
   link: (href, title, text) => `
     <a
-      href="${href}"
+      href="${href.replace(/^([a-z\-]+)\.md$/, (_, x) => `${x}.html`)}"
       class="C(blue600) C(blue500):h C(red600):a C(red500):h:a C(purple600):vi C(purple500):h:vi"
       ${title ? `title="${title}"` : ""}>
       ${text}</a> 
