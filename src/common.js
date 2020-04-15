@@ -39,7 +39,7 @@ const navLinks = [
     active: x => path.basename(x) === "getting-started.md",
   },
   {
-    href: "#",
+    href: "guides.html",
     title: "Guides",
     active: x => x.includes("guide"),
   },

@@ -7,11 +7,9 @@ const { page } = require("./common.js");
 
 const renderer = Object.assign(new Renderer(), {
   code: (code, lang) => `
-    <div class="mdblock P(8px) Bgc(#fff.2) Bd Bdc(#000.2)">
-      <code>
-        ${hljs.highlight(lang, code).value.replace(/\n/g, "<br/>")}
-      </code>
-    </div>
+    <pre class="mdblock P(8px) Bgc(#fff.2) Bd Bdc(#000.2)">${
+      hljs.highlight(lang, code).value
+    }</pre>
   `,
   heading(text, level) {
     const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
