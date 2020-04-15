@@ -2,14 +2,15 @@
 
 If you are using a modern browser, you can start tinkering in the
 [Basement](https://basement.hacss.io) without installing anything. When you are
-ready to take the next step, read on.
+ready to use Hacss in your own environment, the instructions that follow will
+guide you through installation and basic usage.
 
 ## Installation
 
-To use Hacss in a [Node.js](https://nodejs.org) project, ensure that you are
-running Node.js version 11.0.0 or later. Hacss can be installed globally for CLI
-use or project-locally to use via the CLI, the Node API, or Webpack. The easiest
-way to get started is a global installation:
+First, ensure that you are running [Node.js](https://nodejs.org) version 11.0.0
+or later. Hacss can be installed globally for CLI use or project-locally to use
+via the CLI, the Node API, or Webpack. The easiest way to get started is a
+global installation:
 
 ```bash
 npm install -g hacss
