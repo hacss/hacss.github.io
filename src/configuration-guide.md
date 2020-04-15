@@ -60,7 +60,7 @@ declarations. Each value can take one of three basic forms:
 1. A function that maps one or more arguments to the corresponding declarations.
    For example, the declarations for a class name `Tsh(2px,black)` can be
    generated from the rule
-   `Tsh: (size, color) => \`text-shadow: ${size} ${size} ${color}\``.
+   `` Tsh: (size, color) => `text-shadow: ${size} ${size} ${color}` ``.
    While you can review the
    [default rules](https://github.com/hacss/hacss/blob/master/config/rules.js)
    as examples, note that, despite using a few utility functions to simplify
