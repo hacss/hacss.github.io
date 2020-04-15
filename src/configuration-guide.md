@@ -12,6 +12,9 @@ configuration to support such use cases as:
 * Custom breakpoints in responsive design
 * Post-processing, eg replacing a given substring in all CSS output
 
+This guide explains how to define a custom configuration as well as the
+structure of a configuration module.
+
 ## Defining a Custom Configuration
 
 Both the CLI and the [Webpack integration](webpack-guide.md) will look for a
