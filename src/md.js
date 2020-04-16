@@ -11,7 +11,7 @@ const renderer = Object.assign(new Renderer(), {
       hljs.highlight(lang, code).value
     }</code></pre>
   `,
-  codespan: code => `<code class="Ff(m)">${hljs.highlightAuto(code).value}</code>`,
+  codespan: code => `<code class="Ff(m)">${code}</code>`,
   heading(text, level) {
     const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
     const fz = {

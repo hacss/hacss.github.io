@@ -49,7 +49,7 @@ const navLinks = [
     active: x => path.basename(x) === "faq.md",
   },
   {
-    href: "http://basement.hacss.io/",
+    href: "https://basement.hacss.io/",
     content: "Basement",
     active: () => false,
   },
