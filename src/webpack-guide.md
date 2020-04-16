@@ -1,6 +1,6 @@
 # Webpack Integration Guide
 
-Hacss is a bit different than other CSS tools (e. g. preprocessors) that you may
+Hacss is a bit different than other CSS tools (e.g. preprocessors) that you may
 have used with Webpack in the past. With Hacss, you don't simply author a style
 sheet in a compile-to-CSS language; rather, the style sheet is entirely
 generated.
@@ -21,7 +21,7 @@ npm install -D hacss val-loader css-loader style-loader
 
 ## Webpack Configuration
 
-Two small changes in the Webpack configuration (i. e. `webpack.config.js`) to
+Two small changes in the Webpack configuration (i.e. `webpack.config.js`) to
 enable Hacss.
 
 ### Entry
