@@ -31,9 +31,8 @@ argument, allowing you to create custom rules, scopes, and other configuration
 easily on the basis of defaults.
 
 In either case, custom configuration is applied on top of the default
-configuration configuration, so it is possible and even preferable to export a
-partial configuration object reflecting only differences from the default
-configuration.
+configuration, so it is possible and even preferable to export a partial
+configuration object reflecting only differences from the default configuration.
 
 ## Configuration Structure
 
