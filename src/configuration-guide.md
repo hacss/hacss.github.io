@@ -17,10 +17,11 @@ structure of a configuration module.
 
 ## Defining a Custom Configuration
 
-Both the CLI and the [Webpack integration](webpack-guide.md) will look for a
-`hacss.config.js` file in the working directory (ie the project root). You
-can specify an alternate configuration file path by using the explicit `config`
-option. See the CLI and [Webpack](webpack-guide.md) guides for more information.
+Both the [CLI](cli-guide.md) and the [Webpack integration](webpack-guide.md)
+will look for a `hacss.config.js` file in the working directory (ie the project
+root). You can specify an alternate configuration file path by using the
+explicit `config` option. See the [CLI](cli-guide.md) and
+[Webpack](webpack-guide.md) guides for more information.
 
 The configuration module may export either
 * a configuration object or
