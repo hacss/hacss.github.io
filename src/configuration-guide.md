@@ -4,13 +4,13 @@ While Hacss is bundled with a default configuration that makes it useful for
 smaller projects and prototyping, most projects will require a custom
 configuration to support such use cases as:
 
-* Global variables, eg color palette or spacing presets
-* Scoped variables, eg `small`, where the value depends on context
-* Redefining rules, eg changing how `O` (outline) is implemented or custom
+* Global variables, e.g. color palette or spacing presets
+* Scoped variables, e.g. `small`, where the value depends on context
+* Redefining rules, e.g. changing how `O` (outline) is implemented or custom
   parameterization of `Bxsh` (box shadow)
 * Custom rules
 * Custom breakpoints in responsive design
-* Post-processing, eg replacing a given substring in all CSS output
+* Post-processing, e.g. replacing a given substring in all CSS output
 
 This guide explains how to define a custom configuration as well as the
 structure of a configuration module.
@@ -18,8 +18,8 @@ structure of a configuration module.
 ## Defining a Custom Configuration
 
 Both the [CLI](cli-guide.md) and the [Webpack integration](webpack-guide.md)
-will look for a `hacss.config.js` file in the working directory (ie the project
-root). You can specify an alternate configuration file path by using the
+will look for a `hacss.config.js` file in the working directory (i.e. the
+project root). You can specify an alternate configuration file path by using the
 explicit `config` option. See the [CLI](cli-guide.md) and
 [Webpack](webpack-guide.md) guides for more information.
 
