@@ -56,15 +56,15 @@ const navLinks = [
   {
     href: "https://github.com/hacss/hacss",
     content: `
-      <svg viewBox="0 0 16 16" version="1.1" class="W(16px)">
+      <svg viewBox="0 0 16 16" version="1.1" class="width:16px;">
         <path fill="currentColor" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
       </svg>
     `,
     popContent: `
-      <svg viewBox="0 0 16 16" version="1.1" class="W(16px)">
+      <svg viewBox="0 0 16 16" version="1.1" class="width:16px;">
         <path fill="currentColor" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
       </svg>
-      <span class="D(ib) Mstart(8px)">GitHub</span>
+      <span class="display:inline-block; margin-left:8px;">GitHub</span>
     `,
     active: () => false,
   },
@@ -72,7 +72,7 @@ const navLinks = [
 
 exports.page = ({ title, content, source }) => `
   <!DOCTYPE html>
-  <html class="H(100%)">
+  <html class="height:100%;">
     <head>
       <title>Hacss${title ? `: ${title}` : ""}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -81,39 +81,71 @@ exports.page = ({ title, content, source }) => `
       <link href="styles.css" rel="stylesheet" />
       <link href="hljs.css" rel="stylesheet" />
     </head>
-    <body class="M(0) H(100%) Bgc(purple800)">
-      <div class="Mx(auto) Pt(64px) W(100%) Maw(1180px) H(calc(100%-64px)) Bxsh(page) Pos(r)">
+    <body class="margin:0; height:100%; background:$purple800;">
+      <div class="
+        margin-x:auto;
+        padding-top:64px;
+        width:100%;
+        max-width:1180px;
+        height:calc(100%-64px);
+        position:relative;
+        box-shadow:-10px__0__20px__0__$black,__10px__0__20px__0__$black;">
         ${content}
       </div>
-      <div class="Pos(f) T(0) End(0) Start(0) H(64px)">
+      <div class="position:fixed; top:0; right:0; left:0; height:64px;">
         <header class="
-          Mx(auto)
-          W(100%)
-          Maw(1180px)
-          H(100%)
-          Bgc(black)
-          Px(16px)
-          Bxz(bb)
-          D(f)
-          Fxd(r)
-          Ai(c)
-          Jc(sb)
+          margin-x:auto;
+          width:100%;
+          max-width:1180px;
+          height:100%;
+          background:$black;
+          padding-x:16px;
+          box-sizing:border-box;
+          display:flex;
+          flex-direction:row;
+          align-items:center;
+          justify-content:space-between;
         ">
-          ${title ? `<a href="index.html" class="D(f) Ai(c)">` : ""}
-            <img src="logo-h.svg" alt="Hacss" class="Bd(n) H(32px)" />
+          ${title
+            ? `<a href="index.html" class="display:flex; align-items:center;">`
+            : ""
+          }
+            <img src="logo-h.svg" alt="Hacss" class="border:0; height:32px;" />
           ${title ? "</a>" : ""}
           <button
             id="navOpener"
-            class="D(n) D(ib)--sm O(n) H(auto) Bgc(transparent) P(0) M(0) Bd(n) opener">
+            class="
+              display:none;
+              @small{display:inline-block;}
+              outline:none;
+              height:auto;
+              background:transparent;
+              padding:9;
+              margin:0;
+              border:0;
+              opener
+            ">
             <svg
               viewBox="0 0 24 21"
-              class="W(24px) H(21px) Fill(blue300) opener:h_Fill(white)">
+              class="
+                width:24px;
+                height:21px;
+                fill:$blue300;
+                opener:hover_fill:$white;
+              ">
               <rect width="100%" height="5px" />
               <rect width="100%" height="5px" y="8" />
               <rect width="100%" height="5px" y="16" />
             </svg>
           </button>
-          <nav class="Ff(ss) Fz(16px) C(blue200) D(if) Ai(c) D(n)--sm">
+          <nav class="
+            font-family:$sans-serif;
+            font-size:16px;
+            color:$blue200;
+            display:inline-flex;
+            align-items:center;
+            @small{display:none;}
+          ">
             ${
               navLinks
                 .map(({ href, content, active }) =>
@@ -121,14 +153,25 @@ exports.page = ({ title, content, source }) => `
                   ? `
                       <a
                         href="${href}"
-                        class="D(if) Mstart(16px) C(white) Td(n)">
+                        class="
+                          display:inline-flex;
+                          margin-left:16px;
+                          color:$white;
+                          text-decoration:none;
+                        ">
                         ${content}
                       </a>
                     `
                   : `
                       <a
                         href="${href}"
-                        class="D(if) Mstart(16px) C(blue300) C(white):h Td(n)">
+                        class="
+                          display:inline-flex;
+                          margin-left:16px;
+                          color:$blue300;
+                          :hover{color:$white;}
+                          text-decoration:none;
+                        ">
                         ${content}
                       </a>
                     `
@@ -141,33 +184,33 @@ exports.page = ({ title, content, source }) => `
       <div
         id="popNav"
         class="
-          D(n)
-          D(b)--sm
-          Pos(f)
-          Z(-1)
-          Op(0)
-          Trsp(opacity)
-          Trsdu(300ms)
-          T(56px)
-          End(16px)
-          Bxsh(md,rgba(0,0,0,0.1))
-          Bdc(red700)
-          Bds(s)
-          Bdw(1px)
-          Bgc(purple100)
-          Px(0)
-          Py(4px)
-          Bdrs(4px)
-          Ff(ss)
-          Fz(16px)
-          Fw(400)
-          Cnt('')::b
-          Pos(a)::b
-          T(-5px)::b
-          End(8px)::b
-          Bgi(url(popnav-pointer.svg))::b
-          W(9px)::b
-          H(5px)::b
+          display:none;
+          @small{display:block;}
+          position:fixed;
+          z-index:-1;
+          opacity:0;
+          transition-property:opacity;
+          transition-duration:300ms;
+          top:56px;
+          right:16px;
+          box-shadow:4px__4px__0__rgba(0,0,0,0.1),
+          border-color:$red700;
+          border-style:solid;
+          border-width:1px;
+          background:$purple100;
+          padding-x:0;
+          padding-y:4px;
+          border-radius:4px;
+          font-family:$sans-serif;
+          font-size:16px;
+          font-weight:400;
+          ::before{content:'';}
+          ::before{position:absolute;}
+          ::before{top:-5px;}
+          ::before{right:8px;}
+          ::before{background-image:url(data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='9px'%20height='5px'%20viewBox='0%200%209%205'%3E%3Cpolygon%20points='0,5%205,0%209,5'%20fill='$red100'%20/%3E%3C/svg%3E);}
+          ::before{width:9px;}
+          ::before{height:5px;}
         ">
         ${
           navLinks
@@ -176,14 +219,35 @@ exports.page = ({ title, content, source }) => `
               ? `
                   <a
                     href="${href}"
-                    class="D(f) Ai(c) Px(8px) Py(4px) Mih(28px) Bxz(bb) Bgc(purple200) C(purple900) Td(n)">
+                    class="
+                      display:flex;
+                      align-items:center;
+                      padding-x:8px;
+                      padding-y:4px;
+                      min-height:28px;
+                      box-sizing:border-box;
+                      background:$purple200;
+                      color:$purple900;
+                      text-decoration:none;
+                    ">
                     ${popContent || content}
                   </a>
                 `
               : `
                   <a
                     href="${href}"
-                    class="D(f) Ai(c) Px(8px) Py(4px) Mih(28px) Bxz(bb) C(purple600) Td(n) Bgc(purple600):h C(purple100):h">
+                    class="
+                      display:flex;
+                      align-items:center;
+                      padding-x:8px;
+                      padding-y:4px;
+                      min-height:28px;
+                      box-sizing:border-box;
+                      color:$purple600;
+                      text-decoration:none;
+                      :hover{background:$purple600;}
+                      :hover{color:$purple100;}
+                    ">
                     ${popContent || content}
                   </a>
                 `
@@ -194,7 +258,7 @@ exports.page = ({ title, content, source }) => `
       <script>
       document.getElementById("navOpener").addEventListener("click", function() {
         var nav = document.getElementById("popNav");
-        ["Z(-1)", "Op(0)", "Op(1)"].forEach(function(c) {
+        ["z-index:-1;", "opacity:0;", "opacity:1;"].forEach(function(c) {
           nav.classList.toggle(c);
         });
       });

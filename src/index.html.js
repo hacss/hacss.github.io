@@ -3,16 +3,60 @@ const { page } = require("./common.js");
 module.exports = () => page({
   source: __filename,
   content: `
-    <div class="H(100%) D(f) Fxd(c)">
-      <div class="Fxg(1) Fxs(0) Bxz(bb) D(f) Fxd(c) Jc(c) Ai(c) Bgi(linear-gradient(blue700,blue400)) C(white) Ff(ss) Fz(32px) Fz(24px)--sm Fw(300) Py(32px)">
-        <img src="logo-hacss.svg" alt="Hacss" class="H(3em)" />
-        <p class="Mt(8px) Mb(0) Lts(-1px)">Style like you mean it.</p>
-        <a href="getting-started.html" class="Bd(n) Bdrs(0.25em) Mt(1.5em) Mt(1em)--sm Py(0.6em) Pstart(0.8em) Pend(0.6em) Fz(0.625em) Fw(200) Ff(ss) Bgc(red700) Bgc(red800):h C(red100) D(if) Ai(c) Cur(p) Td(n)">
-          <span class="D(ib) Mend(0.2em)">Start</span>
+    <div class="height:100%; display:flex; flex-direction:column;">
+      <div class="
+        flex-grow:1;
+        flex-shrink:0;
+        box-sizing:border-box;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        background-image:linear-gradient($blue700,$blue400);
+        color:white;
+        font-family:$sans-serif;
+        font-size:32px;
+        @small{font-size:32px;}
+        font-weight:300;
+        padding-y:32px;
+      ">
+        <img src="logo-hacss.svg" alt="Hacss" class="height:3em;" />
+        <p class="margin-top:8px; margin-bottom:0; letter-spacing:-1px;">
+          Style like you mean it.
+        </p>
+        <a
+          href="getting-started.html"
+          class="
+            border:none;
+            border-radius:0.25em;
+            margin-top:1.5em;
+            @small{margin-top:1em;}
+            padding-y:0.6em;
+            padding-left:0.8em;
+            padding-right:0.6em;
+            font-size:0.625em;
+            font-weight:200;
+            font-family:$sans-serif;
+            background:$red700;
+            :hover{background:$red800;}
+            color:$red100;
+            display:inline-flex;
+            align-items:center;
+            cursor:pointer;
+            text-decoration:none;
+          ">
+          <span class="display:inline-block; margin-right:0.2em;">Start</span>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="W(1.2em)"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="currentColor" /></svg>
         </a>
       </div>
-      <div class="Bgc(red700) D(f) Fxd(r) Fxw(w) Jc(c) P(4px)">
+      <div class="
+        background:$red700;
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
+        padding:4px;
+      ">
         ${
           [
             {
@@ -42,11 +86,27 @@ module.exports = () => page({
             },
           ]
             .map(({ title, content }) => `
-              <div class="M(4px) P(24px) Bdrs(8px) Fxb(calc(1/3-8px)) Fxb(100%)--sm Bxz(bb) Ff(ss) Bgc(red100) C(red700)">
-                <header class="Ta(c)">
-                  <h1 class="M(0) Fw(500) Fz(18px) Lh(1)">${title}</h1>
+              <div class="
+                margin:4px;
+                padding:24px;
+                border-radius:8px;
+                flex-basis:calc(33.333%-8px);
+                @small{flex-basis:100%;}
+                box-sizing:border-box;
+                font-family:$sans-serif;
+                background:$red100;
+                color:$red700;
+              ">
+                <header class="text-align:center;">
+                  <h1 class="margin:0; font-weight:500; font-size:18px; line-height:1;">${title}</h1>
                 </header>
-                <p class="Fz(14px) Fw(400) Mt(8px) Mb(0) Lh(1.4)">
+                <p class="
+                  font-size:14px;
+                  font-weight:400;
+                  margin-top:8px;
+                  margin-bottom:0;
+                  line-height:1.4;
+                ">
                   ${content}
                 </p>
               </div>

@@ -7,24 +7,40 @@ const { page } = require("./common.js");
 
 const renderer = Object.assign(new Renderer(), {
   code: (code, lang) => `
-    <pre class="mdblock P(8px) Bgc(#fff.2) Bd Bdc(#000.2)"><code class="Ff(m)">${
-      hljs.highlight(lang, code).value
-    }</code></pre>
+    <pre class="
+      mdblock
+      padding:8px;
+      background:rgba(255,255,255,0.2);
+      border-width:1px;
+      border-style:solid;
+      border-color:rgba(0,0,0,0.2);
+    "><code class="font-family:$monospace;">${
+        hljs.highlight(lang, code).value
+      }</code></pre>
   `,
-  codespan: code => `<code class="Ff(m)">${code}</code>`,
+  codespan: code => `<code class="font-family:$monospace;">${code}</code>`,
   heading(text, level) {
     const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
-    const fz = {
-      1: "Fz(36px)",
-      2: "Fz(28px)",
-      3: "Fz(24px)",
-      4: "Fz(20px)",
-      5: "Fz(16px)",
-      6: "Fz(12px)",
+    const fontSize = {
+      1: "font-size:36px;",
+      2: "font-size:28px;",
+      3: "font-size:24px;",
+      4: "font-size:20px;",
+      5: "font-size:16px;",
+      6: "font-size:12px;",
     }[level];
 
     return `
-      <h${level} class="Mx(0) Mt(0) Mb(0.5em) Ff(ss) Fw(400) ${fz} mdblock mdblock+Mt(0.5em)">
+      <h${level} class="
+        margin-x:0;
+        margin-top:0;
+        margin-bottom:0.5em;
+        font-family:$sans-serif;
+        font-weight:400;
+        ${fontSize}
+        mdblock
+        mdblock+margin-top:0.5em;
+      ">
         <a name="${escapedText}" class="anchor" href="#${escapedText}">
           <span class="header-link"></span>
         </a>
@@ -35,7 +51,14 @@ const renderer = Object.assign(new Renderer(), {
   link: (href, title, text) => `
     <a
       href="${href.replace(/^([a-z\-]+)\.md$/, (_, x) => `${x}.html`)}"
-      class="C(blue600) C(blue500):h C(red600):a C(red500):h:a C(purple600):vi C(purple500):h:vi"
+      class="
+        color:$blue600;
+        :hover{color:$blue500;}
+        :active{color:$red600;}
+        :hover:active{color:$red500;}
+        :visited{color:$purple600;}
+        :hover:visited{color:$purple500;}
+      "
       ${title ? `title="${title}"` : ""}>
       ${text}</a> 
   `.trim(),
@@ -54,7 +77,17 @@ module.exports = async path => {
     source: path,
     title,
     content: `
-      <div class="Mih(100%) Bxz(bb) Bgc(blue100) C(blue800) P(16px) Ff(ss) Fz(16px) Fw(400) Lh(1.4)">
+      <div class="
+        min-height:100%;
+        box-sizing:border-box;
+        background:$blue100;
+        color:$blue800;
+        padding:16px;
+        font-family:$sans-serif;
+        font-size:16px;
+        font-weight:400;
+        line-height:1.4;
+      ">
         ${parser(tokens, { renderer })}
       </div>
     `,

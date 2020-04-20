@@ -25,7 +25,9 @@ First, create a file called `index.html` with the following content:
 
 ```html
 <link rel="stylesheet" href="ha.css" />
-<h1 class="C(#f00) Ff(ss) Fw(n) M(0)">Hacss works!</h1>
+<h1 class="color:#f00 font-family:sans-serif; font-weight:normal; margin:0;">
+  Hacss works!
+</h1>
 ```
 
 Next, generate the style sheet `ha.css` referenced in line 1 above:
@@ -37,4 +39,13 @@ hacss --output ha.css index.html
 Finally, open `index.html` in your browser of choice and verify that the page
 looks like this:
 
-<h1 class="C(#f00) Fz(24px) Ff(ss) Fw(n) Lh(1) M(0)">Hacss works!</h1>
+<h1 class="
+  color:#f00;
+  font-size:24px;
+  font-family:sans-serif;
+  font-weight:normal;
+  line-height:1;
+  margin:0;
+">
+  Hacss works!
+</h1>

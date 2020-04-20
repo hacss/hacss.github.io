@@ -1,5 +1,5 @@
 const hacss = require("hacss");
-const hacssConfig = require("hacss/config").customConfig(require("./hacss.config.js"));
+const hacssConfig = require("./hacss.config.js");
 const minifyHTML = require("html-minifier").minify;
 const SVGO = require("svgo"), svgo = new SVGO();
 
