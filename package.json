@@ -26,7 +26,7 @@
   "homepage": "https://github.com/hacss/hacss.io#readme",
   "devDependencies": {
     "glob": "^7.1.6",
-    "hacss": "^1.0.4",
+    "hacss": "^1.0.5",
     "highlight.js": "^9.18.1",
     "html-minifier": "^4.0.0",
     "marked": "^0.8.2",

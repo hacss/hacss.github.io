@@ -120,7 +120,7 @@ exports.page = ({ title, content, source }) => `
               outline:none;
               height:auto;
               background:transparent;
-              padding:9;
+              padding:0;
               margin:0;
               border:0;
               opener
@@ -208,7 +208,7 @@ exports.page = ({ title, content, source }) => `
           ::before{position:absolute;}
           ::before{top:-5px;}
           ::before{right:8px;}
-          ::before{background-image:url(data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='9px'%20height='5px'%20viewBox='0%200%209%205'%3E%3Cpolygon%20points='0,5%205,0%209,5'%20fill='$red100-urlencoded'%20/%3E%3C/svg%3E);}
+          ::before{background-image:url('data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%279px%27%20height=%275px%27%20viewBox=%270%200%209%205%27%3E%3Cpolygon%20points=%270,5%205,0%209,5%27%20fill=%27$red100-urlencoded%27%20/%3E%3C/svg%3E');}
           ::before{width:9px;}
           ::before{height:5px;}
         ">
