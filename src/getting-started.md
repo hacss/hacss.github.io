@@ -25,7 +25,7 @@ First, create a file called `index.html` with the following content:
 
 ```html
 <link rel="stylesheet" href="ha.css" />
-<h1 class="color:#f00 font-family:sans-serif; font-weight:normal; margin:0;">
+<h1 class="color:#f00; font-family:sans-serif; font-weight:normal; margin:0;">
   Hacss works!
 </h1>
 ```
