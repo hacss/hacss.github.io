@@ -4,7 +4,10 @@ const { colors } = require("./src/common.js");
 
 module.exports = {
   plugins: [
-    globalVariables(colors),
+    globalVariables({
+      ...colors,
+      "red100-urlencoded": encodeURIComponent(colors.red100),
+    }),
     indexedVariables({
       "font-family": {
         "sans-serif": "'Inter', sans-serif",
