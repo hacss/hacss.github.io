@@ -26,7 +26,7 @@ recovers the ability to use whitespace by converting double-underscores (i.e.
 
 #### `calc`
 The [`calc` plugin](https://github.com/hacss/hacss/blob/master/plugins/calc.js)
-addresses a problem that otherwise would occur when you attempt to use the CSS
+addresses a problem that would otherwise occur when you attempt to use the CSS
 [`calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc) function. In
 order to work properly, operators within a `calc()` expression must be
 surrounded by whitespace. However, because HTML classes are delimited by
