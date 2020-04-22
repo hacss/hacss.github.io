@@ -16,7 +16,6 @@ module.exports = () => page({
         color:white;
         font-family:$sans-serif;
         font-size:32px;
-        @small{font-size:32px;}
         font-weight:300;
         padding-y:32px;
       ">
@@ -45,8 +44,8 @@ module.exports = () => page({
             cursor:pointer;
             text-decoration:none;
           ">
-          <span class="display:inline-block; margin-right:0.2em;">Start</span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="W(1.2em)"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="currentColor" /></svg>
+          <span class="display:inline-block; margin-right:0.2em;">Get Started</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="width:1.2em;"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="currentColor" /></svg>
         </a>
       </div>
       <div class="
