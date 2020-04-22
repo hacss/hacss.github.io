@@ -79,7 +79,7 @@ module.exports = () => page({
               content: `
                 Hacss brings media queries, pseudo-classes, pseudo-elements, and
                 contextual styling capabilities to the inline style language
-                you've always used, even without plugins.
+                you've always used, even before plugins.
               `,
             },
           ]
