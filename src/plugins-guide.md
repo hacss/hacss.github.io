@@ -30,8 +30,8 @@ addresses a problem that would otherwise occur when you attempt to use the CSS
 [`calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc) function. In
 order to work properly, operators within a `calc()` expression must be
 surrounded by whitespace. However, because HTML classes are delimited by
-whitespace, it is not possible to satisfy this requirement. The plugin finds
-`calc()` expressions and adds the necessary whitespace automatically.
+whitespace, it is not possible to satisfy this requirement. The plugin
+automatically adds the necessary whitespace within `calc()` expressions.
 
 ### Other Plugins
 
