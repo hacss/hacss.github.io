@@ -76,12 +76,11 @@ module.exports = () => page({
               `,
             },
             {
-              title: "Set your own rules.",
+              title: "Inline superpowers",
               content: `
-                Rules are small functions that generate the CSS required for a
-                given class, e. g. <code class="Ff(m)">W(100%)</code>. While
-                many are bundled with Hacss, we prioritize your ability to
-                redefine them and to add new ones.
+                Hacss brings media queries, pseudo-classes, pseudo-elements, and
+                contextual styling capabilities to the inline style language
+                you've always used, even without plugins.
               `,
             },
           ]
