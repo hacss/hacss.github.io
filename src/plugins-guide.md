@@ -82,7 +82,7 @@ A plugin can take one of two specific forms:
    declaration object
 2. A tuple (2-item array), where the first item is a function as described above
    and the second item is a string array containing any additional property
-   names that the plugin knows how to handle.
+   names that the plugin knows how to handle
 
 As an example, here is a plugin that adds a `padding-x` property, which is
 expanded into `padding-left` and `padding-right`:
