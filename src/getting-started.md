@@ -57,7 +57,7 @@ example:
 ```
 
 This technique of embedding styles in HTML classes allows Hacss essentially to
-extend the syntax to include features like pseudo-selectors:
+extend a familiar syntax to include features like pseudo-selectors:
 
 ```html
 <button
