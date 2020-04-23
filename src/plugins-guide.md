@@ -88,7 +88,7 @@ As an example, here is a plugin that adds a `padding-x` property, which is
 expanded into `padding-left` and `padding-right`:
 
 ```javascript
-[
+const horizontalPaddingPlugin = [
   decls => {
     if ("padding-x" in decls) {
       decls["padding-left"] = decls["padding-right"] = decls["padding-x"];
