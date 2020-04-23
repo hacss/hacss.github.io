@@ -30,9 +30,10 @@ argument, you can optionally specify `config` and `output` paths.
 #### ```[--config <config-file>]```
 When a `config` argument is specified, the configuration file specified by the
 `<config-file>` path will be used. When not specified, `hacss.config.js` will be
-used if it exists. It is not strictly necessary to have a configuration file, as
-Hacss is bundled with a default configuration. See the
-[configuration guide](configuration-guide.md) for more details.
+used if it exists. While it is not strictly necessary to have a configuration
+file, you may want to review the
+[configuration guide](configuration-guide.md) to understand when you might want
+to use one.
 
 #### ```[--output <output-file>]```
 When an `output` argument is specified, the generated CSS output will be written
@@ -41,6 +42,6 @@ to the standard output.
 
 #### ```<sources>```
 The [glob](https://www.npmjs.com/package/glob) pattern specified here will be
-used to search for source files where atomic CSS classes are used. The list of
+used to search for source files where Hacss classes are used. The list of
 classes found within these files will be included in the CSS output. You can
 also specify a series of glob patterns.
