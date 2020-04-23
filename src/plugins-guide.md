@@ -70,3 +70,32 @@ are rendered in some way. Possible use cases include:
 * **Processing property values.** For example, you could globally change some
   particular substring in all values; or you could even introduce some
   additional syntax.
+
+## Plugin Architecture
+Hacss plugins are essentially plain JavaScript functions that map one set of
+declarations to another. You can specify an array of plugins in your Hacss
+configuration, and they will run in reverse order; i.e. the last plugin
+specified will run first.
+
+A plugin can take one of two specific forms:
+1. A function, parameterized by a declaration object, that returns a new
+   declaration object
+2. A tuple (2-item array), where the first item is a function as described above
+   and the second item is a string array containing any additional property
+   names that the plugin knows how to handle.
+
+As an example, here is a plugin that adds a `padding-x` property, which is
+expanded into `padding-left` and `padding-right`:
+
+```javascript
+[
+  decls => {
+    if ("padding-x" in decls) {
+      decls["padding-left"] = decls["padding-right"] = decls["padding-x"];
+      delete decls["padding-x"];
+    }
+    return decls;
+  },
+  ["padding-x"],
+]
+```
