@@ -57,15 +57,14 @@ example:
 ```
 
 This technique of embedding styles in HTML classes allows Hacss essentially to
-extend a familiar syntax to include features like pseudo-selectors:
+extend a familiar syntax to include additional features like pseudo-selectors:
 
 ```html
-<button
-  class="
-    background-color:darkblue;
-    color:white;
-    :hover{background-color:blue;}
-  ">
+<button class="
+  background-color:darkblue;
+  color:white;
+  :hover{background-color:blue;}
+">
   Button Text
 </button>
 ```
