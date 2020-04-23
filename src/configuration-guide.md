@@ -4,13 +4,9 @@ While Hacss is bundled with a default configuration that makes it useful for
 smaller projects and prototyping, most projects will require a custom
 configuration to support such use cases as:
 
-* Global variables, e.g. color palette or spacing presets
-* Scoped variables, e.g. `small`, where the value depends on context
-* Redefining rules, e.g. changing how `O` (outline) is implemented or custom
-  parameterization of `Bxsh` (box shadow)
-* Custom rules
-* Custom breakpoints in responsive design
-* Post-processing, e.g. replacing a given substring in all CSS output
+* Custom breakpoints or other media queries
+* Custom properties
+* Variables
 
 This guide explains how to define a custom configuration as well as the
 structure of a configuration module.
@@ -23,72 +19,39 @@ project root). You can specify an alternate configuration file path by using the
 explicit `config` option. See the [CLI](cli-guide.md) and
 [Webpack](webpack-guide.md) guides for more information.
 
-The configuration module may export either
-* a configuration object or
-* a function that returns a configuration object.
+The configuration module must export an object, which can contain either or both
+of the keys `mediaQueries` and `plugins`.
 
-In the latter case, Hacss will pass its default configuration object as an
-argument, allowing you to create custom rules, scopes, and other configuration
-easily on the basis of defaults.
+### `mediaQueries`
+This is a map of media queries you want to use in Hacss classes. Given a class
+`@small{width:100%;}`, for example, you would need to define the `small` media
+query here as something like `only screen and (max-width: 600px)`. Note that
+`small`, `medium`, and `large` breakpoint media queries are
+[provided by default](https://github.com/hacss/hacss/blob/25c901c3db58c9eced8525c5a2219aee06f1f533/index.js#L64),
+but you may want to consider overriding them by specifying new values in your
+configuration.
 
-In either case, custom configuration is applied on top of the default
-configuration, so it is possible and even preferable to export a partial
-configuration object reflecting only differences from the default configuration.
+### `plugins`
+This is an array of plugins you want to use. These should be specified in the
+reverse of the order in which you want them to run; i.e. the plugin at index 0
+runs last. For more about plugins, see the [Plugins](plugins-guide.md) guide.
 
-## Configuration Structure
+## Configuration Example
 
-```typescript
-type RuleFn = (...args: any) => string;
+```javascript
+const indexedVariables = require("hacss/plugins/indexed-variables");
 
-type RuleSpec = RuleFn | Array<string | RuleFn>;
-
-type ConfigSpec = {
-    rules: { [ruleName: string]: RuleSpec },
-    scopes: { [scopeName: string]: (css: string) => string },
-    globalMapArg: (value: any, ruleName: string, argIndex: number) => any,
-    globalMapOutput: (output: string, ruleName: string) => string,
-}
-
-type Config = Partial<ConfigSpec> | ((defaultConfig: ConfigSpec) => Partial<ConfigSpec>);
+module.exports = {
+  mediaQueries: {
+    "medium": "only screen and (min-width: 600px) and (max-width: 1199px)",
+    "large": "only screen and (min-width: 1200px)",
+  },
+  plugins: [
+    indexedVariables({
+      "font-size": {
+        medium: "16px",
+      },
+    }),
+  ],
+};
 ```
-
-### `rules`
-
-Conceptually, the `rules` object maps a rule name to the corresponding
-declarations. Each value can take one of three basic forms:
-
-1. A function that maps one or more arguments to the corresponding declarations.
-   For example, the declarations for a class name `Tsh(2px,black)` can be
-   generated from the rule
-   `` Tsh: (size, color) => `text-shadow: ${size} ${size} ${color}` ``.
-   While you can review the
-   [default rules](https://github.com/hacss/hacss/blob/master/config/rules.js)
-   as examples, note that, despite using a few utility functions to simplify
-   their implementation, they are fundamentally just plain functions.
-2. A string that contains the declarations. You would, of course, use this when
-   no parameters are required.
-3. An array containing a combination of the above. In this case, the value at
-   index 0 should be a string (assuming no parameters are required) or `null`.
-   The remaining indexes should correspond to the arity of the rule as used in
-   code. (For example, when evaluating a class `Tsh(2px,black)`, Hacss would
-   look for a function at index 2 of this array.) _Note: You can also use a map
-   like `{ 0: "property: value", 2: (a, b) => "/* declarations */" }` instead
-   of an array if you feel it provides better lookup performance or clarity._
-
-### `scopes`
-The `scopes` object maps a scope name to a function used to construct the
-corresponding CSS block. Typically, this would be used for media queries. A
-scope function is called with the corresponding block of CSS and returns a new
-block. See the
-[default scopes](https://github.com/hacss/hacss/blob/master/config/scopes.js)
-for examples.
-
-### `globalMapArg`
-The `globalMapArg` function is applied to all arguments before they are passed
-to a rule. The typical use case for this would be global variable lookups,
-although it could be used for more complicated transformations as well. Consider
-changing specific rules before using this option due to its global nature.
-
-### `globalMapOutput`
-The `globalMapOutput` function is applied to the output of all rules. Consider
-changing specific rules before using this option due to its global nature.
