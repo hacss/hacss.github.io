@@ -56,7 +56,7 @@ example:
 <button class="background-color:darkblue; color:white;">Button Text</button>
 ```
 
-This technique of embedding syntax in HTML classes allows Hacss essentially to
+This technique of embedding styles in HTML classes allows Hacss essentially to
 extend the syntax to include features like pseudo-selectors:
 
 ```html
