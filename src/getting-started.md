@@ -8,11 +8,10 @@ and rarely hold true in practice. On the other hand, reasons to colocate markup
 and style information are relatively specific and easy to understand, e.g.:
 
 * Less dead code
-* More consistent code
+* No manual alignment of class names between HTML and CSS
 * Fewer context switches (as markup and styles tend to change together)
 * Local reasoning
-* Less time wasted trying to name new things and trying to understand the names
-  of existing things
+* Less time wasted on naming things
 
 The goal of Hacss is to make inline styles more useful by unlocking features
 that are otherwise only available in a separate style sheet.
@@ -48,9 +47,9 @@ to resort to a separate style sheet and applying an HTML class:
 }
 ```
 
-Hacss saves the trouble of authoring this separate style sheet by generating the
-style sheet from presentational class names that appear in the markup. For
-example:
+Hacss avoids this indirection and manual effort by analyzing the presentational
+class names you use in HTML and generating the corresponding style sheet
+automatically. For example:
 
 ```html
 <button class="background-color:darkblue; color:white;">Button Text</button>
@@ -115,8 +114,6 @@ looks like this:
   font-size:24px;
   font-family:sans-serif;
   font-weight:normal;
-  line-height:1;
-  margin:0;
 ">
   Hacss works!
 </h1>
@@ -124,8 +121,7 @@ looks like this:
 ## Next Steps
 
 Most importantly, if you have found anything in this guide to be confusing or
-difficult, please
-<a href="https://github.com/hacss/hacss.io/issues/new">open an issue</a>.
+difficult, please [open an issue](https://github.com/hacss/hacss.io/issues/new).
 
 Otherwise, you can continue your experiments in the
 [Basement](https://basement.hacss.io) or continue to the
