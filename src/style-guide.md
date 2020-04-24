@@ -11,9 +11,9 @@ including only one declaration per class.
 
 While a single class can include multiple declarations, e.g.
 `background:red;color:white;`, each additional declaration affects composability
-and code reuse. Separating this example into two classes, `background:red;` and
-`color:white;`, would allow the `color:white;` CSS to be reused with other
-classes such as `background:blue;`.
+and reuse of the rule. Separating this example into two classes,
+`background:red;` and `color:white;`, would allow the `color:white;` CSS to be
+reused with other classes such as `background:blue;`.
 
 ## Shorthand Properties
 
@@ -39,4 +39,4 @@ A few options exist to make the above example work consistently, including:
   `margin:8px__8px__8px__0;`
 * Create a [plugin](plugins-guide.md) to add a custom property that applies
   margins more selectively, e.g.
-  `padding-y:8px; padding-right:8px; padding-left:8px;`
+  `margin-y:8px; margin-right:8px; margin-left:8px;`
