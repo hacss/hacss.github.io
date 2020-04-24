@@ -5,3 +5,4 @@
 * [Command-Line Interface](cli-guide.md)
 * [Webpack Integration](webpack-guide.md)
 * Node API (coming soon)
+* [Style Guide](style-guide.md)
