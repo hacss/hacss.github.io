@@ -2,12 +2,12 @@
 
 ## Atomic Classes
 
-### What
+### Suggestion
 
 Use classes as single-purpose units of style. In practice, this generally means
 including only one declaration per class.
 
-### Why
+### Justification
 
 While a single class can include multiple declarations, e.g.
 `background:red;color:white;`, each additional declaration affects composability
@@ -17,11 +17,11 @@ classes such as `background:blue;`.
 
 ## Shorthand Properties
 
-### What
+### Suggestion
 
-Use caution with shorthand properties.
+Use shorthand properties with caution.
 
-### Why
+### Justification
 
 It makes sense, in a way, to apply a class `margin:8px;` to the same element as
 a class `margin-left:0;`: You would probably be trying to achieve 8-pixel top,
