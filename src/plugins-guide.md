@@ -97,5 +97,5 @@ const horizontalPaddingPlugin = [
     return decls;
   },
   ["padding-x"],
-]
+];
 ```
