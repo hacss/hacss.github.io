@@ -21,8 +21,8 @@ npm install -D hacss val-loader css-loader style-loader
 
 ## Webpack Configuration
 
-Two small changes in the Webpack configuration (i.e. `webpack.config.js`) to
-enable Hacss.
+Two small changes in the Webpack configuration (i.e. `webpack.config.js`) are
+necessary to enable Hacss.
 
 ### Entry
 
