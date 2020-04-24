@@ -61,9 +61,9 @@ module.exports = () => page({
             {
               title: "Cut the BS out of CSS.",
               content: `
-                The atomic CSS methodology avoids redundant abstractions,
-                inconsistent or dead code, and surprising behaviors inherent
-                to other approaches and methodologies.
+                Hacss makes inline styles a viable option, avoiding redundant
+                abstractions, inconsistent or dead code, and surprising
+                behaviors inherent to other approaches and methodologies.
               `,
             },
             {
@@ -78,8 +78,8 @@ module.exports = () => page({
               title: "Inline superpowers",
               content: `
                 Hacss brings media queries, pseudo-classes, pseudo-elements, and
-                contextual styling capabilities to the inline style language
-                you've always used, even before plugins.
+                contextual styling capabilities, as well as plugins, to the
+                inline style language you already know.
               `,
             },
           ]
