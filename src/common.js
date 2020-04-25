@@ -34,6 +34,11 @@ exports.colors = {
 
 const navLinks = [
   {
+    href: "overview.html",
+    content: "Overview",
+    active: x => path.basename(x) === "overview.md",
+  },
+  {
     href: "getting-started.html",
     content: "Getting Started",
     active: x => path.basename(x) === "getting-started.md",
