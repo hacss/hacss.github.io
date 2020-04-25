@@ -34,7 +34,7 @@ configuration.
 ### `plugins`
 This is an array of plugins you want to use. These should be specified in the
 reverse of the order in which you want them to run; i.e. the plugin at index 0
-runs last. For more about plugins, see the [Plugins](plugins-guide.md) guide.
+runs last. For more about plugins, see the [plugin guide](plugins-guide.md).
 
 ## Configuration Example
 
