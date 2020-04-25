@@ -79,8 +79,8 @@ guide you through installation and basic usage.
 
 First, ensure that you are running [Node.js](https://nodejs.org) version 8.2.1
 or later. Hacss can be installed globally for CLI use or project-locally to use
-via the CLI, the Node API, or Webpack. The easiest way to get started is a
-global installation:
+via the [CLI](cli-guide.md), [Webpack](webpack-guide.md), or the
+[API](api-guide.md). The easiest way to get started is a global installation:
 
 ```bash
 npm install -g hacss
