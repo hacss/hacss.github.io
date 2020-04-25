@@ -23,10 +23,10 @@ const renderer = Object.assign(new Renderer(), {
     const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
     const fontSize = {
       1: "font-size:36px;",
-      2: "font-size:28px;",
-      3: "font-size:24px;",
-      4: "font-size:20px;",
-      5: "font-size:16px;",
+      2: "font-size:24px;",
+      3: "font-size:20px;",
+      4: "font-size:16px;",
+      5: "font-size:14px;",
       6: "font-size:12px;",
     }[level];
 
