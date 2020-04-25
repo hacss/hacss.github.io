@@ -40,3 +40,16 @@ A few options exist to make the above example work consistently, including:
 * Create a [plugin](plugins-guide.md) to add a custom property that applies
   margins more selectively, e.g.
   `margin-y:8px; margin-right:8px; margin-left:0;`
+
+## Rule Consistency
+
+### Suggestion
+
+Write a given style rule as consistently as possible throughout the codebase,
+avoiding, for example, such classes as `background:red;` and
+`background-color:red;` that achieve the same effect two different ways.
+
+### Justification
+
+Because each style rule adds bytes to the generated style sheet, inconsistent
+style can affect the performance of your Web site.
