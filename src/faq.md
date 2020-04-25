@@ -5,7 +5,7 @@ It is a build tool that enhances your inline styling capabilities by analyzing
 the styles you have written throughout your code and generating a style sheet to
 match.
 
-## How is this different from inline styles?
+## How is it different from inline styles?
 This is the same, in essence, as inline styles. The goal here is to make inline
 styles more powerful.
 
