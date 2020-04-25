@@ -65,7 +65,7 @@ module.exports = {
 };
 ```
 
-## Next Step
+## Next Steps
 
 A generated style sheet will now be added to the page automatically. At this
 point, you can add a `hacss.config.js` file alongside `webpack.config.js` if
