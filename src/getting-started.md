@@ -3,7 +3,7 @@
 ## Motivation
 
 While it is often taken for granted that HTML and CSS address different concerns
-and should be rigidly separated, arguments in favor of this view lack substance
+and should be strictly separated, arguments in favor of this view lack substance
 and rarely hold true in practice. On the other hand, reasons to colocate markup
 and style information are relatively specific and easy to understand, e.g.:
 
