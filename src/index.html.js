@@ -3,7 +3,7 @@ const { page } = require("./common.js");
 module.exports = () => page({
   source: __filename,
   content: `
-    <div class="height:100%; display:flex; flex-direction:column;">
+    <div class="min-height:100%; display:flex; flex-direction:column;">
       <div class="
         flex-grow:1;
         flex-shrink:0;
