@@ -51,4 +51,4 @@ looks like this:
 ## Next Steps
 
 Continue to the [Guides](guides.md) section to learn how to integrate Hacss into
-your production codebase and configure it to fit your needs.
+your project and to configure it to fit your needs.
