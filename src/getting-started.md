@@ -50,9 +50,5 @@ looks like this:
 
 ## Next Steps
 
-Most importantly, if you have found anything in this guide to be confusing or
-difficult, please [open an issue](https://github.com/hacss/hacss.io/issues/new).
-
-Otherwise, you can continue your experiments in the
-[Basement](https://basement.hacss.io) or continue to the
-[Guides](guides.md) section to learn about Hacss in greater detail.
+Continue to the [Guides](guides.md) section to learn how to integrate Hacss into
+your production codebase and configure it to fit your needs.
