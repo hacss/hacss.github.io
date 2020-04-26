@@ -68,17 +68,10 @@ module.exports = () => page({
             {
               title: "Cut the BS out of CSS.",
               content: `
-                Hacss makes inline styles a viable option, avoiding redundant
-                abstractions, inconsistent or dead code, and surprising
-                behaviors inherent to other approaches and methodologies.
-              `,
-            },
-            {
-              title: "Increase your agility.",
-              content: `
-                This direct approach to styling HTML makes code more transparent
-                and easier to change while eliminating context switches, code
-                alignment issues, and naming challenges.
+                Hacss makes inline styles a viable option, helping you to avoid
+                redundant abstractions, inconsistent or dead code, and
+                surprising behaviors inherent to other approaches and
+                methodologies.
               `,
             },
             {
@@ -87,6 +80,14 @@ module.exports = () => page({
                 Hacss brings media queries, pseudo-classes, pseudo-elements, and
                 contextual styling capabilities, as well as plugins, to the
                 inline style language you already know.
+              `,
+            },
+            {
+              title: "Increase your agility.",
+              content: `
+                This direct approach to styling HTML makes code more transparent
+                and easier to change while eliminating context switches, code
+                alignment issues, and naming challenges.
               `,
             },
           ]

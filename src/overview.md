@@ -9,14 +9,13 @@ presented in favor include:
 * It is what you are supposed to do.
 * It is the "semantically correct" thing to do.
 * The HTML is "cleaner" or less verbose.
-* HTML and CSS address different concerns and/or can be maintained by different
-  authors.
+* HTML and CSS address different concerns and/or can be maintained independently
+  by different authors.
 * Styles can be changed without touching the associated markup.
-* Style sheets can be swapped to change themes.
+* Content can be reskinned by swapping style sheets.
 
-On the other hand, practical use cases and real-world workflows reveal
-significant advantages in _colocating_ markup and styles, including:
-
+On the other hand, practical use cases and real-world workflows reveal the
+significant advantages of _colocating_ markup and styles, including:
 
 * Design flexibility
 * Local reasoning
