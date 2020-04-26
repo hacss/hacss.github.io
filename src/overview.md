@@ -2,9 +2,9 @@
 
 ## Motivation
 
-Strict separation between HTML and CSS code is mostly assumed to be a "best
-practice". When challenged, however, the most common arguments presented in
-favor include:
+Strict separation between HTML and CSS code is mostly accepted without question
+as a "best practice". When challenged, however, the most common arguments
+presented in favor include:
 
 * It is what you are supposed to do.
 * It is the "semantically correct" thing to do.
