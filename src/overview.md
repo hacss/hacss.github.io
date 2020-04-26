@@ -14,8 +14,9 @@ presented in favor include:
 * Styles can be changed without touching the associated markup.
 * Style sheets can be swapped to change themes.
 
-On the other hand, real-world use cases and workflows reveal significant
-advantages in _colocating_ markup and styles, including:
+On the other hand, practical use cases and real-world workflows reveal
+significant advantages in _colocating_ markup and styles, including:
+
 
 * Design flexibility
 * Local reasoning
