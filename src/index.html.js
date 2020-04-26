@@ -20,7 +20,7 @@ module.exports = () => page({
         padding-y:32px;
       ">
         <img src="logo-hacss.svg" alt="Hacss" class="height:3em;" />
-        <p class="margin-top:8px; margin-bottom:0; letter-spacing:-1px;">
+        <p class="margin-top:0.25em; margin-bottom:0; letter-spacing:-0.03em;">
           Style like you mean it.
         </p>
         <a
