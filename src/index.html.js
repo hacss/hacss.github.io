@@ -2,6 +2,13 @@ const { page } = require("./common.js");
 
 module.exports = () => page({
   source: __filename,
+  tags: `
+    <meta property="og:title" content="Hacss" />
+    <meta property="og:description" content="Style like you mean it. Inline styles without the limitations." />
+    <meta property="og:image" content="https://repository-images.githubusercontent.com/234330718/b398e100-8722-11ea-9a02-712ad5e77447" />
+    <meta property="og:url" content="https://hacss.io" />
+    <meta name="twitter:card" content="summary_large_image" />
+  `,
   content: `
     <div class="min-height:100%; display:flex; flex-direction:column;">
       <div class="

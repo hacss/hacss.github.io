@@ -75,7 +75,7 @@ const navLinks = [
   },
 ];
 
-exports.page = ({ title, content, source }) => `
+exports.page = ({ title, content, source, tags = "" }) => `
   <!DOCTYPE html>
   <html class="height:100%;">
     <head>
@@ -85,6 +85,7 @@ exports.page = ({ title, content, source }) => `
       <link href="https://fonts.googleapis.com/css?family=Inconsolata:400" rel="stylesheet" />
       <link href="styles.css" rel="stylesheet" />
       <link href="hljs.css" rel="stylesheet" />
+      ${tags}
     </head>
     <body class="margin:0; height:100%; background:$purple800;">
       <div class="
