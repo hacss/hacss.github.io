@@ -31,7 +31,7 @@ For more information about plugins, see the
 
 This plugin processes global variables, as in `color:$red500;`.
 
-* `variables` an object mapping variable names to values,
+* `variables` `{Object}` An object mapping variable names to values,
   e.g. `{ red500: "#900"}`
 * returns: `{Function}` A Hacss-compatible plugin function
 
@@ -40,8 +40,8 @@ This plugin processes global variables, as in `color:$red500;`.
 This plugin processes indexed variables, where the value changes by context, as
 in `font-size:$small; border-radius:$small;`.
 
-* `variables` an object mapping variable names to values, with an additional
-  level of nesting to index by property, e.g.
+* `variables` `{Object}` An object mapping variable names to values, with an
+  additional level of nesting to index by property, e.g.
   `{ "font-size": { small: "12px" }, "border-radius": { small: "4px" } }`
 * return: `{Function}` A Hacss-compatible plugin function
 
