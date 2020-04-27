@@ -47,7 +47,7 @@ A few options exist to make the above example work consistently, including:
 
 Write a given style rule as consistently as possible throughout the codebase,
 avoiding, for example, such classes as `background:red;` and
-`background-color:red;` that achieve the same effect two different ways.
+`background-color:red;` that achieve the same effect in two different ways.
 
 ### Justification
 
