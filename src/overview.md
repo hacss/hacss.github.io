@@ -28,7 +28,7 @@ significant advantages of _colocating_ markup and styles, including:
 Hacss facilitates the colocation of markup and styles by recovering features not
 available in native inline styles. It does so without significantly altering the
 syntax you already know, introducing additional runtime overhead, or committing
-you to any particular UI library or framework.
+you to any particular UI library or application framework.
 
 ## Mechanism
 
