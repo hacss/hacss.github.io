@@ -14,6 +14,7 @@ const renderer = Object.assign(new Renderer(), {
       border-width:1px;
       border-style:solid;
       border-color:rgba(0,0,0,0.2);
+      overflow-x:auto;
     "><code class="font-family:$monospace;">${
         hljs.highlight(lang, code).value
       }</code></pre>
