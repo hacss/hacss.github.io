@@ -23,7 +23,7 @@ The configuration module must export an object, which can contain either or both
 of the keys `mediaQueries` and `plugins`.
 
 ### `mediaQueries`
-This is a map of media queries you want to use in Hacss classes. Given a class
+This is a map of media queries you want to use in rules. Given a rule class
 `@small{width:100%;}`, for example, you would need to define the `small` media
 query here as something like `only screen and (max-width: 600px)`. Note that
 `small`, `medium`, and `large` breakpoint media queries are
