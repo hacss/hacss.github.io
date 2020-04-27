@@ -39,8 +39,8 @@ examples:
 ## Media Queries
 
 Declarations, including those with pseudo-selectors, may be enclosed within a
-media query scope by surrounding them in curly braces and prepending an `@`
-character followed by the media query alias. For example:
+media query scope by surrounding them in curly braces and prepending an at sign
+(`@`) followed by the media query alias. For example:
 
 ```css
 @small{width:100%;}
