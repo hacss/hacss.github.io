@@ -17,10 +17,10 @@ can't be disabled. Others are optional but provide features that most projects
 would typically leverage.
 
 ### Core Plugins
-Hacss syntax is embedded in HTML classes. Because HTML classes are delimited by
-whitespace, it is not possible to include whitespace in the syntax directly. The
-core plugins address this limitation by adding whitespace as needed within the
-value of each generated declaration.
+Hacss rule syntax is embedded in HTML classes. Because HTML classes are
+delimited by whitespace, it is not possible to include whitespace in the syntax
+directly. The core plugins address this limitation by adding whitespace as
+needed within the value of each declaration.
 
 #### `space`
 Sometimes, it is necessary to use whitespace explicitly, particularly for
@@ -33,13 +33,13 @@ declarations.
 
 #### `calc`
 The [`calc()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/calc)
-requires operators to be surrounded by whitespace; i.e. `calc(50% + 5px)` works
+requires operators to be surrounded by whitespace; e.g. `calc(50% + 5px)` works
 while `calc(50%+5px)` does not. The
 [`calc` plugin](https://github.com/hacss/hacss/blob/master/plugins/calc.js)
 automatically adds the necessary whitespace around operators within `calc()`
 expressions.
 
-### Other Plugins
+### Optional Plugins
 
 #### `global-variables`
 The
