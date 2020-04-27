@@ -33,11 +33,11 @@ rule appeared later in the generated style sheet.
 A few options exist to make the above example work consistently, including:
 * Merging the rules, which would guarantee their application in the correct
   order: `margin:8px;margin-left:0;`
-* Avoid the shorthand property altogether:
+* Avoiding the shorthand property altogether:
   `margin-top:8px; margin-right:8px; margin-bottom:8px; margin-left:0;`
-* Use a more explicit form of the shorthand property:
+* Using a more explicit form of the shorthand property:
   `margin:8px__8px__8px__0;`
-* Create a [plugin](plugins-guide.md) to add a custom property that applies
+* Creating a [plugin](plugins-guide.md) to add a custom property that applies
   margins more selectively, e.g.
   `margin-y:8px; margin-right:8px; margin-left:0;`
 
