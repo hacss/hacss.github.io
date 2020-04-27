@@ -1,7 +1,7 @@
 # Syntax
 
-Hacss mostly builds upon the familiar syntax of CSS and native inline styles.
-However, a few minor adjustments are required.
+Hacss mostly builds upon the familiar syntax of CSS and native inline styles
+with only minor adjustments.
 
 ## Whitespace
 
