@@ -1,8 +1,8 @@
 # Plugins
 
-Hacss syntax extends that of native inline styles with additional features such
-as pseudo-selectors and media queries. However, it also offers the ability to
-change style declarations through plugins.
+Hacss rule syntax extends that of native inline styles with additional features
+such as pseudo-selectors and media queries. However, it also offers the ability
+to change style declarations through plugins.
 
 To help you understand possible use cases for plugins, this guide will begin by
 describing the plugins that are bundled with Hacss. Then, it will provide a few
