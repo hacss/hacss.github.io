@@ -39,7 +39,7 @@ runs last. For more about plugins, see the [plugin guide](plugins-guide.md).
 ## Configuration Example
 
 ```javascript
-const indexedVariables = require("hacss/plugins/indexed-variables");
+const variables = require("@hacss/plugin-variables");
 
 module.exports = {
   mediaQueries: {
@@ -47,7 +47,7 @@ module.exports = {
     "large": "only screen and (min-width: 1200px)",
   },
   plugins: [
-    indexedVariables({
+    variables({
       "font-size": {
         medium: "16px",
       },
