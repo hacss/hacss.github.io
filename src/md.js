@@ -23,12 +23,12 @@ const renderer = Object.assign(new Renderer(), {
   heading(text, level) {
     const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
     const fontSize = {
-      1: "font-size:36px;",
-      2: "font-size:24px;",
-      3: "font-size:20px;",
-      4: "font-size:16px;",
-      5: "font-size:14px;",
-      6: "font-size:12px;",
+      1: "font-size:36px; font-weight:400;",
+      2: "font-size:24px; font-weight:400;",
+      3: "font-size:20px; font-weight:400;",
+      4: "font-size:16px; font-weight:700;",
+      5: "font-size:14px; font-weight:700;",
+      6: "font-size:12px; font-weight:700;",
     }[level];
 
     return `
@@ -37,7 +37,6 @@ const renderer = Object.assign(new Renderer(), {
         margin-top:0;
         margin-bottom:0.5em;
         font-family:$sans-serif;
-        font-weight:400;
         ${fontSize}
         mdblock
         mdblock+margin-top:0.5em;

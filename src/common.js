@@ -214,7 +214,7 @@ exports.page = ({ title, content, source, tags = "" }) => `
           ::before{position:absolute;}
           ::before{top:-5px;}
           ::before{right:8px;}
-          ::before{background-image:url('data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%279px%27%20height=%275px%27%20viewBox=%270%200%209%205%27%3E%3Cpolygon%20points=%270,5%205,0%209,5%27%20fill=%27$red100-urlencoded%27%20/%3E%3C/svg%3E');}
+          ::before{background-image:url('data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%279px%27%20height=%275px%27%20viewBox=%270%200%209%205%27%3E%3Cpolygon%20points=%270,5%205,0%209,5%27%20fill=%27$(red100|url-encode)%27%20/%3E%3C/svg%3E');}
           ::before{width:9px;}
           ::before{height:5px;}
         ">

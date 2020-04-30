@@ -1,14 +1,11 @@
-const globalVariables = require("hacss/plugins/global-variables");
-const indexedVariables = require("hacss/plugins/indexed-variables");
+const variables = require("@hacss/plugin-variables");
 const { colors } = require("./src/common.js");
 
 module.exports = {
   plugins: [
-    globalVariables({
+    variables({
       ...colors,
-      "red100-urlencoded": encodeURIComponent(colors.red100),
-    }),
-    indexedVariables({
+      "url-encode": encodeURIComponent,
       "font-family": {
         "sans-serif": "'Inter', sans-serif",
         "monospace": "'Inconsolata', monospace",

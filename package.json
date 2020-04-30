@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/hacss/hacss.io#readme",
   "devDependencies": {
+    "@hacss/plugin-variables": "^1.1.1",
     "glob": "^7.1.6",
     "hacss": "^1.0.9",
     "highlight.js": "^9.18.1",

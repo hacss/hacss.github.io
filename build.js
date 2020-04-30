@@ -38,7 +38,7 @@ const minifyHTMLOptions = {
 };
 
 const buildCSS = () =>
-  glob("./src/*.*")
+  glob("./src/!(*.md|*.svg.js)")
     .then(x => Promise.all(x.map(y => readFile(y, "utf8"))))
     .then(x => x.join("\n"))
     .then(code => hacss(code, hacssConfig))
