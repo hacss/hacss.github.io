@@ -72,8 +72,7 @@ const horizontalPaddingPlugin = [
 
 ### Variables
 
-The [Variables plugin](https://github.com/hacss/plugin-variables) allows you to
-use variables in declaration values.
+The Variables plugin allows you to use variables in declaration values.
 
 #### Installation
 
