@@ -10,7 +10,7 @@ module.exports = () => page({
     <meta name="twitter:card" content="summary_large_image" />
   `,
   content: `
-    <div class="min-height:100%; display:flex; flex-direction:column;">
+    <div class="min-height:calc(100vh-64px); display:flex; flex-direction:column;">
       <div class="
         flex-grow:1;
         flex-shrink:0;
@@ -34,7 +34,6 @@ module.exports = () => page({
           href="getting-started.html"
           class="
             border:none;
-            border-radius:0.25em;
             margin-top:1.5em;
             @small{margin-top:1em;}
             padding-y:0.6em;
@@ -95,7 +94,6 @@ module.exports = () => page({
               <div class="
                 margin:4px;
                 padding:24px;
-                border-radius:8px;
                 flex-basis:calc(33.333%-8px);
                 @small{flex-basis:100%;}
                 box-sizing:border-box;
@@ -104,14 +102,21 @@ module.exports = () => page({
                 color:$red700;
               ">
                 <header class="text-align:center;">
-                  <h1 class="margin:0; font-weight:500; font-size:18px; line-height:1;">${title}</h1>
+                  <h1 class="
+                    margin:0;
+                    font-weight:500;
+                    font-size:18px;
+                    line-height:1;
+                  ">
+                    ${title}
+                  </h1>
                 </header>
                 <p class="
                   font-size:14px;
                   font-weight:400;
                   margin-top:8px;
                   margin-bottom:0;
-                  line-height:1.4;
+                  line-height:1.5;
                 ">
                   ${content}
                 </p>
@@ -121,5 +126,80 @@ module.exports = () => page({
         }
       </div>
     </div>
+    <div class="
+      background:$red700;
+      color:$red100;
+      font-family:$sans-serif;
+      font-size:16px;
+      font-weight:400;
+      line-height:1.5;
+    ">
+      ${
+        [
+          {
+            headline: "Nothing but classes",
+            commentary: `
+              Hacss moves inline styles from the
+              <code class="font-family:$monospace;">style</code>
+              attribute to the
+              <code class="font-family:$monospace;">class</code>
+              attribute with a few minor adjustments.
+            `,
+          },
+          {
+            headline: "Pseudo-classes",
+            commentary: "Things that should be easy, now they are.",
+          },
+          {
+            headline: "Pseudo-elements",
+            commentary: "Things that should be easy, now they are.",
+          },
+          {
+            headline: "Context",
+            commentary: "Things that should be easy, nwo they are.",
+          },
+          {
+            headline: "Responsive design",
+            commentary: "Blah blah blah",
+          },
+          {
+            headline: "Variables",
+            commentary: "Things that should be easy, now they are.",
+          },
+        ]
+          .map(example)
+          .join("")
+      }
+    </div>
   `,
 });
+
+const example = ({ headline, commentary }) => `
+  <div class="
+    :first-child{padding-top:96px;}
+    padding-x:96px;
+    padding-bottom:96px;
+    display:flex;
+    flex-direction:row;
+    align-items:flex-start;
+  ">
+    <div class="flex:1;">
+      <h1 class="
+        font-family:$display;
+        font-size:32px;
+        font-weight:400;
+        margin:0;
+        line-height:1;
+      ">
+        ${headline}
+      </h1>
+      <div class="margin-top:16px;">
+        ${commentary}
+      </div>
+    </div>
+    <div class="margin-left:96px;">
+      <div class="width:512px; height:400px; background:$red100;">
+      </div>
+    </div>
+  </div>
+`;
