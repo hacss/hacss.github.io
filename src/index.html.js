@@ -1,4 +1,5 @@
 const { page } = require("./common.js");
+const hljs = require("highlight.js");
 
 module.exports = () => page({
   source: __filename,
@@ -144,28 +145,38 @@ module.exports = () => page({
               <code class="font-family:$monospace;">style</code>
               attribute to the
               <code class="font-family:$monospace;">class</code>
-              attribute with a few minor adjustments.
+              attribute with only minimal syntactical changes.
+            `,
+            code: `
+              <span class="color:red;">
+                Hacss works!
+              </span>
             `,
           },
           {
             headline: "Pseudo-classes",
             commentary: "Things that should be easy, now they are.",
+            code: "<button>Hello</button>",
           },
           {
             headline: "Pseudo-elements",
             commentary: "Things that should be easy, now they are.",
+            code: "<button>Hello</button>",
           },
           {
             headline: "Context",
             commentary: "Things that should be easy, nwo they are.",
+            code: "<button>Hello</button>",
           },
           {
             headline: "Responsive design",
             commentary: "Blah blah blah",
+            code: "<button>Hello</button>",
           },
           {
             headline: "Variables",
             commentary: "Things that should be easy, now they are.",
+            code: "<button>Hello</button>",
           },
         ]
           .map(example)
@@ -175,7 +186,7 @@ module.exports = () => page({
   `,
 });
 
-const example = ({ headline, commentary }) => `
+const example = ({ headline, commentary, code }) => `
   <div class="
     padding-x:8px;
     @medium{padding-x:48px;}
@@ -207,7 +218,68 @@ const example = ({ headline, commentary }) => `
       </div>
     </div>
     <div class="margin-top:16px; @large{margin-top:0;} @large{margin-left:96px;} flex:2;">
-      <div class="width:100%; height:400px; background:$red100;">
+      <div class="
+        box-sizing:border-box;
+        width:100%;
+        height:400px;
+        background:$red100;
+        color:$red900;
+        position:relative;
+        border-width:8px;
+        border-color:$red800;
+        border-style:solid;
+      ">
+        <div class="
+          position:absolute;
+          top:0;
+          right:50%;
+          bottom:0;
+          left:0;
+          border-right-width:1px;
+          border-right-style:solid;
+          border-right-color:$red800;
+        ">
+          <pre class="
+            margin:0;
+            padding:8px;
+            background:$red100;
+            overflow-x:auto;
+          "><code class="font-family:$monospace;">${
+            hljs
+              .highlight(
+                "html",
+                code
+                  .split("\n")
+                  .filter(x => x)
+                  .map((x, _, lines) =>
+                    x.substring(
+                      Math.min.apply(
+                        null,
+                        lines
+                          .filter(x => x)
+                          .map(x => (x.match(/\S/) || {}).index)
+                          .filter(x => x)
+                      ),
+                    ),
+                  )
+                  .join("\n")
+              )
+              .value
+            }</code></pre>
+        </div>
+        <div class="
+          position:absolute;
+          top:0;
+          right:0;
+          bottom:0;
+          left:50%;
+          padding:8px;
+          border-left-width:1px;
+          border-left-style:solid;
+          border-left-color:$red800;
+        ">
+          ${code}
+        </div>
       </div>
     </div>
   </div>
