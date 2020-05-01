@@ -150,7 +150,7 @@ module.exports = {
 
 Markup:
 ```html
-<div class="color:white; background:url('dynbg.gif?color=$(red500|url-encode);">
+<div class="color:white; background:url('dynbg.gif?color=$(red500|url-encode)');">
   Hello World
 </div>
 ```
