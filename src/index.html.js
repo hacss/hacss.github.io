@@ -132,7 +132,8 @@ module.exports = () => page({
       font-family:$sans-serif;
       font-size:16px;
       font-weight:400;
-      line-height:1.5;
+      line-height:1.25;
+      @large{line-height:1.5;}
     ">
       ${
         [
@@ -176,12 +177,20 @@ module.exports = () => page({
 
 const example = ({ headline, commentary }) => `
   <div class="
-    :first-child{padding-top:96px;}
-    padding-x:96px;
-    padding-bottom:96px;
+    padding-x:8px;
+    @medium{padding-x:48px;}
+    @large{padding-x:96px;}
+    padding-top:32px;
+    @medium{padding-top:48px;}
+    @large{padding-top:96px;}
+    padding-bottom:8px;
+    @medium{:last-child{padding-bottom:48px;}}
+    @large{:last-child{padding-bottom:96px;}}
     display:flex;
-    flex-direction:row;
-    align-items:flex-start;
+    flex-direction:column;
+    align-items:stretch;
+    @large{flex-direction:row;}
+    @large{align-items:flex-start;}
   ">
     <div class="flex:1;">
       <h1 class="
@@ -193,12 +202,12 @@ const example = ({ headline, commentary }) => `
       ">
         ${headline}
       </h1>
-      <div class="margin-top:16px;">
+      <div class="margin-top:8px; @large{margin-top:16px;}">
         ${commentary}
       </div>
     </div>
-    <div class="margin-left:96px;">
-      <div class="width:512px; height:400px; background:$red100;">
+    <div class="margin-top:16px; @large{margin-top:0;} @large{margin-left:96px;} flex:2;">
+      <div class="width:100%; height:400px; background:$red100;">
       </div>
     </div>
   </div>
