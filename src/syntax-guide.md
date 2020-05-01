@@ -5,9 +5,8 @@ with only minor adjustments.
 
 ## Whitespace
 
-The most important thing to understand is that whitespace is not allowed. Avoid
-it when you can and use double-underscores (`__`), which are converted to
-spaces, when necessary.
+The most important thing to understand is that whitespace is strictly forbidden.
+When necessary, use double-underscores (`__`), which are converted to spaces.
 
 ## Declarations
 
@@ -36,11 +35,37 @@ examples:
 :nth-child(2n):hover{background:#ccc;}
 ```
 
+### Context
+
+Context may be used to affect the style of an element based on its relationship
+to another element. Context is the combination of an arbitrary class name
+applied to the context element, along with any applicable pseudo-selectors, and
+an operator describing the relationship:
+
+* An underscore (`_`) indicates that the context element can be any ancestor.
+* A chevron (`>`) indicates that the context element must be the parent.
+* A plus sign (`+`) indicates that the context element must be the immediately
+  preceding sibling.
+
+For example:
+
+```css
+foo:hover>color:red;
+```
+
+```css
+editmode_:hover{background:#ccc;}
+```
+
+```css
+item+margin-left:8px;
+```
+
 ## Media Queries
 
-Declarations, including those with pseudo-selectors, may be enclosed within a
-media query scope by surrounding them in curly braces and prepending an at sign
-(`@`) followed by the media query alias. For example:
+Declarations, including those surrounded by context and/or pseudo-selectors, may
+be enclosed within a media query scope by surrounding them in curly braces and
+prepending an at sign (`@`) followed by the media query alias. For example:
 
 ```css
 @small{width:100%;}
@@ -56,8 +81,8 @@ can learn how to customize these (or to add new ones) in the
 
 ## Rules
 
-A rule consists of declarations, pseudo-selectors, and media queries. The only
-required component is a single declaration. The [style guide](style-guide.md)
-encourages one declaration per rule in general; however, it is possible to
-include multiple declarations through juxtaposition, e.g.
-`font-size:16px;font-weight:bold;`.
+A rule consists of declarations, pseudo-selectors, context, and media queries.
+The only required component is a single declaration. The
+[style guide](style-guide.md) encourages one declaration per rule in general;
+however, it is possible to include multiple declarations through juxtaposition,
+e.g. `font-size:16px;font-weight:bold;`.
