@@ -77,9 +77,9 @@ module.exports = () => page({
             {
               title: "Inline superpowers",
               content: `
-                Hacss brings media queries, pseudo-classes, pseudo-elements,
-                contextual styling capabilities, variables, and more to the
-                inline style language you already know.
+                Hacss brings pseudo-classes, pseudo-elements, contextual styling
+                capabilities, media queries, variables, and more to the inline
+                style language you already know.
               `,
             },
             {
