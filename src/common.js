@@ -81,6 +81,7 @@ exports.page = ({ title, content, source, tags = "" }) => `
     <head>
       <title>Hacss${title ? `: ${title}` : ""}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link href="https://fonts.googleapis.com/css?family=Do+Hyeon:400" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,700" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=Inconsolata:400" rel="stylesheet" />
       <link href="styles.css" rel="stylesheet" />
@@ -93,7 +94,7 @@ exports.page = ({ title, content, source, tags = "" }) => `
         padding-top:64px;
         width:100%;
         max-width:1180px;
-        height:calc(100%-64px);
+        min-height:calc(100%-64px);
         position:relative;
         box-shadow:-10px__0__20px__0__$black,__10px__0__20px__0__$black;">
         ${content}

@@ -7,6 +7,7 @@ module.exports = {
       ...colors,
       "url-encode": encodeURIComponent,
       "font-family": {
+        "display": "'Do Hyeon', sans-serif",
         "sans-serif": "'Inter', sans-serif",
         "monospace": "'Inconsolata', monospace",
       },

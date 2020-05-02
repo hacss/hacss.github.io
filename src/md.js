@@ -78,7 +78,7 @@ module.exports = async path => {
     title,
     content: `
       <div class="
-        min-height:100%;
+        min-height:calc(100vh-64px);
         box-sizing:border-box;
         background:$blue100;
         color:$blue800;

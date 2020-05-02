@@ -1,3 +1,4 @@
+const autoprefixer = require("autoprefixer");
 const hacss = require("hacss");
 const hacssConfig = require("./hacss.config.js");
 const minifyHTML = require("html-minifier").minify;
@@ -42,6 +43,7 @@ const buildCSS = () =>
     .then(x => Promise.all(x.map(y => readFile(y, "utf8"))))
     .then(x => x.join("\n"))
     .then(code => hacss(code, hacssConfig))
+    .then(css => autoprefixer.process(css).css)
     .then(css => ({ "styles.css": css }));
 
 const buildHTML = () =>
