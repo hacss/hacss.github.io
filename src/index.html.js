@@ -165,9 +165,9 @@ module.exports = () => page({
             `,
             code: `
               <button class="
-                background:#057dc3;
-                :hover{background:#06a;}
-                :active{background:#003177;}
+                background:#e64d1a;
+                :hover{background:#f63;}
+                :active{background:#c30;}
                 color:#fff;
                 font-family:sans-serif;
                 font-size:14px;
@@ -175,7 +175,7 @@ module.exports = () => page({
                 border-radius:999px;
                 border:none;
                 outline:none;
-                :focus{box-shadow:0__0__0__2px__#003177;}
+                :focus{box-shadow:0__0__0__2px__#c30;}
               ">
                 Save Changes
               </button>
