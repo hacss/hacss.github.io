@@ -139,13 +139,15 @@ module.exports = () => page({
       ${
         [
           {
-            headline: "Nothing but classes",
+            headline: "Just classes",
             commentary: `
-              Hacss moves inline styles from the
+              Simply move inline styles from the
               <code class="font-family:$monospace;">style</code>
               attribute to the
               <code class="font-family:$monospace;">class</code>
-              attribute with only minimal syntactical changes.
+              attribute and remove whitespace as needed. Hacss generates a style
+              sheet to apply the styles you have used. No JavaScript runtime is
+              required: Just add a reference to this generated style sheet.
             `,
             code: `
               <span class="color:red;">
@@ -155,7 +157,10 @@ module.exports = () => page({
           },
           {
             headline: "Pseudo-classes",
-            commentary: "Things that should be easy, now they are.",
+            commentary: `
+              Hacss extends the inline style rule syntax to include
+              pseudo-classes.
+            `,
             code: `
               <button class="
                 background:#057dc3;
@@ -176,8 +181,89 @@ module.exports = () => page({
           },
           {
             headline: "Pseudo-elements",
-            commentary: "Things that should be easy, now they are.",
-            code: "<button>Hello</button>",
+            commentary: `
+              Pseudo-elements also work as expected, helping to preserve markup
+              semantics by avoiding unnecessary presentational elements.
+            `,
+            code: `
+              <ol class="
+                list-style-type:none;
+                margin:0;
+                padding:0;
+                display:flex;
+                justify-content:stretch;
+              ">
+                <li class="
+                  ::after{content:'';}
+                  ::after{position:absolute;}
+                  ::after{left:50%;}
+                  ::after{right:0;}
+                  ::after{top:10px;}
+                  ::after{height:4px;}
+                  ::after{background:#f63;}
+                  position:relative;
+                  display:inline-block;
+                  padding-top:30px;
+                  background-image:url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%202%202%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Ccircle%20cx=%271px%27%20cy=%271px%27%20r=%271px%27%20fill=%27%23f63%27%20/%3E%3C/svg%3E');
+                  background-size:16px;
+                  background-repeat:no-repeat;
+                  background-position-x:center;
+                  background-position-y:4px;
+                  flex:1;
+                  text-align:center;
+                ">
+                  Welcome
+                </li>
+                <li class="
+                  ::before{content:'';}
+                  ::before{position:absolute;}
+                  ::before{left:0;}
+                  ::before{right:50%;}
+                  ::before{top:10px;}
+                  ::before{height:4px;}
+                  ::before{background:#f63;}
+                  ::after{content:'';}
+                  ::after{position:absolute;}
+                  ::after{left:calc(50%+12px);}
+                  ::after{right:0;}
+                  ::after{top:10px;}
+                  ::after{height:4px;}
+                  ::after{background:#b6a5a7;}
+                  position:relative;
+                  display:inline-block;
+                  padding-top:30px;
+                  background-image:url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%202%202%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Ccircle%20cx=%271px%27%20cy=%271px%27%20r=%271px%27%20fill=%27%23f63%27%20/%3E%3C/svg%3E');
+                  background-size:24px;
+                  background-repeat:no-repeat;
+                  background-position-x:center;
+                  flex:1;
+                  text-align:center;
+                ">
+                  Register
+                </li>
+                <li class="
+                  ::before{content:'';}
+                  ::before{position:absolute;}
+                  ::before{left:0;}
+                  ::before{right:50%;}
+                  ::before{top:10px;}
+                  ::before{height:4px;}
+                  ::before{background:#b6a5a7;}
+                  position:relative;
+                  display:inline-block;
+                  padding-top:30px;
+                  background-image:url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%202%202%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Ccircle%20cx=%271px%27%20cy=%271px%27%20r=%271px%27%20fill=%27%23b6a5a7%27%20/%3E%3C/svg%3E');
+                  background-size:16px;
+                  background-repeat:no-repeat;
+                  background-position-x:center;
+                  background-position-y:4px;
+                  flex:1;
+                  text-align:center;
+                ">
+                  Confirm
+                </li>
+              </ol>
+            `,
           },
           {
             headline: "Context",
@@ -256,10 +342,15 @@ const example = ({ headline, commentary, code }) => `
           border-right-color:$red800;
         ">
           <pre class="
+            position:absolute;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
             margin:0;
             padding:8px;
             background:$red100;
-            overflow-x:auto;
+            overflow:auto;
           "><code class="font-family:$monospace;">${
             hljs
               .highlight(
