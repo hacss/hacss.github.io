@@ -270,7 +270,35 @@ module.exports = () => page({
           {
             headline: "Context",
             commentary: "Things that should be easy, nwo they are.",
-            code: "<button>Hello</button>",
+            code: `
+              <label class="display:flex; align-items:center;">
+                <input
+                  type="checkbox"
+                  class="
+                    cbx
+                    margin-top:0;
+                    margin-bottom:0;
+                    margin-left:0;
+                    margin-right:8px;
+                    appearance:none;
+                    border-width:1px;
+                    border-style:solid;
+                    border-color:#f63;
+                    width:15px;
+                    height:16px;
+                    border-radius:0;
+                    outline:none;
+                    :checked{background-color:#f63;}
+                    :checked{background-image:url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%2011%2011%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath%20d=%27M0,7%20l4,4%20l7,-8%20l-2,-2%20l-5,6%20l-3,-2%27%20fill=%27%23fff%27%20/%3E%3C/svg%3E');}
+                    :checked{background-position-x:1px;}
+                    :checked{background-position-y:1px;}
+                    :checked{background-repeat:no-repeat;}
+                    :checked{background-size:11px;}
+                    :focus{box-shadow:0__0__0__1px__#f63;}
+                  " checked />
+                  <span class="cbx:checked+text-decoration:line-through;">Mow the lawn.</span>
+              </label>
+            `,
           },
           {
             headline: "Responsive design",
