@@ -159,7 +159,9 @@ module.exports = () => page({
             headline: "Pseudo-classes",
             commentary: `
               Hacss extends the inline style rule syntax to include
-              pseudo-classes.
+              pseudo-classes. Now you can affect the style of an element on
+              hover without resorting to JavaScript or authoring a separate
+              style sheet.
             `,
             code: `
               <button class="
