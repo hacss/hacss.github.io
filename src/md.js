@@ -38,6 +38,7 @@ const renderer = Object.assign(new Renderer(), {
         margin-bottom:0.5em;
         font-family:$sans-serif;
         ${fontSize}
+        line-height:1.25;
         mdblock
         mdblock+margin-top:0.5em;
       ">
