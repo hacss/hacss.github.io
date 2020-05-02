@@ -9,9 +9,11 @@ match.
 This is the same, in essence, as inline styles. The goal here is to make inline
 styles more powerful.
 
-## Classes usually help me to avoid repeating the same styles over and over again. Aren't inline styles a step backward?
+## Shouldn't I use classes instead of inline styles to avoid repeating myself?
 If your project uses HTML templating or has some notion of components outside of
-CSS, then you can likely use these existing tools to avoid repeating styles.
+CSS, then you can likely use these existing tools to avoid repeating styles. In
+fact, removing an unnecessary layer of CSS abstraction may reduce the size of
+your codebase.
 
 ## If I don't need advanced styling capabilities, should I still use Hacss?
 The primary use case for Hacss is to recover style sheet functionality within

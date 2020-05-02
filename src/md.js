@@ -86,7 +86,7 @@ module.exports = async path => {
         font-family:$sans-serif;
         font-size:16px;
         font-weight:400;
-        line-height:1.4;
+        line-height:1.5;
       ">
         ${parser(tokens, { renderer })}
       </div>
