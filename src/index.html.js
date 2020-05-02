@@ -150,8 +150,8 @@ module.exports = () => page({
               required: Just add a reference to this generated style sheet.
             `,
             code: `
-              <span class="color:red;">
-                Hacss works!
+              <span class="color:#f63;">
+                You have 43 unread messages.
               </span>
             `,
           },
@@ -303,6 +303,39 @@ module.exports = () => page({
                   Mow the lawn.
                 </span>
               </label>
+            `,
+          },
+          {
+            headline: "Media Queries",
+            commentary: `
+              You can use media queries to affect the styling of the element
+              based on e.g. device width.
+            `,
+            code: `
+              <div>
+                Current breakpoint:
+                <strong class="
+                  display:none;
+                  @small{display:inline;}
+                  font-weight:700;
+                ">
+                  small
+                </strong>
+                <strong class="
+                  display:none;
+                  @medium{display:inline;}
+                  font-weight:700;
+                ">
+                  medium
+                </strong>
+                <strong class="
+                  display:none;
+                  @large{display:inline;}
+                  font-weight:700;
+                ">
+                  large
+                </strong>
+              </div>
             `,
           },
           {
