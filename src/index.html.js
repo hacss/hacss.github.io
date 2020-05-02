@@ -269,7 +269,10 @@ module.exports = () => page({
           },
           {
             headline: "Context",
-            commentary: "Things that should be easy, nwo they are.",
+            commentary: `
+              You can create style rules contingent upon the element's
+              relationship to some other element.
+            `,
             code: `
               <label class="display:flex; align-items:center;">
                 <input
@@ -301,14 +304,23 @@ module.exports = () => page({
             `,
           },
           {
-            headline: "Responsive design",
-            commentary: "Blah blah blah",
-            code: "<button>Hello</button>",
-          },
-          {
             headline: "Variables",
-            commentary: "Things that should be easy, now they are.",
-            code: "<button>Hello</button>",
+            commentary: `
+              A plugin allows you to propagate design primitives through
+              variables.
+            `,
+            code: `
+              <h1 class="
+                font-family:$display;
+                font-weight:normal;
+                font-size:48px;
+                margin:0;
+                line-height:1;
+                color:$red700;
+              ">
+                hacss
+              </h1>
+            `,
           },
         ]
           .map(example)
@@ -360,16 +372,23 @@ const example = ({ headline, commentary, code }) => `
         border-width:8px;
         border-color:$red800;
         border-style:solid;
+        display:flex;
+        flex-direction:column;
       ">
         <div class="
-          position:absolute;
-          top:0;
-          right:50%;
-          bottom:0;
-          left:0;
-          border-right-width:1px;
-          border-right-style:solid;
-          border-right-color:$red800;
+          padding:24px;
+          border-bottom-width:1px;
+          border-bottom-style:solid;
+          border-bottom-color:$red800;
+        ">
+          ${code}
+        </div>
+        <div class="
+          flex:1;
+          position:relative;
+          border-top-width:1px;
+          border-top-style:solid;
+          border-top-color:$red800;
         ">
           <pre class="
             position:absolute;
@@ -378,7 +397,7 @@ const example = ({ headline, commentary, code }) => `
             bottom:0;
             left:0;
             margin:0;
-            padding:8px;
+            padding:24px;
             background:$red100;
             overflow:auto;
           "><code class="font-family:$monospace;">${
@@ -403,19 +422,6 @@ const example = ({ headline, commentary, code }) => `
               )
               .value
             }</code></pre>
-        </div>
-        <div class="
-          position:absolute;
-          top:0;
-          right:0;
-          bottom:0;
-          left:50%;
-          padding:8px;
-          border-left-width:1px;
-          border-left-style:solid;
-          border-left-color:$red800;
-        ">
-          ${code}
         </div>
       </div>
     </div>
