@@ -156,7 +156,23 @@ module.exports = () => page({
           {
             headline: "Pseudo-classes",
             commentary: "Things that should be easy, now they are.",
-            code: "<button>Hello</button>",
+            code: `
+              <button class="
+                background:#057dc3;
+                :hover{background:#06a;}
+                :active{background:#003177;}
+                color:#fff;
+                font-family:sans-serif;
+                font-size:14px;
+                padding:8px__16px;
+                border-radius:999px;
+                border:none;
+                outline:none;
+                :focus{box-shadow:0__0__0__2px__#003177;}
+              ">
+                Save Changes
+              </button>
+            `,
           },
           {
             headline: "Pseudo-elements",
