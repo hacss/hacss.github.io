@@ -299,7 +299,9 @@ module.exports = () => page({
                     :checked{background-size:11px;}
                     :focus{box-shadow:0__0__0__1px__#f63;}
                   " checked />
-                  <span class="cbx:checked+text-decoration:line-through;">Mow the lawn.</span>
+                <span class="cbx:checked+text-decoration:line-through;">
+                  Mow the lawn.
+                </span>
               </label>
             `,
           },
