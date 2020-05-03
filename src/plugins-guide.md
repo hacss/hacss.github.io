@@ -154,3 +154,107 @@ Markup:
   Hello World
 </div>
 ```
+
+### Expand
+
+The Expand plugin allows you to expand custom shorthand declarations.
+
+#### Installation
+
+NPM:
+```bash
+npm install -D @hacss/plugin-expand
+```
+
+Hacss configuration:
+```javascript
+const expand = require("@hacss/plugin-expand");
+```
+
+#### Usage
+
+Hacss configuration:
+```javascript
+module.exports = {
+  plugins: [
+    expand({
+      "padding-x": ["padding-left", "padding-right"],
+      "padding-y": ["padding-top", "padding-bottom"],
+    }),
+  ],
+};
+```
+
+Markup:
+```html
+<button class="padding-x:20px; padding-y:16px;">Button Text</button>
+```
+
+### Copy
+
+The Copy plugin allows you to copy the value of a declaration to another
+declaration.
+
+#### Installation
+
+NPM:
+```bash
+npm install -D @hacss/plugin-copy
+```
+
+Hacss configuration:
+```javascript
+const copy = require("@hacss/plugin-copy");
+```
+
+#### Usage
+
+Hacss configuration:
+```javascript
+module.exports = {
+  plugins: [
+    copy({
+      "appearance": ["-webkit-appearance", "-moz-appearance"],
+    }),
+  ],
+};
+```
+
+Markup:
+```html
+<input type="checkbox" class="appearance:none;" />
+```
+
+### Delete
+
+The Delete plugin allows you to remove declarations by property name.
+
+#### Installation
+
+NPM:
+```bash
+npm install -D @hacss/plugin-delete
+```
+
+Hacss configuration:
+```javascript
+const del = require("@hacss/plugin-delete");
+```
+
+#### Usage
+
+Hacss configuration:
+```javascript
+module.exports = {
+  plugins: [
+    del(["text-stroke"]),
+  ],
+};
+```
+
+Markup:
+```html
+<span class="text-stroke:1px__red;">
+  Just kidding: No text stroke to see here
+</span>
+```
