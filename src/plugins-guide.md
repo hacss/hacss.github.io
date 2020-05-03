@@ -68,13 +68,13 @@ const horizontalPaddingPlugin = [
 ];
 ```
 
-## Available Plugins
+-----
 
-### Variables
+## Variables Plugin
 
 The Variables plugin allows you to use variables in declaration values.
 
-#### Installation
+### Installation
 
 NPM:
 ```bash
@@ -105,7 +105,7 @@ Markup:
 <button class="font-family:$sans-serif; color:$blue500;">Button Text</button>
 ```
 
-#### Indexed Variables
+### Indexed Variables
 
 Indexed variables are resolved to a different value depending on the property
 to which they are applied.
@@ -131,7 +131,7 @@ Markup:
 <button class="font-size:$small; border-radius:$small;">Button Text</button>
 ```
 
-#### Pipes
+### Pipes
 
 Pipes introduce a minimal amount of programmability so that variables can be
 modified in certain contexts.
@@ -155,11 +155,13 @@ Markup:
 </div>
 ```
 
-### Expand
+-----
+
+## Expand Plugin
 
 The Expand plugin allows you to expand custom shorthand declarations.
 
-#### Installation
+### Installation
 
 NPM:
 ```bash
@@ -171,7 +173,7 @@ Hacss configuration:
 const expand = require("@hacss/plugin-expand");
 ```
 
-#### Usage
+### Usage
 
 Hacss configuration:
 ```javascript
@@ -190,12 +192,14 @@ Markup:
 <button class="padding-x:20px; padding-y:16px;">Button Text</button>
 ```
 
-### Copy
+-----
+
+## Copy Plugin
 
 The Copy plugin allows you to copy the value of a declaration to another
 declaration.
 
-#### Installation
+### Installation
 
 NPM:
 ```bash
@@ -207,7 +211,7 @@ Hacss configuration:
 const copy = require("@hacss/plugin-copy");
 ```
 
-#### Usage
+### Usage
 
 Hacss configuration:
 ```javascript
@@ -225,11 +229,13 @@ Markup:
 <input type="checkbox" class="appearance:none;" />
 ```
 
-### Delete
+-----
+
+## Delete Plugin
 
 The Delete plugin allows you to remove declarations by property name.
 
-#### Installation
+### Installation
 
 NPM:
 ```bash
@@ -241,7 +247,7 @@ Hacss configuration:
 const del = require("@hacss/plugin-delete");
 ```
 
-#### Usage
+### Usage
 
 Hacss configuration:
 ```javascript

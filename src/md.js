@@ -23,12 +23,12 @@ const renderer = Object.assign(new Renderer(), {
   heading(text, level) {
     const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
     const fontSize = {
-      1: "font-size:36px; font-weight:400;",
-      2: "font-size:24px; font-weight:400;",
-      3: "font-size:20px; font-weight:400;",
-      4: "font-size:16px; font-weight:700;",
-      5: "font-size:14px; font-weight:700;",
-      6: "font-size:12px; font-weight:700;",
+      1: "font-size:36px; font-weight:500;",
+      2: "font-size:24px; font-weight:500;",
+      3: "font-size:20px; font-weight:500;",
+      4: "font-size:16px; font-weight:500;",
+      5: "font-size:14px; font-weight:500;",
+      6: "font-size:12px; font-weight:500;",
     }[level];
 
     return `
@@ -49,6 +49,15 @@ const renderer = Object.assign(new Renderer(), {
       </h${level}>
     `.trim();
   },
+  hr: () => `
+    <hr class="
+      border-top-width:1px;
+      border-bottom-width:1px;
+      border-color:$blue400;
+      border-style:solid;
+      margin-y:32px;
+    " />
+  `,
   link: (href, title, text) => `
     <a
       href="${href.replace(/^([a-z\-]+)\.md$/, (_, x) => `${x}.html`)}"
@@ -83,7 +92,7 @@ module.exports = async path => {
         box-sizing:border-box;
         background:$blue100;
         color:$blue800;
-        padding:16px;
+        padding:32px;
         font-family:$sans-serif;
         font-size:16px;
         font-weight:400;
