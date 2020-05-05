@@ -139,7 +139,7 @@ module.exports = () => page({
       ${
         [
           {
-            headline: "Just classes",
+            headline: "Just Classes",
             commentary: `
               Simply move inline styles from the
               <code class="font-family:$monospace;">style</code>
@@ -312,37 +312,35 @@ module.exports = () => page({
               based on e.g. device width.
             `,
             code: `
-              <div>
-                Current breakpoint:
-                <strong class="
-                  display:none;
-                  @small{display:inline;}
-                  font-weight:700;
-                ">
-                  small
-                </strong>
-                <strong class="
-                  display:none;
-                  @medium{display:inline;}
-                  font-weight:700;
-                ">
-                  medium
-                </strong>
-                <strong class="
-                  display:none;
-                  @large{display:inline;}
-                  font-weight:700;
-                ">
-                  large
-                </strong>
-              </div>
+              Current breakpoint:
+              <strong class="
+                display:none;
+                @small{display:inline;}
+                font-weight:700;
+              ">
+                small
+              </strong>
+              <strong class="
+                display:none;
+                @medium{display:inline;}
+                font-weight:700;
+              ">
+                medium
+              </strong>
+              <strong class="
+                display:none;
+                @large{display:inline;}
+                font-weight:700;
+              ">
+                large
+              </strong>
             `,
           },
           {
             headline: "Variables",
             commentary: `
-              A plugin allows you to propagate design primitives through
-              variables.
+              You can propagate design primitives through variables using an
+              available plugin.
             `,
             code: `
               <h1 class="
