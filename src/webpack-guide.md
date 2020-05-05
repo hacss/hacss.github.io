@@ -16,7 +16,7 @@ generate a CSS module dynamically using Hacss.
 If you have not done so already, install the required packages:
 
 ```bash
-npm install -D hacss val-loader css-loader style-loader
+npm install -D @hacss/build val-loader css-loader style-loader
 ```
 
 ## Webpack Configuration
@@ -29,19 +29,19 @@ necessary to enable Hacss.
 The first change required is to insert an additional
 [entry point](https://webpack.js.org/concepts/entry-points/). Most likely this
 means changing the existing `entry` value from a string to an array and adding
-`hacss/output`:
+`@hacss/build`:
 
 ```javascript
 module.exports = {
-  entry: ["./src/main.js", "hacss/output"]
+  entry: ["./src/main.js", "@hacss/build"]
 };
 ```
 
 ### Rule
 
 The next step is to create a
-[rule](https://webpack.js.org/configuration/module/#rule) that defines how to
-load the `hacss/output` module you referenced in the `entry` array.
+[rule](https://webpack.js.org/configuration/module/#rule) that specifies how to
+load the `@hacss/build` module you referenced in the `entry` array.
 
 As a starting point, you can use the rule configuration below, setting the
 `sources` option in the `val-loader` configuration to a glob pattern that
@@ -53,7 +53,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /hacss\/output/,
+        test: /@hacss\/build/,
         use: [
           "style-loader",
           "css-loader",

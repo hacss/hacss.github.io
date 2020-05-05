@@ -7,10 +7,10 @@ how to use it.
 ## Installation
 
 Begin with a global installation of the
-[`hacss` package](https://npmjs.org/package/hacss):
+[`@hacss/cli` package](https://npmjs.org/package/@hacss/cli):
 
 ```bash
-npm install -g hacss
+npm install -g @hacss/cli
 ```
 
 ## Usage
@@ -41,7 +41,7 @@ to the `<output-file>` path. When not specified, the CSS output will be written
 to the standard output.
 
 #### ```<sources>```
-The [glob](https://www.npmjs.com/package/glob) pattern specified here will be
-used to search for source files where Hacss classes are used. The list of
+The [globby](https://www.npmjs.com/package/globby) pattern specified here will
+be used to search for source files where Hacss classes are used. The list of
 classes found within these files will be included in the CSS output. You can
 also specify a series of glob patterns.
