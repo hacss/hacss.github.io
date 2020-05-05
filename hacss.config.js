@@ -1,3 +1,4 @@
+const expand = require("@hacss/plugin-expand");
 const variables = require("@hacss/plugin-variables");
 const { colors } = require("./src/common.js");
 
@@ -12,25 +13,11 @@ module.exports = {
         "monospace": "'Inconsolata', monospace",
       },
     }),
-    [
-      decls => {
-        const spacingxy = prop => {
-          const fromx = `${prop}-x`;
-          const fromy = `${prop}-y`;
-          if (fromx in decls) {
-            decls[`${prop}-left`] = decls[`${prop}-right`] = decls[fromx];
-            delete decls[`${prop}-x`];
-          }
-          if (fromy in decls) {
-            decls[`${prop}-top`] = decls[`${prop}-bottom`] = decls[fromy];
-            delete decls[fromy];
-          }
-        };
-        spacingxy("margin");
-        spacingxy("padding");
-        return decls;
-      },
-      ["margin-x", "margin-y", "padding-x", "padding-y"],
-    ],
+    expand({
+      "margin-x": ["margin-left", "margin-right"],
+      "margin-y": ["margin-top", "margin-bottom"],
+      "padding-x": ["padding-left", "padding-right"],
+      "padding-y": ["padding-top", "padding-bottom"],
+    }),
   ],
 };

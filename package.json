@@ -25,10 +25,11 @@
   },
   "homepage": "https://github.com/hacss/hacss.io#readme",
   "devDependencies": {
-    "@hacss/plugin-variables": "^1.1.1",
+    "@hacss/core": "^1.0.0",
+    "@hacss/plugin-expand": "^1.1.1",
+    "@hacss/plugin-variables": "^1.2.0",
     "autoprefixer": "^9.7.6",
     "glob": "^7.1.6",
-    "hacss": "^2.0.2",
     "highlight.js": "^9.18.1",
     "html-minifier": "^4.0.0",
     "marked": "^0.8.2",

@@ -1,5 +1,5 @@
 const autoprefixer = require("autoprefixer");
-const hacss = require("hacss");
+const hacss = require("@hacss/core");
 const hacssConfig = require("./hacss.config.js");
 const minifyHTML = require("html-minifier").minify;
 const SVGO = require("svgo"), svgo = new SVGO();
