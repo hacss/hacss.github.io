@@ -54,7 +54,7 @@ const navLinks = [
     active: x => path.basename(x) === "faq.md",
   },
   {
-    href: "https://basement.hacss.io/",
+    href: "https://basement.hacss.io/#NoIgPAJglgbgBAYwDYEMDOaC8AdE2B2ccADgPZpQAuUp+AXCgEZqlICulApgNwFEDuUCJQAWdAIwAGSQFJehOCM5QA5iMoTpcvnGhpiqAJ50AZkk4APeURRJV+ALRVOAWzR0EnfFwBO1uABWbGjUJoYOCLRc3h5evvK4AHw6kLCIqBg4eApEJlEOJiguUEjGACRoKPho-rn5FABenHRlqD4qPDpEkUikPi0+nBC1cIwoCADWKj6kbPgQLcRQ+BMjxCgQ0PgqDhZ0AEySxFZdJBtbO8bi+8f+SacAEpxIvXAA6n1IECkA9NAwyXwYD+sESIAANCAfj8YCgfIhSMRDHBMHBBgBHNhQQYAClwAAEROMMD8DGwVMsIojDLgAJTyaGw+EQZ4otGcTHYzh4kCE4loUnsCmOFnmLh0+RMuCWdbzNkYrG4glEhAksnChwyqrfED0ghSplQJjmNDyjmK7nK-mC8mUw3GzhoCUEAguUgQNjmAB0Mr6lFNqIA3jp1ct3HBgKctfMccGckQ4Lh1ptljsLLg6BGk+dUw5zCZKLhwYmQMmLg4fKp1LgALrg05EbMp7YOGkgTOR0s5luURFFktl3OMUiUXsuWunAC+tPr8ftjBNsYbJby3gKRRKbczcYTu7glWqmdwB7QDjQnErJlwy8ns73K-qUCaGbgO-vcDaHSPIAAzDd09k963sugwLCWADECDSEWy5LCs37gSYmzXvG046DWBCTtwEIgAAQugrhxCANZAA",
     content: "Basement",
     active: () => false,
   },
