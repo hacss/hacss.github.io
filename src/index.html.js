@@ -399,7 +399,7 @@ const example = ({ headline, commentary, code }) => `
         box-sizing:border-box;
         width:100%;
         height:400px;
-        background:$red100;
+        background:$white;
         color:$red900;
         position:relative;
         border-width:8px;
@@ -431,7 +431,7 @@ const example = ({ headline, commentary, code }) => `
             left:0;
             margin:0;
             padding:24px;
-            background:$red100;
+            background:$white;
             overflow:auto;
           "><code class="font-family:$monospace;">${
             hljs
