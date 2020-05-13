@@ -271,7 +271,7 @@ module.exports = () => page({
             headline: "Context",
             commentary: `
               You can create style rules contingent upon the element's
-              relationship to some other element.
+              relationship to another element.
             `,
             code: `
               <label class="display:flex; align-items:center;">
