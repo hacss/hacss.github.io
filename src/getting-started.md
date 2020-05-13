@@ -1,9 +1,9 @@
 # Getting Started
 
-If you are using a modern browser, you can start tinkering in the
-[Basement](https://basement.hacss.io) without installing anything. When you are
-ready to use Hacss in your own environment, the instructions that follow will
-guide you through installation and basic usage.
+You can start tinkering in the [Basement](https://basement.hacss.io) without
+installing anything. When you are ready to use Hacss in your own environment,
+the instructions that follow will guide you through installation and basic
+usage.
 
 ## Installation
 
