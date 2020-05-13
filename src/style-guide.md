@@ -1,5 +1,7 @@
 # Style Guide
 
+-----
+
 ## Atomic Classes
 
 ### Suggestion
@@ -14,6 +16,8 @@ While a single class can include multiple declarations, e.g.
 and reuse of the rule. Separating this example into two classes,
 `background:red;` and `color:white;`, would allow the `color:white;` CSS to be
 reused with other classes such as `background:blue;`.
+
+-----
 
 ## Shorthand Properties
 
@@ -40,6 +44,8 @@ A few options exist to make the above example work consistently, including:
 * Creating a [plugin](plugins-guide.md) to add a custom property that applies
   margins more selectively, e.g.
   `margin-y:8px; margin-right:8px; margin-left:0;`
+
+-----
 
 ## Rule Consistency
 

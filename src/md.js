@@ -8,7 +8,6 @@ const { page } = require("./common.js");
 const renderer = Object.assign(new Renderer(), {
   code: (code, lang) => `
     <pre class="
-      mdblock
       padding:8px;
       background:rgba(255,255,255,0.2);
       border-width:1px;
@@ -34,13 +33,13 @@ const renderer = Object.assign(new Renderer(), {
     return `
       <h${level} class="
         margin-x:0;
-        margin-top:0;
+        :first-child{margin-top:0;}
+        mdhr+margin-top:0;
+        :not(:first-child){margin-top:0.5;}
         margin-bottom:0.5em;
         font-family:$sans-serif;
         ${fontSize}
         line-height:1.25;
-        mdblock
-        mdblock+margin-top:0.5em;
       ">
         <a name="${escapedText}" class="anchor" href="#${escapedText}">
           <span class="header-link"></span>
@@ -51,6 +50,7 @@ const renderer = Object.assign(new Renderer(), {
   },
   hr: () => `
     <hr class="
+      mdhr
       border-top-width:1px;
       border-bottom-width:1px;
       border-color:$blue400;
@@ -72,6 +72,7 @@ const renderer = Object.assign(new Renderer(), {
       ${title ? `title="${title}"` : ""}>
       ${text}</a> 
   `.trim(),
+  paragraph: x => `<p class="margin-y:0.5em;">${x}</p>`,
 });
 
 module.exports = async path => {
