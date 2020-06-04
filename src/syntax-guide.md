@@ -40,7 +40,7 @@ examples:
 Context may be used to affect the style of an element based on its relationship
 to another element. Context is the combination of an arbitrary class name
 applied to the context element, along with any applicable pseudo-selectors, and
-an operator describing the relationship:
+a combinator describing the relationship:
 
 * An underscore (`_`) indicates that the context element can be any ancestor.
 * A chevron (`>`) indicates that the context element must be the parent.
