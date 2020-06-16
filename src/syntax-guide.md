@@ -35,6 +35,9 @@ examples:
 :nth-child(2n):hover{background:#ccc;}
 ```
 
+_For a list of supported pseudo selectors, please review the
+[pseudo selector guide](pseudo-selector-guide.md)._
+
 ### Context
 
 Context may be used to affect the style of an element based on its relationship
