@@ -51,11 +51,15 @@ a combinator describing the relationship:
 For example:
 
 ```css
+editmode_:hover{background:#ccc;}
+```
+
+```css
 foo:hover>color:red;
 ```
 
 ```css
-editmode_:hover{background:#ccc;}
+checkbox:disabled~border-color:#ccc;
 ```
 
 ```css
