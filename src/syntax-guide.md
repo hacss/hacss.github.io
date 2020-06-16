@@ -17,10 +17,10 @@ separated by a colon (`:`), and followed by a semicolon (`;`). For example:
 font-size:14px;
 ```
 
-## Pseudo-Selectors
+## Pseudo Selectors
 
-Declarations may be enclosed within a pseudo-selector scope by surrounding them
-in curly braces and prepending the pseudo-selectors, as in the following
+Declarations may be enclosed within a pseudo selector scope by surrounding them
+in curly braces and prepending the pseudo selectors, as in the following
 examples:
 
 ```css
@@ -39,7 +39,7 @@ examples:
 
 Context may be used to affect the style of an element based on its relationship
 to another element. Context is the combination of an arbitrary class name
-applied to the context element, along with any applicable pseudo-selectors, and
+applied to the context element, along with any applicable pseudo selectors, and
 a combinator describing the relationship:
 
 * An underscore (`_`) indicates that the context element can be any ancestor.
@@ -68,7 +68,7 @@ item+margin-left:8px;
 
 ## Media Queries
 
-Declarations, including those surrounded by context and/or pseudo-selectors, may
+Declarations, including those surrounded by context and/or pseudo selectors, may
 be enclosed within a media query scope by surrounding them in curly braces and
 prepending an at sign (`@`) followed by the media query alias. For example:
 
@@ -86,7 +86,7 @@ can learn how to customize these (or to add new ones) in the
 
 ## Rules
 
-A rule consists of declarations, pseudo-selectors, context, and media queries.
+A rule consists of declarations, pseudo selectors, context, and media queries.
 The only required component is a single declaration. The
 [style guide](style-guide.md) encourages one declaration per rule in general;
 however, it is possible to include multiple declarations through juxtaposition,
