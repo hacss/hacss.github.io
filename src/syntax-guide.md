@@ -44,6 +44,7 @@ a combinator describing the relationship:
 
 * An underscore (`_`) indicates that the context element can be any ancestor.
 * A chevron (`>`) indicates that the context element must be the parent.
+* A tilde (`~`) indicates that the context element can be any preceding sibling.
 * A plus sign (`+`) indicates that the context element must be the immediately
   preceding sibling.
 
