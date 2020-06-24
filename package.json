@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/hacss/hacss.io#readme",
   "devDependencies": {
-    "@hacss/core": "^2.4.0",
+    "@hacss/core": "^2.5.1",
     "@hacss/plugin-expand": "^1.1.1",
     "@hacss/plugin-variables": "^1.2.0",
     "autoprefixer": "^9.7.6",
