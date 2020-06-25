@@ -2,9 +2,7 @@
 
 Hacss supports the following pseudo selectors.
 
-## Pseudo Elements
-
-_Note: These cannot be applied to context._
+## Pseudo-elements
 
 * `::after`
 * `::before`
@@ -13,7 +11,9 @@ _Note: These cannot be applied to context._
 * `::placeholder`
 * `::selection`
 
-## Pseudo Classes
+_Note: Pseudo-elements cannot be applied to context._
+
+## Pseudo-classes
 
 * `:active`
 * `:checked`
@@ -32,7 +32,7 @@ _Note: These cannot be applied to context._
 * `:last-child`
 * `:last-of-type`
 * `:link`
-* `:not()` _Note: This can only be used to negate other pseudo classes._
+* `:not()` _Note: This can only be used to negate other pseudo-classes._
 * `:nth-child()`
 * `:nth-last-child()`
 * `:nth-last-of-type()`
@@ -49,9 +49,9 @@ _Note: These cannot be applied to context._
 * `:valid`
 * `:visited`
 
-### `:intersection()` Pseudo Class
+### `:intersection()` Pseudo-class
 
-The `:intersection()` pseudo class allows styles to be applied conditionally
+The `:intersection()` pseudo-class allows styles to be applied conditionally
 when some other class is added to the same element.
 
 For example:
