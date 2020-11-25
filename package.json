@@ -30,7 +30,7 @@
     "@hacss/plugin-variables": "^1.2.0",
     "autoprefixer": "^9.7.6",
     "glob": "^7.1.6",
-    "highlight.js": "^9.18.1",
+    "highlight.js": "^10.1.2",
     "html-minifier": "^4.0.0",
     "marked": "^0.8.2",
     "rimraf": "^3.0.2",
