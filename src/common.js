@@ -118,7 +118,7 @@ exports.page = ({ title, content, source, tags = "" }) => `
             id="navOpener"
             class="
               display:none;
-              @small{display:inline-block;}
+              @small{display:inline-block}
               outline:none;
               height:auto;
               background:transparent;
@@ -133,7 +133,7 @@ exports.page = ({ title, content, source, tags = "" }) => `
                 width:24px;
                 height:21px;
                 fill:$blue300;
-                opener:hover_fill:$white;
+                :hover>fill:$white;
               ">
               <rect width="100%" height="5px" />
               <rect width="100%" height="5px" y="8" />
@@ -141,12 +141,12 @@ exports.page = ({ title, content, source, tags = "" }) => `
             </svg>
           </button>
           <nav class="
-            font-family:$sans-serif;
+            font-family:$font-sans;
             font-size:16px;
             color:$blue200;
             display:inline-flex;
             align-items:center;
-            @small{display:none;}
+            @small{display:none}
           ">
             ${
               navLinks
@@ -171,7 +171,7 @@ exports.page = ({ title, content, source, tags = "" }) => `
                           display:inline-flex;
                           margin-left:16px;
                           color:$blue300;
-                          :hover{color:$white;}
+                          :hover{color:$white}
                           text-decoration:none;
                         ">
                         ${content}
@@ -187,7 +187,7 @@ exports.page = ({ title, content, source, tags = "" }) => `
         id="popNav"
         class="
           display:none;
-          @small{display:block;}
+          @small{display:block}
           position:fixed;
           z-index:-1;
           opacity:0;
@@ -195,7 +195,7 @@ exports.page = ({ title, content, source, tags = "" }) => `
           transition-duration:300ms;
           top:56px;
           right:16px;
-          box-shadow:4px__4px__0__rgba(0,0,0,0.1),
+          box-shadow:4px__4px__0__rgba(0,0,0,0.1);
           border-color:$red700;
           border-style:solid;
           border-width:1px;
@@ -203,16 +203,16 @@ exports.page = ({ title, content, source, tags = "" }) => `
           padding-x:0;
           padding-y:4px;
           border-radius:4px;
-          font-family:$sans-serif;
+          font-family:$font-sans;
           font-size:16px;
           font-weight:400;
-          ::before{content:'';}
-          ::before{position:absolute;}
-          ::before{top:-5px;}
-          ::before{right:8px;}
-          ::before{background-image:url('data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%279px%27%20height=%275px%27%20viewBox=%270%200%209%205%27%3E%3Cpolygon%20points=%270,5%205,0%209,5%27%20fill=%27$(red100|url-encode)%27%20/%3E%3C/svg%3E');}
-          ::before{width:9px;}
-          ::before{height:5px;}
+          ::before{content:''}
+          ::before{position:absolute}
+          ::before{top:-5px}
+          ::before{right:8px}
+          ::before{background-image:url('data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%279px%27%20height=%275px%27%20viewBox=%270%200%209%205%27%3E%3Cpolygon%20points=%270,5%205,0%209,5%27%20fill=%27#{$red100}%27%20/%3E%3C/svg%3E')}
+          ::before{width:9px}
+          ::before{height:5px}
         ">
         ${
           navLinks
@@ -247,8 +247,8 @@ exports.page = ({ title, content, source, tags = "" }) => `
                       box-sizing:border-box;
                       color:$purple600;
                       text-decoration:none;
-                      :hover{background:$purple600;}
-                      :hover{color:$purple100;}
+                      :hover{background:$purple600}
+                      :hover{color:$purple100}
                     ">
                     ${popContent || content}
                   </a>

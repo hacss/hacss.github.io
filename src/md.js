@@ -14,11 +14,15 @@ const renderer = Object.assign(new Renderer(), {
       border-style:solid;
       border-color:rgba(0,0,0,0.2);
       overflow-x:auto;
-    "><code class="font-family:$monospace;">${
+    "><code class="font-family:$font-mono;">${
         hljs.highlight(lang, code).value
       }</code></pre>
   `,
-  codespan: code => `<code class="font-family:$monospace;">${code}</code>`,
+  codespan: code => `
+    <code class="font-family:$font-mono; background:rgba(0,0,0,0.05);">
+      ${code}
+    </code>
+  `,
   heading(text, level) {
     const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
     const fontSize = {
@@ -33,11 +37,11 @@ const renderer = Object.assign(new Renderer(), {
     return `
       <h${level} class="
         margin-x:0;
-        :first-child{margin-top:0;}
+        :first-child{margin-top:0}
         mdhr+margin-top:0;
-        :not(:first-child){margin-top:0.5;}
+        :not(:first-child){margin-top:0.5}
         margin-bottom:0.5em;
-        font-family:$sans-serif;
+        font-family:$font-sans;
         ${fontSize}
         line-height:1.25;
       ">
@@ -63,11 +67,11 @@ const renderer = Object.assign(new Renderer(), {
       href="${href.replace(/^([a-z\-]+)\.md$/, (_, x) => `${x}.html`)}"
       class="
         color:$blue600;
-        :hover{color:$blue500;}
-        :active{color:$red600;}
-        :hover:active{color:$red500;}
-        :visited{color:$purple600;}
-        :hover:visited{color:$purple500;}
+        :hover{color:$blue500}
+        :active{color:$red600}
+        :hover:active{color:$red500}
+        :visited{color:$purple600}
+        :hover:visited{color:$purple500}
       "
       ${title ? `title="${title}"` : ""}>
       ${text}</a> 
@@ -94,7 +98,7 @@ module.exports = async path => {
         background:$blue100;
         color:$blue800;
         padding:32px;
-        font-family:$sans-serif;
+        font-family:$font-sans;
         font-size:16px;
         font-weight:400;
         line-height:1.5;

@@ -2,6 +2,8 @@ const autoprefixer = require("autoprefixer");
 const hacss = require("@hacss/core");
 const hacssConfig = require("./hacss.config.js");
 const minifyHTML = require("html-minifier").minify;
+const postcss = require("postcss");
+const postcssAxis = require("postcss-axis");
 const SVGO = require("svgo"), svgo = new SVGO();
 
 const { promisify } = require("util");
@@ -43,16 +45,7 @@ const buildCSS = () =>
     .then(x => Promise.all(x.map(y => readFile(y, "utf8"))))
     .then(x => x.join("\n"))
     .then(code => hacss(code, hacssConfig))
-    .then(({ css, ignored }) => {
-      if (ignored && ignored.length) {
-        console.warn(
-          ignored
-            .map(({ className, error }) => `Ignored class ${className}: ${error}`)
-            .join("\n")
-        );
-      }
-      return autoprefixer.process(css).css;
-    })
+    .then(css => postcss([postcssAxis, autoprefixer]).process(css).css)
     .then(css => ({ "styles.css": css }));
 
 const buildHTML = () =>

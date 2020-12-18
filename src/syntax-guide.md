@@ -12,11 +12,10 @@ spaces.
 ## Value
 
 The simplest type of value is an unquoted literal, e.g. `1px`. This type of
-value may not include syntactically-significant characters such as `;`, `}`, or
-`'`.
+value may not include syntactically-significant characters: `;}'`
 
 A value containing syntactically-significant characters can be surrounded by
-single quotes, for example `';'`.
+single quotes. For example: `';'`
 
 Another simple type of value is a variable that constitutes the entirety of the
 value, e.g. `$red500`.
@@ -74,8 +73,8 @@ non-consecutive hyphens. It must begin and end with a letter unless a vendor
 prefix is used, e.g. `-moz`, `-ms`, `-o`, or `-webkit`.
 
 A pseudo-class is functionally similar to a named class. However, unlike a named
-class, the browser activates the pseudo-class implicitly based on the state of
-the corresponding element. For example, the rule `:focus{color:red}` has a
+class, the browser activates the pseudo-class automatically based on the state
+of the corresponding element. For example, the rule `:focus{color:red}` has a
 pseudo-class `focus`. The `color:red` declaration would be activated when the
 element has focus.
 

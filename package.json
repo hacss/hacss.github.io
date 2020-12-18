@@ -25,14 +25,14 @@
   },
   "homepage": "https://github.com/hacss/hacss.io#readme",
   "devDependencies": {
-    "@hacss/core": "^2.5.1",
-    "@hacss/plugin-expand": "^1.1.1",
-    "@hacss/plugin-variables": "^1.2.0",
+    "@hacss/core": "^4.0.3",
     "autoprefixer": "^9.7.6",
     "glob": "^7.1.6",
     "highlight.js": "^9.18.1",
     "html-minifier": "^4.0.0",
     "marked": "^0.8.2",
+    "postcss": "^8.2.1",
+    "postcss-axis": "^0.1.2",
     "rimraf": "^3.0.2",
     "svgo": "^1.3.2"
   }

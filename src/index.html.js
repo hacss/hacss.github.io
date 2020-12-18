@@ -20,9 +20,9 @@ module.exports = () => page({
         flex-direction:column;
         justify-content:center;
         align-items:center;
-        background-image:linear-gradient($blue700,$blue400);
+        background-image:linear-gradient(#{$blue700},#{$blue400});
         color:white;
-        font-family:$sans-serif;
+        font-family:$font-sans;
         font-size:32px;
         font-weight:300;
         padding-y:32px;
@@ -36,15 +36,15 @@ module.exports = () => page({
           class="
             border:none;
             margin-top:1.5em;
-            @small{margin-top:1em;}
+            @small{margin-top:1em}
             padding-y:0.6em;
             padding-left:0.8em;
             padding-right:0.6em;
             font-size:0.625em;
             font-weight:200;
-            font-family:$sans-serif;
+            font-family:$font-sans;
             background:$red700;
-            :hover{background:$red800;}
+            :hover{background:$red800}
             color:$red100;
             display:inline-flex;
             align-items:center;
@@ -96,9 +96,9 @@ module.exports = () => page({
                 margin:4px;
                 padding:24px;
                 flex-basis:calc(33.333%-8px);
-                @small{flex-basis:100%;}
+                @small{flex-basis:100%}
                 box-sizing:border-box;
-                font-family:$sans-serif;
+                font-family:$font-sans;
                 background:$red100;
                 color:$red700;
               ">
@@ -130,11 +130,11 @@ module.exports = () => page({
     <div class="
       background:$red700;
       color:$red100;
-      font-family:$sans-serif;
+      font-family:$font-sans;
       font-size:16px;
       font-weight:400;
       line-height:1.25;
-      @large{line-height:1.5;}
+      @large{line-height:1.5}
     ">
       ${
         [
@@ -142,9 +142,9 @@ module.exports = () => page({
             headline: "Just Classes",
             commentary: `
               Simply move inline styles from the
-              <code class="font-family:$monospace;">style</code>
+              <code class="font-family:$font-mono;">style</code>
               attribute to the
-              <code class="font-family:$monospace;">class</code>
+              <code class="font-family:$font-mono;">class</code>
               attribute and remove whitespace as needed. Hacss generates a style
               sheet to apply the styles you have used. No JavaScript runtime is
               required: Just add a reference to this generated style sheet.
@@ -166,8 +166,8 @@ module.exports = () => page({
             code: `
               <button class="
                 background:#e64d1a;
-                :hover{background:#f63;}
-                :active{background:#c30;}
+                :hover{background:#f63}
+                :active{background:#c30}
                 color:#fff;
                 font-family:sans-serif;
                 font-size:14px;
@@ -175,7 +175,7 @@ module.exports = () => page({
                 border-radius:999px;
                 border:none;
                 outline:none;
-                :focus{box-shadow:0__0__0__2px__#c30;}
+                :focus{box-shadow:0__0__0__2px__#c30}
               ">
                 Save Changes
               </button>
@@ -196,13 +196,14 @@ module.exports = () => page({
                 justify-content:stretch;
               ">
                 <li class="
-                  ::after{content:'';}
-                  ::after{position:absolute;}
-                  ::after{left:50%;}
-                  ::after{right:0;}
-                  ::after{top:10px;}
-                  ::after{height:4px;}
-                  ::after{background:#f63;}
+                  ::after{content:'__'}
+                  ::after{position:absolute}
+                  ::after{left:50%}
+                  ::after{right:0}
+                  ::after{top:10px}
+                  ::after{height:4px}
+                  ::after{background:#f63}
+                  ::after{z-index:1}
                   position:relative;
                   display:inline-block;
                   padding-top:30px;
@@ -217,20 +218,22 @@ module.exports = () => page({
                   Welcome
                 </li>
                 <li class="
-                  ::before{content:'';}
-                  ::before{position:absolute;}
-                  ::before{left:0;}
-                  ::before{right:50%;}
-                  ::before{top:10px;}
-                  ::before{height:4px;}
-                  ::before{background:#f63;}
-                  ::after{content:'';}
-                  ::after{position:absolute;}
-                  ::after{left:calc(50%+12px);}
-                  ::after{right:0;}
-                  ::after{top:10px;}
-                  ::after{height:4px;}
-                  ::after{background:#b6a5a7;}
+                  ::before{content:'__'}
+                  ::before{position:absolute}
+                  ::before{left:0}
+                  ::before{right:50%}
+                  ::before{top:10px}
+                  ::before{height:4px}
+                  ::before{background:#f63}
+                  ::before{z-index:1}
+                  ::after{content:'__'}
+                  ::after{position:absolute}
+                  ::after{left:calc(50%+12px)}
+                  ::after{right:0}
+                  ::after{top:10px}
+                  ::after{height:4px}
+                  ::after{background:#b6a5a7}
+                  ::after{z-index:1}
                   position:relative;
                   display:inline-block;
                   padding-top:30px;
@@ -244,13 +247,14 @@ module.exports = () => page({
                   Register
                 </li>
                 <li class="
-                  ::before{content:'';}
-                  ::before{position:absolute;}
-                  ::before{left:0;}
-                  ::before{right:50%;}
-                  ::before{top:10px;}
-                  ::before{height:4px;}
-                  ::before{background:#b6a5a7;}
+                  ::before{content:'__'}
+                  ::before{position:absolute}
+                  ::before{left:0}
+                  ::before{right:50%}
+                  ::before{top:10px}
+                  ::before{height:4px}
+                  ::before{background:#b6a5a7}
+                  ::before{z-index:1}
                   position:relative;
                   display:inline-block;
                   padding-top:30px;
@@ -278,7 +282,6 @@ module.exports = () => page({
                 <input
                   type="checkbox"
                   class="
-                    cbx
                     margin-top:0;
                     margin-bottom:0;
                     margin-left:0;
@@ -291,15 +294,15 @@ module.exports = () => page({
                     height:16px;
                     border-radius:0;
                     outline:none;
-                    :checked{background-color:#f63;}
-                    :checked{background-image:url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%2011%2011%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath%20d=%27M0,7%20l4,4%20l7,-8%20l-2,-2%20l-5,6%20l-3,-2%27%20fill=%27%23fff%27%20/%3E%3C/svg%3E');}
-                    :checked{background-position-x:1px;}
-                    :checked{background-position-y:1px;}
-                    :checked{background-repeat:no-repeat;}
-                    :checked{background-size:11px;}
-                    :focus{box-shadow:0__0__0__1px__#f63;}
+                    :checked{background-color:#f63}
+                    :checked{background-image:url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%2011%2011%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath%20d=%27M0,7%20l4,4%20l7,-8%20l-2,-2%20l-5,6%20l-3,-2%27%20fill=%27%23fff%27%20/%3E%3C/svg%3E')}
+                    :checked{background-position-x:1px}
+                    :checked{background-position-y:1px}
+                    :checked{background-repeat:no-repeat}
+                    :checked{background-size:11px}
+                    :focus{box-shadow:0__0__0__1px__#f63}
                   " checked />
-                <span class="cbx:checked+text-decoration:line-through;">
+                <span class=":checked+{text-decoration:line-through}">
                   Mow the lawn.
                 </span>
               </label>
@@ -315,21 +318,21 @@ module.exports = () => page({
               Current breakpoint:
               <strong class="
                 display:none;
-                @small{display:inline;}
+                @small{display:inline}
                 font-weight:700;
               ">
                 small
               </strong>
               <strong class="
                 display:none;
-                @medium{display:inline;}
+                @medium{display:inline}
                 font-weight:700;
               ">
                 medium
               </strong>
               <strong class="
                 display:none;
-                @large{display:inline;}
+                @large{display:inline}
                 font-weight:700;
               ">
                 large
@@ -339,12 +342,11 @@ module.exports = () => page({
           {
             headline: "Variables",
             commentary: `
-              You can propagate design primitives through variables using an
-              available plugin.
+              You can propagate design primitives through variables.
             `,
             code: `
               <h1 class="
-                font-family:$display;
+                font-family:$font-display;
                 font-weight:normal;
                 font-size:48px;
                 margin:0;
@@ -366,23 +368,23 @@ module.exports = () => page({
 const example = ({ headline, commentary, code }) => `
   <div class="
     padding-x:8px;
-    @medium{padding-x:48px;}
-    @large{padding-x:96px;}
+    @medium{padding-x:48px}
+    @large{padding-x:96px}
     padding-top:32px;
-    @medium{padding-top:48px;}
-    @large{padding-top:96px;}
+    @medium{padding-top:48px}
+    @large{padding-top:96px}
     padding-bottom:8px;
-    @medium{:last-child{padding-bottom:48px;}}
-    @large{:last-child{padding-bottom:96px;}}
+    @medium{:last-child{padding-bottom:48px}}
+    @large{:last-child{padding-bottom:96px}}
     display:flex;
     flex-direction:column;
     align-items:stretch;
-    @large{flex-direction:row;}
-    @large{align-items:flex-start;}
+    @large{flex-direction:row}
+    @large{align-items:flex-start}
   ">
     <div class="flex:1;">
       <h1 class="
-        font-family:$display;
+        font-family:$font-display;
         font-size:32px;
         font-weight:400;
         margin:0;
@@ -390,11 +392,11 @@ const example = ({ headline, commentary, code }) => `
       ">
         ${headline}
       </h1>
-      <div class="margin-top:8px; @large{margin-top:16px;}">
+      <div class="margin-top:8px; @large{margin-top:16px}">
         ${commentary}
       </div>
     </div>
-    <div class="margin-top:16px; @large{margin-top:0;} @large{margin-left:96px;} flex:2;">
+    <div class="margin-top:16px; @large{margin-top:0} @large{margin-left:96px} flex:2;">
       <div class="
         box-sizing:border-box;
         width:100%;
@@ -433,7 +435,7 @@ const example = ({ headline, commentary, code }) => `
             padding:24px;
             background:$white;
             overflow:auto;
-          "><code class="font-family:$monospace;">${
+          "><code class="font-family:$font-mono;">${
             hljs
               .highlight(
                 "html",
