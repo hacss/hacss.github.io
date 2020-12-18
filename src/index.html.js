@@ -196,7 +196,7 @@ module.exports = () => page({
                 justify-content:stretch;
               ">
                 <li class="
-                  ::after{content:'__'}
+                  ::after{content:''}
                   ::after{position:absolute}
                   ::after{left:50%}
                   ::after{right:0}
@@ -218,7 +218,7 @@ module.exports = () => page({
                   Welcome
                 </li>
                 <li class="
-                  ::before{content:'__'}
+                  ::before{content:''}
                   ::before{position:absolute}
                   ::before{left:0}
                   ::before{right:50%}
@@ -226,7 +226,7 @@ module.exports = () => page({
                   ::before{height:4px}
                   ::before{background:#f63}
                   ::before{z-index:1}
-                  ::after{content:'__'}
+                  ::after{content:''}
                   ::after{position:absolute}
                   ::after{left:calc(50%+12px)}
                   ::after{right:0}
@@ -247,7 +247,7 @@ module.exports = () => page({
                   Register
                 </li>
                 <li class="
-                  ::before{content:'__'}
+                  ::before{content:''}
                   ::before{position:absolute}
                   ::before{left:0}
                   ::before{right:50%}
