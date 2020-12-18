@@ -76,7 +76,7 @@ extend the syntax to include additional features like pseudo-selectors:
 <button class="
   background-color:darkblue;
   color:white;
-  :hover{background-color:blue;}
+  :hover{background-color:blue}
 ">
   Button Text
 </button>

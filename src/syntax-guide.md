@@ -6,91 +6,167 @@ with only minor adjustments.
 ## Whitespace
 
 The most important thing to understand is that whitespace is strictly forbidden.
-When necessary, use double-underscores (`__`), which are converted to spaces.
+When necessary, double-underscores (`__`) can be used instead to represent
+spaces.
 
-## Declarations
+## Value
+
+The simplest type of value is an unquoted literal, e.g. `1px`. This type of
+value may not include syntactically-significant characters such as `;`, `}`, or
+`'`.
+
+A value containing syntactically-significant characters can be surrounded by
+single quotes, for example `';'`.
+
+Another simple type of value is a variable that constitutes the entirety of the
+value, e.g. `$red500`.
+
+A URL value must be enclosed in single quotes, e.g.
+`url('http://abc.xyz/logo.gif')`.
+
+Calculations are much the same as in native CSS, except that whitespace must
+omitted around operators (e.g. `calc(50%+1px)`) where it would be required in
+native CSS.
+
+Variables can be included in other values using the interpolation syntax, e.g.
+`#{$red500}__url('#{$asset-base-url}/logo-background.gif')`.
+
+
+## Variable
+
+A valid variable follows a `$` and consists of lowercase letters and
+non-consecutive hyphens.
+
+## Property
+
+A valid property consists of lowercase letters and non-consecutive hyphens.
+It must begin and end with a letter unless a vendor prefix is used, e.g. `-moz`,
+`-ms`, `-o`, or `-webkit`.
+
+CSS properties are well-documented elsewhere, such as
+[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference).
+
+## Declaration
 
 A declaration is the combination of a property and the corresponding value,
-separated by a colon (`:`), and followed by a semicolon (`;`). For example:
+separated by a colon (`:`), for example `font-size:14px`.
 
-```css
-font-size:14px;
-```
+## Class
 
-## Pseudo Selectors
+A class can be used to apply a given style rule conditionally. It can be either
+a _named class_ or a _pseudo-class_.
 
-Declarations may be enclosed within a pseudo selector scope by surrounding them
-in curly braces and prepending the pseudo selectors, as in the following
-examples:
+### Named Class
 
-```css
-:hover{color:red;}
-```
+A named class is an arbitrary tag typically attached to an element's class list
+programmatically to indicate some sort of state, such as an error condition.
+A named class is qualified by a leading `.` and can contain lowercase letters
+and non-consecutive hyphens. For example, the rule `.has-error{color:red}` has a
+named class `has-error`. The `color:red` declaration would be activated when the
+element has both the `has-error` class and the `.has-error{color:red}` class.
+When `has-error` is omitted, on the other hand, `.has-error{color:red}` will
+have no effect.
 
-```css
-::after{content:'';}
-```
+### Pseudo-Class
 
-```css
-:nth-child(2n):hover{background:#ccc;}
-```
+A valid pseudo-class follows a `:` and consists of lowercase letters and
+non-consecutive hyphens. It must begin and end with a letter unless a vendor
+prefix is used, e.g. `-moz`, `-ms`, `-o`, or `-webkit`.
 
-_For a list of supported pseudo selectors, please review the
-[pseudo selector guide](pseudo-selector-guide.md)._
+A pseudo-class is functionally similar to a named class. However, unlike a named
+class, the browser activates the pseudo-class implicitly based on the state of
+the corresponding element. For example, the rule `:focus{color:red}` has a
+pseudo-class `focus`. The `color:red` declaration would be activated when the
+element has focus.
 
-### Context
+Known pseudo-classes are well-documented elsewhere, such as
+[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes).
 
-Context may be used to affect the style of an element based on its relationship
-to another element. Context is the combination of an arbitrary class name
-applied to the context element, along with any applicable pseudo selectors, and
-a combinator describing the relationship:
+Hacss introduces no additional capabilities to pseudo-classes (although its
+output could be processed by [PostCSS](https://postcss.org) for such a purpose).
+Perhaps its only noteworthy limitation is that the `:not()` pseudo-class may
+only be applied to a class list, e.g. `:not(.foo.bar:focus:hover)`.
 
-* An underscore (`_`) indicates that the context element can be any ancestor.
-* A chevron (`>`) indicates that the context element must be the parent.
-* A tilde (`~`) indicates that the context element can be any preceding sibling.
-* A plus sign (`+`) indicates that the context element must be the immediately
-  preceding sibling.
+## Pseudo-Element
 
-For example:
+A valid pseudo-element follows `::` and consists of lowercase letters and
+non-consecutive hyphens. It must begin and end with a letter unless a vendor
+prefix is specified, e.g. `-moz`, `-ms`, `-o`, or `-webkit`.
 
-```css
-editmode_:hover{background:#ccc;}
-```
+A pseudo-element creates a presentational element outside of the DOM tree.
 
-```css
-foo:hover>color:red;
-```
+Known pseudo-elements are well-documented elsewhere, such as
+[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements).
 
-```css
-checkbox:disabled~border-color:#ccc;
-```
+## Context
 
-```css
-item+margin-left:8px;
-```
+A context consists of a class list used to match some other element, followed by
+a combinator describing the relationship of that element to the current element.
 
-## Media Queries
+The available combinators are:
+* `_` - ancestor
+* `>` - parent
+* `~` - general sibling
+* `+` - adjacent sibling
 
-Declarations, including those surrounded by context and/or pseudo selectors, may
-be enclosed within a media query scope by surrounding them in curly braces and
-prepending an at sign (`@`) followed by the media query alias. For example:
+An example of a context is `:checked+`, which asserts that the current element's
+previous sibling matches the `checked` pseudo-class.
 
-```css
-@small{width:100%;}
-```
+## Selector
 
-```css
-@medium{:hover{color:red;}}
-```
+A selector consists of a context, a class list, and/or a pseudo-element. Some
+examples of valid selectors are:
 
-While `small`, `medium`, and `large` media queries are available by default, you
-can learn how to customize these (or to add new ones) in the
+* `.error~`
+* `:hover>`
+* `.success`
+* `.status.completed:hover`
+* `.important::after`
+* `.error_.field:focus::placeholder`
+
+### At-Scope
+
+At-scopes correspond to
+[conditional group rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule#Conditional_group_rules),
+most commonly media queries.
+
+A valid at-scope follows an `@`, consists of lowercase letters and
+non-consecutive hyphens, and corresponds to a key in the `atScopes` map of the
+Hacss configuration, as documented in the
 [configuration guide](configuration-guide.md).
+
+## Priority
+
+Hacss moves rules that include at-scopes to the end of the style sheet. Aside
+from that, it is unable to guarantee any particular ordering of rules in the CSS
+output. Therefore,
+[specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) must
+be used to prioritize style rules.
+
+A priority can be used to control specificity explicitly. It is represented as a
+list of exclamation points. Each exclamation point increases the priority of a
+rule and, in turn, its specificity.
 
 ## Rules
 
-A rule consists of declarations, pseudo selectors, context, and media queries.
+A rule consists of declarations, a selector, an at-scope, and/or a priority.
+
 The only required component is a single declaration. The
 [style guide](style-guide.md) encourages one declaration per rule in general;
 however, it is possible to include multiple declarations through juxtaposition,
 e.g. `font-size:16px;font-weight:bold;`.
+
+In the absence of a selector or at-scope, the last declaration must be trailed
+by a semicolon. Otherwise, that semicolon must be omitted, with semicolons only
+being used to separate multiple declarations.
+
+A selector requires the declarations to be surrounded by curly braces, e.g.
+`.error{color:red;transform:scale(1.5)}`.
+
+Similarly, curly braces must be added for at-scopes, e.g. `@sm{padding:0}`.
+
+A combination of an at-scope and a selector requires two sets of curly braces,
+e.g. `@sm{.loading{display:none}}`.
+
+Any rule can optionally be followed by a priority, e.g. `color:red;!!` or
+`:hover{font-weight:bold}!`.

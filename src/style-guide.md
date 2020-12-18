@@ -41,9 +41,9 @@ A few options exist to make the above example work consistently, including:
   `margin-top:8px; margin-right:8px; margin-bottom:8px; margin-left:0;`
 * Using a more explicit form of the shorthand property:
   `margin:8px__8px__8px__0;`
-* Creating a [plugin](plugins-guide.md) to add a custom property that applies
-  margins more selectively, e.g.
-  `margin-y:8px; margin-right:8px; margin-left:0;`
+* Applying [postcss-axis](https://github.com/kinday/postcss-axis) or similar to
+  the Hacss-generated style sheet to enable more selective shorthand properties
+  such as `margin-x` and `margin-y`
 
 -----
 
