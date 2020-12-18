@@ -1,0 +1,165 @@
+ <!doctype html> <html class=height:100%;> <head> <title>Hacss</title> <meta name=viewport content="width=device-width,initial-scale=1"> <link href="https://fonts.googleapis.com/css?family=Do+Hyeon:400" rel=stylesheet> <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500" rel=stylesheet> <link href="https://fonts.googleapis.com/css?family=Inconsolata:400" rel=stylesheet> <link href=styles.css rel=stylesheet> <link href=hljs.css rel=stylesheet> <meta property=og:title content=Hacss> <meta property=og:description content="Style like you mean it. Inline styles without the limitations."> <meta property=og:image content=https://repository-images.githubusercontent.com/234330718/b398e100-8722-11ea-9a02-712ad5e77447> <meta property=og:url content=https://hacss.io> <meta name=twitter:card content=summary_large_image> </head> <body class="margin:0; height:100%; background:$purple800;"> <div class="margin-x:auto; padding-top:64px; width:100%; max-width:1180px; min-height:calc(100%-64px); position:relative; box-shadow:-10px__0__20px__0__$black,__10px__0__20px__0__$black;"> <div class="min-height:calc(100vh-64px); display:flex; flex-direction:column;"> <div class="flex-grow:1; flex-shrink:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:center; align-items:center; background-image:linear-gradient(#{$blue700},#{$blue400}); color:white; font-family:$font-sans; font-size:32px; font-weight:300; padding-y:32px;"> <img src=logo-hacss.svg alt=Hacss class=height:3em;> <p class="margin-top:0.25em; margin-bottom:0; letter-spacing:-0.03em;"> Style like you mean it. </p> <a href=getting-started.html class="border:none; margin-top:1.5em; @small{margin-top:1em} padding-y:0.6em; padding-left:0.8em; padding-right:0.6em; font-size:0.625em; font-weight:200; font-family:$font-sans; background:$red700; :hover{background:$red800} color:$red100; display:inline-flex; align-items:center; cursor:pointer; text-decoration:none;"> <span class="display:inline-block; margin-right:0.2em;">Get Started</span> <svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 24 24" class="width:1.2em; height:1.2em;"><path d="M0 0h24v24H0z" fill=none /><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill=currentColor /></svg> </a> </div> <div class="background:$red700; display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center; padding:4px;"> <div class="margin:4px; padding:24px; flex-basis:calc(33.333%-8px); @small{flex-basis:100%} box-sizing:border-box; font-family:$font-sans; background:$red100; color:$red700;"> <header class=text-align:center;> <h1 class="margin:0; font-weight:500; font-size:18px; line-height:1;"> Cut the BS out of CSS. </h1> </header> <p class="font-size:14px; font-weight:400; margin-top:8px; margin-bottom:0; line-height:1.5;"> Hacss makes inline styles a viable option, helping you to avoid redundant abstractions, inconsistent or dead code, and surprising behaviors inherent to other approaches and methodologies. </p> </div> <div class="margin:4px; padding:24px; flex-basis:calc(33.333%-8px); @small{flex-basis:100%} box-sizing:border-box; font-family:$font-sans; background:$red100; color:$red700;"> <header class=text-align:center;> <h1 class="margin:0; font-weight:500; font-size:18px; line-height:1;"> Inline superpowers </h1> </header> <p class="font-size:14px; font-weight:400; margin-top:8px; margin-bottom:0; line-height:1.5;"> Hacss brings pseudo-classes, pseudo-elements, contextual styling capabilities, media queries, variables, and more to the inline style language you already know. </p> </div> <div class="margin:4px; padding:24px; flex-basis:calc(33.333%-8px); @small{flex-basis:100%} box-sizing:border-box; font-family:$font-sans; background:$red100; color:$red700;"> <header class=text-align:center;> <h1 class="margin:0; font-weight:500; font-size:18px; line-height:1;"> Increase your agility. </h1> </header> <p class="font-size:14px; font-weight:400; margin-top:8px; margin-bottom:0; line-height:1.5;"> This direct approach to styling HTML makes code more transparent and easier to change while eliminating context switches, code alignment issues, and naming challenges. </p> </div> </div> </div> <div class="background:$red700; color:$red100; font-family:$font-sans; font-size:16px; font-weight:400; line-height:1.25; @large{line-height:1.5}"> <div class="padding-x:8px; @medium{padding-x:48px} @large{padding-x:96px} padding-top:32px; @medium{padding-top:48px} @large{padding-top:96px} padding-bottom:8px; @medium{:last-child{padding-bottom:48px}} @large{:last-child{padding-bottom:96px}} display:flex; flex-direction:column; align-items:stretch; @large{flex-direction:row} @large{align-items:flex-start}"> <div class=flex:1;> <h1 class="font-family:$font-display; font-size:32px; font-weight:400; margin:0; line-height:1;"> Just Classes </h1> <div class="margin-top:8px; @large{margin-top:16px}"> Simply move inline styles from the <code class=font-family:$font-mono;>style</code> attribute to the <code class=font-family:$font-mono;>class</code> attribute and remove whitespace as needed. Hacss generates a style sheet to apply the styles you have used. No JavaScript runtime is required: Just add a reference to this generated style sheet. </div> </div> <div class="margin-top:16px; @large{margin-top:0} @large{margin-left:96px} flex:2;"> <div class="box-sizing:border-box; width:100%; height:400px; background:$white; color:$red900; position:relative; border-width:8px; border-color:$red800; border-style:solid; display:flex; flex-direction:column;"> <div class="padding:24px; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:$red800;"> <span class=color:#f63;> You have 43 unread messages. </span> </div> <div class="flex:1; position:relative; border-top-width:1px; border-top-style:solid; border-top-color:$red800;"> <pre class="position:absolute; top:0; right:0; bottom:0; left:0; margin:0; padding:24px; background:$white; overflow:auto;"><code class=font-family:$font-mono;><span class=hljs-tag>&lt;<span class=hljs-name>span</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"color:#f63;"</span>&gt;</span>
+  You have 43 unread messages.
+<span class=hljs-tag>&lt;/<span class=hljs-name>span</span>&gt;</span>
+</code></pre> </div> </div> </div> </div> <div class="padding-x:8px; @medium{padding-x:48px} @large{padding-x:96px} padding-top:32px; @medium{padding-top:48px} @large{padding-top:96px} padding-bottom:8px; @medium{:last-child{padding-bottom:48px}} @large{:last-child{padding-bottom:96px}} display:flex; flex-direction:column; align-items:stretch; @large{flex-direction:row} @large{align-items:flex-start}"> <div class=flex:1;> <h1 class="font-family:$font-display; font-size:32px; font-weight:400; margin:0; line-height:1;"> Pseudo-classes </h1> <div class="margin-top:8px; @large{margin-top:16px}"> Hacss extends the inline style rule syntax to include pseudo-classes. Now you can affect the style of an element on hover without resorting to JavaScript or authoring a separate style sheet. </div> </div> <div class="margin-top:16px; @large{margin-top:0} @large{margin-left:96px} flex:2;"> <div class="box-sizing:border-box; width:100%; height:400px; background:$white; color:$red900; position:relative; border-width:8px; border-color:$red800; border-style:solid; display:flex; flex-direction:column;"> <div class="padding:24px; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:$red800;"> <button class="background:#e64d1a; :hover{background:#f63} :active{background:#c30} color:#fff; font-family:sans-serif; font-size:14px; padding:8px__16px; border-radius:999px; border:none; outline:none; :focus{box-shadow:0__0__0__2px__#c30}"> Save Changes </button> </div> <div class="flex:1; position:relative; border-top-width:1px; border-top-style:solid; border-top-color:$red800;"> <pre class="position:absolute; top:0; right:0; bottom:0; left:0; margin:0; padding:24px; background:$white; overflow:auto;"><code class=font-family:$font-mono;><span class=hljs-tag>&lt;<span class=hljs-name>button</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"
+  background:#e64d1a;
+  :hover{background:#f63}
+  :active{background:#c30}
+  color:#fff;
+  font-family:sans-serif;
+  font-size:14px;
+  padding:8px__16px;
+  border-radius:999px;
+  border:none;
+  outline:none;
+  :focus{box-shadow:0__0__0__2px__#c30}
+"</span>&gt;</span>
+  Save Changes
+<span class=hljs-tag>&lt;/<span class=hljs-name>button</span>&gt;</span>
+</code></pre> </div> </div> </div> </div> <div class="padding-x:8px; @medium{padding-x:48px} @large{padding-x:96px} padding-top:32px; @medium{padding-top:48px} @large{padding-top:96px} padding-bottom:8px; @medium{:last-child{padding-bottom:48px}} @large{:last-child{padding-bottom:96px}} display:flex; flex-direction:column; align-items:stretch; @large{flex-direction:row} @large{align-items:flex-start}"> <div class=flex:1;> <h1 class="font-family:$font-display; font-size:32px; font-weight:400; margin:0; line-height:1;"> Pseudo-elements </h1> <div class="margin-top:8px; @large{margin-top:16px}"> Pseudo-elements also work as expected, helping to preserve markup semantics by avoiding unnecessary presentational elements. </div> </div> <div class="margin-top:16px; @large{margin-top:0} @large{margin-left:96px} flex:2;"> <div class="box-sizing:border-box; width:100%; height:400px; background:$white; color:$red900; position:relative; border-width:8px; border-color:$red800; border-style:solid; display:flex; flex-direction:column;"> <div class="padding:24px; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:$red800;"> <ol class="list-style-type:none; margin:0; padding:0; display:flex; justify-content:stretch;"> <li class="::after{content:''} ::after{position:absolute} ::after{left:50%} ::after{right:0} ::after{top:10px} ::after{height:4px} ::after{background:#f63} ::after{z-index:1} position:relative; display:inline-block; padding-top:30px; background-image:url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%202%202%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Ccircle%20cx=%271px%27%20cy=%271px%27%20r=%271px%27%20fill=%27%23f63%27%20/%3E%3C/svg%3E'); background-size:16px; background-repeat:no-repeat; background-position-x:center; background-position-y:4px; flex:1; text-align:center;"> Welcome </li> <li class="::before{content:''} ::before{position:absolute} ::before{left:0} ::before{right:50%} ::before{top:10px} ::before{height:4px} ::before{background:#f63} ::before{z-index:1} ::after{content:''} ::after{position:absolute} ::after{left:calc(50%+12px)} ::after{right:0} ::after{top:10px} ::after{height:4px} ::after{background:#b6a5a7} ::after{z-index:1} position:relative; display:inline-block; padding-top:30px; background-image:url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%202%202%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Ccircle%20cx=%271px%27%20cy=%271px%27%20r=%271px%27%20fill=%27%23f63%27%20/%3E%3C/svg%3E'); background-size:24px; background-repeat:no-repeat; background-position-x:center; flex:1; text-align:center;"> Register </li> <li class="::before{content:''} ::before{position:absolute} ::before{left:0} ::before{right:50%} ::before{top:10px} ::before{height:4px} ::before{background:#b6a5a7} ::before{z-index:1} position:relative; display:inline-block; padding-top:30px; background-image:url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%202%202%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Ccircle%20cx=%271px%27%20cy=%271px%27%20r=%271px%27%20fill=%27%23b6a5a7%27%20/%3E%3C/svg%3E'); background-size:16px; background-repeat:no-repeat; background-position-x:center; background-position-y:4px; flex:1; text-align:center;"> Confirm </li> </ol> </div> <div class="flex:1; position:relative; border-top-width:1px; border-top-style:solid; border-top-color:$red800;"> <pre class="position:absolute; top:0; right:0; bottom:0; left:0; margin:0; padding:24px; background:$white; overflow:auto;"><code class=font-family:$font-mono;><span class=hljs-tag>&lt;<span class=hljs-name>ol</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  justify-content:stretch;
+"</span>&gt;</span>
+  <span class=hljs-tag>&lt;<span class=hljs-name>li</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"
+    ::after{content:''}
+    ::after{position:absolute}
+    ::after{left:50%}
+    ::after{right:0}
+    ::after{top:10px}
+    ::after{height:4px}
+    ::after{background:#f63}
+    ::after{z-index:1}
+    position:relative;
+    display:inline-block;
+    padding-top:30px;
+    background-image:url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%202%202%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Ccircle%20cx=%271px%27%20cy=%271px%27%20r=%271px%27%20fill=%27%23f63%27%20/%3E%3C/svg%3E');
+    background-size:16px;
+    background-repeat:no-repeat;
+    background-position-x:center;
+    background-position-y:4px;
+    flex:1;
+    text-align:center;
+  "</span>&gt;</span>
+    Welcome
+  <span class=hljs-tag>&lt;/<span class=hljs-name>li</span>&gt;</span>
+  <span class=hljs-tag>&lt;<span class=hljs-name>li</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"
+    ::before{content:''}
+    ::before{position:absolute}
+    ::before{left:0}
+    ::before{right:50%}
+    ::before{top:10px}
+    ::before{height:4px}
+    ::before{background:#f63}
+    ::before{z-index:1}
+    ::after{content:''}
+    ::after{position:absolute}
+    ::after{left:calc(50%+12px)}
+    ::after{right:0}
+    ::after{top:10px}
+    ::after{height:4px}
+    ::after{background:#b6a5a7}
+    ::after{z-index:1}
+    position:relative;
+    display:inline-block;
+    padding-top:30px;
+    background-image:url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%202%202%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Ccircle%20cx=%271px%27%20cy=%271px%27%20r=%271px%27%20fill=%27%23f63%27%20/%3E%3C/svg%3E');
+    background-size:24px;
+    background-repeat:no-repeat;
+    background-position-x:center;
+    flex:1;
+    text-align:center;
+  "</span>&gt;</span>
+    Register
+  <span class=hljs-tag>&lt;/<span class=hljs-name>li</span>&gt;</span>
+  <span class=hljs-tag>&lt;<span class=hljs-name>li</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"
+    ::before{content:''}
+    ::before{position:absolute}
+    ::before{left:0}
+    ::before{right:50%}
+    ::before{top:10px}
+    ::before{height:4px}
+    ::before{background:#b6a5a7}
+    ::before{z-index:1}
+    position:relative;
+    display:inline-block;
+    padding-top:30px;
+    background-image:url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%202%202%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Ccircle%20cx=%271px%27%20cy=%271px%27%20r=%271px%27%20fill=%27%23b6a5a7%27%20/%3E%3C/svg%3E');
+    background-size:16px;
+    background-repeat:no-repeat;
+    background-position-x:center;
+    background-position-y:4px;
+    flex:1;
+    text-align:center;
+  "</span>&gt;</span>
+    Confirm
+  <span class=hljs-tag>&lt;/<span class=hljs-name>li</span>&gt;</span>
+<span class=hljs-tag>&lt;/<span class=hljs-name>ol</span>&gt;</span>
+</code></pre> </div> </div> </div> </div> <div class="padding-x:8px; @medium{padding-x:48px} @large{padding-x:96px} padding-top:32px; @medium{padding-top:48px} @large{padding-top:96px} padding-bottom:8px; @medium{:last-child{padding-bottom:48px}} @large{:last-child{padding-bottom:96px}} display:flex; flex-direction:column; align-items:stretch; @large{flex-direction:row} @large{align-items:flex-start}"> <div class=flex:1;> <h1 class="font-family:$font-display; font-size:32px; font-weight:400; margin:0; line-height:1;"> Context </h1> <div class="margin-top:8px; @large{margin-top:16px}"> You can create style rules contingent upon the element's relationship to another element. </div> </div> <div class="margin-top:16px; @large{margin-top:0} @large{margin-left:96px} flex:2;"> <div class="box-sizing:border-box; width:100%; height:400px; background:$white; color:$red900; position:relative; border-width:8px; border-color:$red800; border-style:solid; display:flex; flex-direction:column;"> <div class="padding:24px; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:$red800;"> <label class="display:flex; align-items:center;"> <input type=checkbox class="margin-top:0; margin-bottom:0; margin-left:0; margin-right:8px; appearance:none; border-width:1px; border-style:solid; border-color:#f63; width:15px; height:16px; border-radius:0; outline:none; :checked{background-color:#f63} :checked{background-image:url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%2011%2011%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath%20d=%27M0,7%20l4,4%20l7,-8%20l-2,-2%20l-5,6%20l-3,-2%27%20fill=%27%23fff%27%20/%3E%3C/svg%3E')} :checked{background-position-x:1px} :checked{background-position-y:1px} :checked{background-repeat:no-repeat} :checked{background-size:11px} :focus{box-shadow:0__0__0__1px__#f63}" checked> <span class=:checked+{text-decoration:line-through}> Mow the lawn. </span> </label> </div> <div class="flex:1; position:relative; border-top-width:1px; border-top-style:solid; border-top-color:$red800;"> <pre class="position:absolute; top:0; right:0; bottom:0; left:0; margin:0; padding:24px; background:$white; overflow:auto;"><code class=font-family:$font-mono;><span class=hljs-tag>&lt;<span class=hljs-name>label</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"display:flex; align-items:center;"</span>&gt;</span>
+  <span class=hljs-tag>&lt;<span class=hljs-name>input</span>
+    <span class=hljs-attr>type</span>=<span class=hljs-string>"checkbox"</span>
+    <span class=hljs-attr>class</span>=<span class=hljs-string>"
+      margin-top:0;
+      margin-bottom:0;
+      margin-left:0;
+      margin-right:8px;
+      appearance:none;
+      border-width:1px;
+      border-style:solid;
+      border-color:#f63;
+      width:15px;
+      height:16px;
+      border-radius:0;
+      outline:none;
+      :checked{background-color:#f63}
+      :checked{background-image:url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%2011%2011%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath%20d=%27M0,7%20l4,4%20l7,-8%20l-2,-2%20l-5,6%20l-3,-2%27%20fill=%27%23fff%27%20/%3E%3C/svg%3E')}
+      :checked{background-position-x:1px}
+      :checked{background-position-y:1px}
+      :checked{background-repeat:no-repeat}
+      :checked{background-size:11px}
+      :focus{box-shadow:0__0__0__1px__#f63}
+    "</span> <span class=hljs-attr>checked</span> /&gt;</span>
+  <span class=hljs-tag>&lt;<span class=hljs-name>span</span> <span class=hljs-attr>class</span>=<span class=hljs-string>":checked+{text-decoration:line-through}"</span>&gt;</span>
+    Mow the lawn.
+  <span class=hljs-tag>&lt;/<span class=hljs-name>span</span>&gt;</span>
+<span class=hljs-tag>&lt;/<span class=hljs-name>label</span>&gt;</span>
+</code></pre> </div> </div> </div> </div> <div class="padding-x:8px; @medium{padding-x:48px} @large{padding-x:96px} padding-top:32px; @medium{padding-top:48px} @large{padding-top:96px} padding-bottom:8px; @medium{:last-child{padding-bottom:48px}} @large{:last-child{padding-bottom:96px}} display:flex; flex-direction:column; align-items:stretch; @large{flex-direction:row} @large{align-items:flex-start}"> <div class=flex:1;> <h1 class="font-family:$font-display; font-size:32px; font-weight:400; margin:0; line-height:1;"> Media Queries </h1> <div class="margin-top:8px; @large{margin-top:16px}"> You can use media queries to affect the styling of the element based on e.g. device width. </div> </div> <div class="margin-top:16px; @large{margin-top:0} @large{margin-left:96px} flex:2;"> <div class="box-sizing:border-box; width:100%; height:400px; background:$white; color:$red900; position:relative; border-width:8px; border-color:$red800; border-style:solid; display:flex; flex-direction:column;"> <div class="padding:24px; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:$red800;"> Current breakpoint: <strong class="display:none; @small{display:inline} font-weight:700;"> small </strong> <strong class="display:none; @medium{display:inline} font-weight:700;"> medium </strong> <strong class="display:none; @large{display:inline} font-weight:700;"> large </strong> </div> <div class="flex:1; position:relative; border-top-width:1px; border-top-style:solid; border-top-color:$red800;"> <pre class="position:absolute; top:0; right:0; bottom:0; left:0; margin:0; padding:24px; background:$white; overflow:auto;"><code class=font-family:$font-mono;>Current breakpoint:
+<span class=hljs-tag>&lt;<span class=hljs-name>strong</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"
+  display:none;
+  @small{display:inline}
+  font-weight:700;
+"</span>&gt;</span>
+  small
+<span class=hljs-tag>&lt;/<span class=hljs-name>strong</span>&gt;</span>
+<span class=hljs-tag>&lt;<span class=hljs-name>strong</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"
+  display:none;
+  @medium{display:inline}
+  font-weight:700;
+"</span>&gt;</span>
+  medium
+<span class=hljs-tag>&lt;/<span class=hljs-name>strong</span>&gt;</span>
+<span class=hljs-tag>&lt;<span class=hljs-name>strong</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"
+  display:none;
+  @large{display:inline}
+  font-weight:700;
+"</span>&gt;</span>
+  large
+<span class=hljs-tag>&lt;/<span class=hljs-name>strong</span>&gt;</span>
+</code></pre> </div> </div> </div> </div> <div class="padding-x:8px; @medium{padding-x:48px} @large{padding-x:96px} padding-top:32px; @medium{padding-top:48px} @large{padding-top:96px} padding-bottom:8px; @medium{:last-child{padding-bottom:48px}} @large{:last-child{padding-bottom:96px}} display:flex; flex-direction:column; align-items:stretch; @large{flex-direction:row} @large{align-items:flex-start}"> <div class=flex:1;> <h1 class="font-family:$font-display; font-size:32px; font-weight:400; margin:0; line-height:1;"> Variables </h1> <div class="margin-top:8px; @large{margin-top:16px}"> You can propagate design primitives through variables. </div> </div> <div class="margin-top:16px; @large{margin-top:0} @large{margin-left:96px} flex:2;"> <div class="box-sizing:border-box; width:100%; height:400px; background:$white; color:$red900; position:relative; border-width:8px; border-color:$red800; border-style:solid; display:flex; flex-direction:column;"> <div class="padding:24px; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:$red800;"> <h1 class="font-family:$font-display; font-weight:normal; font-size:48px; margin:0; line-height:1; color:$red700;"> hacss </h1> </div> <div class="flex:1; position:relative; border-top-width:1px; border-top-style:solid; border-top-color:$red800;"> <pre class="position:absolute; top:0; right:0; bottom:0; left:0; margin:0; padding:24px; background:$white; overflow:auto;"><code class=font-family:$font-mono;><span class=hljs-tag>&lt;<span class=hljs-name>h1</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"
+  font-family:$font-display;
+  font-weight:normal;
+  font-size:48px;
+  margin:0;
+  line-height:1;
+  color:$red700;
+"</span>&gt;</span>
+  hacss
+<span class=hljs-tag>&lt;/<span class=hljs-name>h1</span>&gt;</span>
+</code></pre> </div> </div> </div> </div> </div> </div> <div class="position:fixed; top:0; right:0; left:0; height:64px;"> <header class="margin-x:auto; width:100%; max-width:1180px; height:100%; background:$black; padding-x:16px; box-sizing:border-box; display:flex; flex-direction:row; align-items:center; justify-content:space-between;"> <img src=logo-h.svg alt=Hacss class="border:0; height:32px;"> <button id=navOpener class="display:none; @small{display:inline-block} outline:none; height:auto; background:transparent; padding:0; margin:0; border:0; opener"> <svg viewBox="0 0 24 21" class="width:24px; height:21px; fill:$blue300; :hover>fill:$white;"> <rect width=100% height=5px /> <rect width=100% height=5px y=8 /> <rect width=100% height=5px y=16 /> </svg> </button> <nav class="font-family:$font-sans; font-size:16px; color:$blue200; display:inline-flex; align-items:center; @small{display:none}"> <a href=overview.html class="display:inline-flex; margin-left:16px; color:$blue300; :hover{color:$white} text-decoration:none;"> Overview </a> <a href=getting-started.html class="display:inline-flex; margin-left:16px; color:$blue300; :hover{color:$white} text-decoration:none;"> Getting Started </a> <a href=guides.html class="display:inline-flex; margin-left:16px; color:$blue300; :hover{color:$white} text-decoration:none;"> Guides </a> <a href=https://basement.hacss.io/#N4IgbghgTglhBGAbApgZxALgNpZABxgDsBrEAGhCgHN4AKAJgFZGz6BmABlYBYOBKEAF0yuKMgAm5SjQbMyjLgEYO-ISJCoIhdBQCShAC7IoQ4SAMwDKTCABCEVMgC2yQ1KfRiAVzw2APOIwYAAEADqEwcEAxogOqAC8oSDhkZF4APaoljDphBgIqOmIXkYA3CmpBul4GBzlEamwVAAWBrX1qcHw6QZVTu0VkSgAZm11g8GBqHixAJ4YwygAHh2pEIgwVIQAtJbOqBhRrkZQq5EAVl6oFsOz21G5RoaHx8arSQB8EwFBE5ExcUSyQanUiUxmEHmRA2hGQ2yQ6SixDOoLwEHEgUIVAwijEThRnXgECRVCg6S8hHEGAAJAQSATUg9EOkoDSxOIGZFho9tsMIE4YIh5tTNNpOcFuYZtlkAF7IDD0PHimFw5rITatHHi7pQcTGbYAdxg4gMzQVeBWf1SOr1UGlBlmKAwhQ2HKtkRt+qZLMOXigYkMAGEiiyGZ8rQAJZCIZnBADqLMQ4m+AHpAmAvoQ-Gmgh8pA9CMNNpg+YhHBQIAYAMoPPBoTBYQQAXyAA class="display:inline-flex; margin-left:16px; color:$blue300; :hover{color:$white} text-decoration:none;"> Basement </a> <a href=https://github.com/hacss/core class="display:inline-flex; margin-left:16px; color:$blue300; :hover{color:$white} text-decoration:none;"> <svg viewBox="0 0 16 16" version=1.1 class=width:16px;> <path fill=currentColor fill-rule=evenodd d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path> </svg> </a> </nav> </header> </div> <div id=popNav class="display:none; @small{display:block} position:fixed; z-index:-1; opacity:0; transition-property:opacity; transition-duration:300ms; top:56px; right:16px; box-shadow:4px__4px__0__rgba(0,0,0,0.1); border-color:$red700; border-style:solid; border-width:1px; background:$purple100; padding-x:0; padding-y:4px; border-radius:4px; font-family:$font-sans; font-size:16px; font-weight:400; ::before{content:''} ::before{position:absolute} ::before{top:-5px} ::before{right:8px} ::before{background-image:url('data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%279px%27%20height=%275px%27%20viewBox=%270%200%209%205%27%3E%3Cpolygon%20points=%270,5%205,0%209,5%27%20fill=%27#{$red100}%27%20/%3E%3C/svg%3E')} ::before{width:9px} ::before{height:5px}"> <a href=overview.html class="display:flex; align-items:center; padding-x:8px; padding-y:4px; min-height:28px; box-sizing:border-box; color:$purple600; text-decoration:none; :hover{background:$purple600} :hover{color:$purple100}"> Overview </a> <a href=getting-started.html class="display:flex; align-items:center; padding-x:8px; padding-y:4px; min-height:28px; box-sizing:border-box; color:$purple600; text-decoration:none; :hover{background:$purple600} :hover{color:$purple100}"> Getting Started </a> <a href=guides.html class="display:flex; align-items:center; padding-x:8px; padding-y:4px; min-height:28px; box-sizing:border-box; color:$purple600; text-decoration:none; :hover{background:$purple600} :hover{color:$purple100}"> Guides </a> <a href=https://basement.hacss.io/#N4IgbghgTglhBGAbApgZxALgNpZABxgDsBrEAGhCgHN4AKAJgFZGz6BmABlYBYOBKEAF0yuKMgAm5SjQbMyjLgEYO-ISJCoIhdBQCShAC7IoQ4SAMwDKTCABCEVMgC2yQ1KfRiAVzw2APOIwYAAEADqEwcEAxogOqAC8oSDhkZF4APaoljDphBgIqOmIXkYA3CmpBul4GBzlEamwVAAWBrX1qcHw6QZVTu0VkSgAZm11g8GBqHixAJ4YwygAHh2pEIgwVIQAtJbOqBhRrkZQq5EAVl6oFsOz21G5RoaHx8arSQB8EwFBE5ExcUSyQanUiUxmEHmRA2hGQ2yQ6SixDOoLwEHEgUIVAwijEThRnXgECRVCg6S8hHEGAAJAQSATUg9EOkoDSxOIGZFho9tsMIE4YIh5tTNNpOcFuYZtlkAF7IDD0PHimFw5rITatHHi7pQcTGbYAdxg4gMzQVeBWf1SOr1UGlBlmKAwhQ2HKtkRt+qZLMOXigYkMAGEiiyGZ8rQAJZCIZnBADqLMQ4m+AHpAmAvoQ-Gmgh8pA9CMNNpg+YhHBQIAYAMoPPBoTBYQQAXyAA class="display:flex; align-items:center; padding-x:8px; padding-y:4px; min-height:28px; box-sizing:border-box; color:$purple600; text-decoration:none; :hover{background:$purple600} :hover{color:$purple100}"> Basement </a> <a href=https://github.com/hacss/core class="display:flex; align-items:center; padding-x:8px; padding-y:4px; min-height:28px; box-sizing:border-box; color:$purple600; text-decoration:none; :hover{background:$purple600} :hover{color:$purple100}"> <svg viewBox="0 0 16 16" version=1.1 class=width:16px;> <path fill=currentColor fill-rule=evenodd d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path> </svg> <span class="display:inline-block; margin-left:8px;">GitHub</span> </a> </div> <script> document.getElementById("navOpener").addEventListener("click", function() {
+        var nav = document.getElementById("popNav");
+        ["z-index:-1;", "opacity:0;", "opacity:1;"].forEach(function(c) {
+          nav.classList.toggle(c);
+        });
+      }); </script> </body> </html> 
