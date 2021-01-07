@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@fontsource/inconsolata": "^4.1.0",
+    "@fontsource/nanum-gothic-coding": "^4.1.0",
     "@fontsource/rubik": "^4.1.0",
     "@hacss/build": "^4.2.0",
     "@hacss/shortcuts": "^1.2.0",

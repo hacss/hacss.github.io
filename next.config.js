@@ -11,7 +11,7 @@ module.exports = {
             "style-loader",
             "css-loader",
             "postcss-loader",
-            { loader: "val-loader", options: { sources: "./pages/**/*.js" } },
+            { loader: "val-loader", options: { sources: ["components", "demos", "pages"].map(x => `./${x}/**/*.js`) } },
           ],
         },
       ],

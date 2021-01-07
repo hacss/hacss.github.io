@@ -9,9 +9,10 @@ module.exports = {
     font: {
       ...shortcuts.variables.font,
       jumbo: "700 4rem/4rem 'Rubik', sans-serif",
+      code: "400 0.75rem/1.25rem 'Nanum Gothic Coding', monospace",
     },
     "font-family": {
-      mono: "'Inconsolata', monospace",
+      mono: "'Nanum Gothic Coding', monospace",
     },
   },
 };

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
-    const bg = "background:$gray05;";
+    const bg = "background:white;";
     document.body.classList.add(bg);
     return () => document.body.classList.remove(bg);
   }, []);

@@ -1,7 +1,12 @@
+import { useState } from "react";
+import CodeEditor from "../components/CodeEditor";
+import cutTheBS from "../demos/cutTheBS";
+
 export default function Home() {
+  const [cutTheBSPreview, setCutTheBSPreview] = useState(cutTheBS.initial);
   return (
     <div className="padding:$space128;">
-      <svg viewBox="0 0 1679 512" height="3rem">
+      <svg viewBox="0 0 1679 512" className="height:3rem;">
         <defs>
           <linearGradient id="logoB" x1="0" x2="0" y1="0" y2="100%">
             <stop offset="62.5%" className="stop-color:$gray60;"></stop>
@@ -29,7 +34,7 @@ export default function Home() {
         your HTML. Write style rules directly in markup using expressive class
         names like{" "}
         <code className="font-family:$mono;! font-weight:700;! color:$gray95;">
-          {":hover{color:$red50}"}
+          {":hover{background:$gray80}"}
         </code>.
         Hacss generates a style sheet for you at build time.
       </p>
@@ -39,9 +44,9 @@ export default function Home() {
           border:none;
           appearance:none;
           outline:none;
-          margin:0;
           display:inline-flex;
           align-items:center;
+          margin:0;
           padding-x:$space24;
           padding-y:$space16;
           border-radius:$md;
@@ -54,11 +59,15 @@ export default function Home() {
           :focus{box-shadow:#{$outline-offset-gray05},#{$outline-ring-gray90}}
           :focus:hover{box-shadow:#{$outline-offset-gray05},#{$outline-ring-gray80}}
         `}>
-        Get started
-        <svg viewBox="0 0 14 14" className="width:1em; margin-left:0.5em;">
-          <path d="M14,6 l-5,5 v-4 h-9 v-2 h9 v-4" fill="currentColor" />
+        <span className="font-size:1.25em;">Get started</span>
+        <svg viewBox="0 0 14 9" className="width:1.25em; margin-left:0.625em;">
+          <path d="M14,4 l-5,5 v-4 h-9 v-2 h9 v-4" fill="currentColor" />
         </svg>
       </a>
+      <div className="margin-y:$space64;">
+        <CodeEditor script={cutTheBS} onPublish={setCutTheBSPreview} />
+        <div dangerouslySetInnerHTML={{ __html: cutTheBSPreview }} />
+      </div>
     </div>
   );
 }
