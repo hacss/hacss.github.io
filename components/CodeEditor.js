@@ -92,7 +92,7 @@ export default function CodeEditor({ script, onPublish }) {
           redo
         </button>
       </div>
-      <div className="background:$gray95; color:$gray30; padding:$space16;">
+      <div className="background:$gray95; color:$gray30; padding:$len16;">
         <pre className="margin:0;">
           <code className="font:$code;" dangerouslySetInnerHTML={{
             __html: highlight(html)
