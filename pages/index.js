@@ -64,9 +64,44 @@ export default function Home() {
           <path d="M14,4 l-5,5 v-4 h-9 v-2 h9 v-4" fill="currentColor" />
         </svg>
       </a>
-      <div className="margin-y:$len64;">
-        <CodeEditor script={cutTheBS} onPublish={setCutTheBSPreview} />
-        <div dangerouslySetInnerHTML={{ __html: cutTheBSPreview }} />
+      <div className={`
+        margin-y:$len32;
+        display:flex;
+        padding:$len16;
+        background:$gray10;
+        border-radius:$md;
+        box-shadow:$inner;
+      `}>
+        <div className="flex:1; margin:$len16;">
+          <div className={`
+            border-radius:$md;
+            box-shadow:$md;
+            background:#fff;
+            color:$gray70;
+            margin:0;
+            overflow:hidden;
+            display:flex;
+            flex-direction:row-reverse;
+          `}>
+            <img
+              src="grinder.jpg"
+              alt="Grinder"
+              className="object-fit:cover; width:$len128;" />
+            <div className="padding:$len16;">
+              <h1 className="margin:0; margin-bottom:$len8;! font:$h5;">Cut the B.S. out of CSS.</h1>
+              <p className="font:$body2; margin:0;">
+                Hacss combines the advantages of atomic CSS with the flexibility
+                and familiarity of native CSS. It&apos;s no longer necessary to
+                burn valuable engineering time learning a complicated system of
+                utility classes only to find out later that the system
+                didn&apos;t anticipate all of your needs.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="flex:1; margin:$len16;">
+          <CodeEditor script={cutTheBS} onPublish={setCutTheBSPreview} />
+        </div>
       </div>
     </div>
   );

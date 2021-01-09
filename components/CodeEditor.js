@@ -110,7 +110,7 @@ export default function CodeEditor({ script, onPublish }) {
             font-size:$len20;
             width:1em;
             height:1em;
-            box-shadow:inset__0.1em__0.1em__0.1em__0__#{$gray60},-0.1em__-0.1em__0__0__#{$gray95};
+            box-shadow:inset__0.1em__0.1em__0.1em__0__#{$gray40},-0.1em__-0.1em__0__0__#{$gray95};
             background:linear-gradient(135deg,#{$gray50}__49%,#{$gray60}__50%);
             color:$gray80;
             :hover{color:$gray20}
