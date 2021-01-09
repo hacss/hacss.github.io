@@ -87,13 +87,81 @@ export default function CodeEditor({ script, onPublish }) {
 
   return (
     <div>
-      <div className="background:$gray90;">
-        <button onClick={() => { setStep(-1); }}>
-          redo
+      <div className={`
+        background:linear-gradient(#{$gray80},#{$gray95});
+        padding-x:$len12;
+        padding-y:$len8;
+        border-top-radius:$md;
+        display:flex;
+        justify-content:flex-end;
+        border-top-width:$len2;
+        border-x-width:0;
+        border-bottom-width:0;
+        border-style:solid;
+        border-color:$gray60;
+      `}>
+        <button
+          className={`
+            appearance:none;
+            outline:none;
+            margin:0;
+            padding:0;
+            border:0;
+            font-size:$len20;
+            width:1em;
+            height:1em;
+            box-shadow:inset__0.1em__0.1em__0.1em__0__#{$gray60},-0.1em__-0.1em__0__0__#{$gray95};
+            background:linear-gradient(135deg,#{$gray50}__49%,#{$gray60}__50%);
+            color:$gray80;
+            :hover{color:$gray20}
+            :active{color:$gray05}
+            border-radius:$full;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            position:relative;
+            transform:scale(0.999);
+            :focus::before{content:''}
+            ::before{position:absolute}
+            ::before{z-index:-1}
+            ::before{inset:-0.25em}
+            ::before{border-radius:$full}
+            ::before{border-width:$len2}
+            ::before{border-style:solid}
+            ::before{border-color:#{$gray70}}
+          `}
+          onClick={() => { setStep(-1); }}>
+          <svg className="width:$len12;" viewBox="0 0 16 16">
+            <circle cx="8" cy="9" r="6" fill="transparent" stroke="currentColor" strokeDasharray="20 7.69" />
+            <path fill="currentColor" d="M 4 3 l 4 -3 v 6" />
+          </svg>
         </button>
       </div>
-      <div className="background:$gray95; color:$gray30; padding:$len16;">
-        <pre className="margin:0;">
+      <div className={`
+        background:$gray95;
+        border-bottom-radius:$md;
+        color:$gray30;
+        padding:$len16;
+        position:relative;
+      `}>
+        <div className={`
+          font:$code;
+          color:$gray60;
+          position:absolute;
+          top:$len16;
+          left:$len16;
+          bottom:$len16;
+          text-align:right;
+          overflow:hidden;
+        `}>
+          {
+            Array
+              .from(Array(50).keys())
+              .map(x => x + 1)
+              .map(x => <div>{x}</div>)
+          }
+        </div>
+        <pre className="margin-y:0; margin-left:$len32; margin-right:0;">
           <code className="font:$code;" dangerouslySetInnerHTML={{
             __html: highlight(html)
           }} />

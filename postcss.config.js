@@ -6,4 +6,5 @@ exports.plugins = [
     { hosted: ["./node_modules/@fontsource/**/*"] },
   ],
   "postcss-inset",
+  "postcss-short-border-radius",
 ];

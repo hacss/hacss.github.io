@@ -14,5 +14,9 @@ module.exports = {
     "font-family": {
       mono: "'Nanum Gothic Coding', monospace",
     },
+    ...Object.fromEntries(
+      ["top", "right", "bottom", "left"]
+        .map(x => [`border-${x}-radius`, shortcuts.variables["border-radius"]]),
+    ),
   },
 };
