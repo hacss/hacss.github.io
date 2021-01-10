@@ -103,38 +103,46 @@ export default function CodeEditor({ script, onPublish }) {
         <button
           className={`
             appearance:none;
-            outline:none;
+            outline:0;
+            border:0;
             margin:0;
             padding:0;
+            width:$len20;
+            height:$len20;
+            border-radius:$full;
+            background:linear-gradient(#{$gray95},#{$gray30});
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            :focus{box-shadow:#{$outline-offset-gray70}}
+            :focus{background:linear-gradient(#{$gray80},#{$gray20})}
+          `}
+          onClick={() => { setStep(-1); }}>
+          <div className={`
             border:0;
-            font-size:$len20;
+            font-size:$len16;
             width:1em;
             height:1em;
-            box-shadow:inset__0.1em__0.1em__0.1em__0__#{$gray40},-0.1em__-0.1em__0__0__#{$gray95};
-            background:linear-gradient(135deg,#{$gray50}__49%,#{$gray60}__50%);
+            box-shadow:inset__0__0.1em__0__0__#{$gray20},inset__0__-0.1em__0__0__#{$gray50};
+            background:$gray40;
             color:$gray80;
-            :hover{color:$gray20}
-            :active{color:$gray05}
+            :hover>{background:$gray30}
             border-radius:$full;
             display:flex;
             align-items:center;
             justify-content:center;
             position:relative;
-            transform:scale(0.999);
-            :focus::before{content:''}
-            ::before{position:absolute}
-            ::before{z-index:-1}
-            ::before{inset:-0.25em}
-            ::before{border-radius:$full}
-            ::before{border-width:$len2}
-            ::before{border-style:solid}
-            ::before{border-color:#{$gray70}}
-          `}
-          onClick={() => { setStep(-1); }}>
-          <svg className="width:$len12;" viewBox="0 0 16 16">
-            <circle cx="8" cy="9" r="6" fill="transparent" stroke="currentColor" strokeDasharray="20 7.69" />
-            <path fill="currentColor" d="M 4 3 l 4 -3 v 6" />
-          </svg>
+            ::after{content:''}
+            ::after{position:absolute}
+            ::after{inset:0}
+            ::after{border-radius:$full}
+            :active>{box-shadow:inset__0__-0.1em__0__0__#{$gray20},inset__0__0.1em__0__0__#{$gray50}}
+          `}>
+            <svg className="width:0.75em; :active_{width:0.625em}" viewBox="0 0 16 16">
+              <circle cx="8" cy="9" r="6" fill="transparent" stroke="currentColor" strokeDasharray="20 7.69" />
+              <path fill="currentColor" d="M 4 3 l 4 -3 v 6" />
+            </svg>
+          </div>
         </button>
       </div>
       <div className={`
@@ -158,7 +166,7 @@ export default function CodeEditor({ script, onPublish }) {
             Array
               .from(Array(50).keys())
               .map(x => x + 1)
-              .map(x => <div>{x}</div>)
+              .map(x => <div key={x}>{x}</div>)
           }
         </div>
         <pre className="margin-y:0; margin-left:$len32; margin-right:0;">
