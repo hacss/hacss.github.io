@@ -124,9 +124,8 @@ export default function CodeEditor({ script, onPublish }) {
             width:1em;
             height:1em;
             box-shadow:inset__0__0.1em__0__0__#{$gray20},inset__0__-0.1em__0__0__#{$gray50};
-            background:$gray40;
+            background:linear-gradient(#{$gray60},#{$gray40});
             color:$gray80;
-            :hover>{background:$gray30}
             border-radius:$full;
             display:flex;
             align-items:center;
@@ -136,6 +135,7 @@ export default function CodeEditor({ script, onPublish }) {
             ::after{position:absolute}
             ::after{inset:0}
             ::after{border-radius:$full}
+            :hover{background:linear-gradient(#{$gray40},#{$gray20})}
             :active>{box-shadow:inset__0__-0.1em__0__0__#{$gray20},inset__0__0.1em__0__0__#{$gray50}}
           `}>
             <svg className="width:0.75em; :active_{width:0.625em}" viewBox="0 0 16 16">
