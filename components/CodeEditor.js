@@ -7,7 +7,7 @@ const highlight = html => {
   const tag = x => `<span class="color:$blue40;">${x}</span>`;
   return html
     .replace(
-      /<([a-z][a-z0-9]*)([^>]*)>|<\/([a-z][a-z0-9]+)>/g,
+      /<([a-z][a-z0-9]*)([^>]*)>|<\/([a-z][a-z0-9]*)>/g,
       (_, open, attrs, close) =>
         close
           ? ochev + tag("/" + close) + cchev
@@ -25,42 +25,88 @@ const highlight = html => {
     .replace("|", `<span class="position:relative;"><span class="position:absolute; inset:0; width:0.125em; height:1em; background:white;"></span></span>`);
 };
 
-const play = ({ initial, steps }, x) => {
-  let s = { html: initial.replace(/^\s+/m, "").replace(/\s+$/m, "") };
+const mapLines = (f, str) => str.split("\n").map(f).join("\n");
+
+const play = (demo, x) => {
+  let
+    html = demo.html.replace(/^\s+/m, "").replace(/\s+$/m, "").split("\n"),
+    { row = 0, col = 0 } = demo,
+    vis = false;
+  
+  const { steps } = demo;
+
+  const hideCursor = () => {
+    html = html.map(x => x.replace("|", ""));
+  };
+
+  const refreshCursor = () => {
+    hideCursor();
+    if (vis) {
+      html[row] = html[row].substring(0, col) + "|" + html[row].substring(col);
+    }
+  };
+
   for (let i = 0; i <= x; i++) {
     const step = steps[i];
-    switch (step.type) {
-      case "move":
-        s.cursor = step.cursor;
-        s.html = s
-          .html
-          .split("\n")
-          .map((text, line) => {
-            if (line !== s.cursor[0]) {
-              return text;
-            }
-            return text.substring(0, s.cursor[1]) + "|" + text.substring(s.cursor[1]);
-          })
-          .join("\n");
+    switch (step?.type) {
+      case "show":
+        vis = true;
+        refreshCursor();
+        break;
+      case "hide":
+        vis = false;
+        hideCursor();
+        break;
+      case "up":
+        row--;
+        refreshCursor();
+        break;
+      case "down":
+        row++;
+        refreshCursor();
+        break;
+      case "right":
+        col++;
+        refreshCursor();
+        break;
+      case "left":
+        do {
+          col--;
+        }
+        while (col > html[row].length - 2);
+        refreshCursor();
         break;
       case "insert":
-        const pos = s.cursor || [0, 0];
-        s.html =
-          s
-            .html
-            .split("\n")
-            .map((text, line) => {
-              if (line !== pos[0]) {
-                return text;
-              }
-              return text.substring(0, pos[1]) + step.character + text.substring(pos[1]);
-            })
-            .join("\n");
-        s.cursor = [pos[0], pos[1] + 1];
+        if (step.character === "\n") {
+          const remainder = html[row].substring(col);
+          html[row] = html[row].substring(0, col);
+          col = 0;
+          row++;
+          html.splice(row, 0, remainder);
+        }
+        else {
+          html[row] = html[row].substring(0, col) + step.character + html[row].substring(col);
+          col++;
+        }
+        refreshCursor();
+        break;
+      case "delete":
+        if (col === 0) {
+          if (html[row] === "|") {
+            html.splice(row, 1);
+          }
+          row--;
+          col = html[row].length;
+        }
+        else {
+          html[row] = html[row].substring(0, col - 1) + html[row].substring(col);
+          col--;
+        }
+        refreshCursor();
         break;
     }
   }
-  return s.html;
+  return html.join("\n");
 };
 
 export default function CodeEditor({ script, onPublish }) {
@@ -71,8 +117,8 @@ export default function CodeEditor({ script, onPublish }) {
   }, [script, setStep]);
 
   useEffect(() => {
-    if (step < script.steps.length - 1) {
-      const t = setTimeout(() => setStep(step + 1), Math.round(100 + Math.random() * 500));
+    if (script.steps.length && step < script.steps.length - 1) {
+      const t = setTimeout(() => setStep(step + 1), 200);
       return () => clearTimeout(t);
     }
   }, [script, setStep, step]);
@@ -86,7 +132,7 @@ export default function CodeEditor({ script, onPublish }) {
   }, [onPublish, script, step]);
 
   return (
-    <div>
+    <div className="height:100%; display:flex; flex-direction:column;">
       <div className={`
         background:linear-gradient(#{$gray80},#{$gray95});
         padding-x:$len12;
@@ -146,6 +192,7 @@ export default function CodeEditor({ script, onPublish }) {
         </button>
       </div>
       <div className={`
+        flex:1;
         background:$gray95;
         border-bottom-radius:$md;
         color:$gray30;
@@ -153,27 +200,16 @@ export default function CodeEditor({ script, onPublish }) {
         position:relative;
       `}>
         <div className={`
-          font:$code;
-          color:$gray60;
           position:absolute;
-          top:$len16;
-          left:$len16;
-          bottom:$len16;
-          text-align:right;
-          overflow:hidden;
+          inset:0;
+          overflow:auto;
         `}>
-          {
-            Array
-              .from(Array(50).keys())
-              .map(x => x + 1)
-              .map(x => <div key={x}>{x}</div>)
-          }
+          <pre className="margin:0;">
+            <code className="font:$code;" dangerouslySetInnerHTML={{
+              __html: highlight(mapLines(x => `  ${x}  `, html)) + "\n&nbsp;"
+            }} />
+          </pre>
         </div>
-        <pre className="margin-y:0; margin-left:$len32; margin-right:0;">
-          <code className="font:$code;" dangerouslySetInnerHTML={{
-            __html: highlight(html)
-          }} />
-        </pre>
       </div>
     </div>
   );
