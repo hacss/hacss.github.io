@@ -109,7 +109,7 @@ const play = (demo, x) => {
   return html.join("\n");
 };
 
-export default function CodeEditor({ script, onPublish }) {
+export default function CodeEditor({ className, script, onPublish }) {
   const [step, setStep] = useState(-1);
 
   useEffect(() => {
@@ -132,7 +132,7 @@ export default function CodeEditor({ script, onPublish }) {
   }, [onPublish, script, step]);
 
   return (
-    <div className="height:100%; display:flex; flex-direction:column;">
+    <div className={`${className || ""} display:flex; flex-direction:column;`}>
       <div className={`
         background:linear-gradient(#{$gray80},#{$gray95});
         padding-x:$len12;

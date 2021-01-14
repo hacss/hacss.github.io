@@ -5,7 +5,12 @@ import * as cutTheBS from "../demos/cutTheBS";
 export default function Home() {
   const [cutTheBSPreview, setCutTheBSPreview] = useState(cutTheBS.html);
   return (
-    <div className="padding:$len128;">
+    <div className={`
+      padding:$len32;
+      @lg{padding:$len128}
+      max-width:80rem;
+      margin-x:auto;
+    `}>
       <svg viewBox="0 0 1679 512" className="height:$len48;">
         <defs>
           <linearGradient id="logoB" x1="0" x2="0" y1="0" y2="100%">
@@ -67,7 +72,7 @@ export default function Home() {
       <div className={`
         margin-y:$len32;
         display:flex;
-        align-items:stretch;
+        @sm{flex-direction:column-reverse}
         padding:$len16;
         background:$gray10;
         border-radius:$md;
@@ -76,8 +81,11 @@ export default function Home() {
         <div className="flex:1; margin:$len16; display:flex; align-items:center;">
           <div dangerouslySetInnerHTML={{ __html: cutTheBSPreview }} />
         </div>
-        <div className="flex:1; margin:$len16; min-height:$len512;">
-          <CodeEditor script={cutTheBS} onPublish={setCutTheBSPreview} />
+        <div className="flex:1; margin:$len16;">
+          <CodeEditor
+            className="height:100%; min-height:$len512; @sm{min-height:$len256}"
+            script={cutTheBS}
+            onPublish={setCutTheBSPreview} />
         </div>
       </div>
     </div>
