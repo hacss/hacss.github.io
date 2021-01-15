@@ -78,7 +78,7 @@ export const steps = [
   ...Array(9).fill({ type: "right" }),
   ...insertString("\n      margin:0__auto;"),
   ...insertString("\n      @lg{border-radius:0}"),
-  ...insertString("\n      border-radius:$full;"),
+  ...insertString("\n      border-radius:$sm;"),
 ];
 
 /*

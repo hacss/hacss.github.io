@@ -1,4 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const scrollIfNeeded = (o, i) => {
+  const min = i.offsetTop - o.clientHeight + i.offsetHeight;
+  const max = i.offsetTop - i.offsetHeight;
+
+  if (o.scrollTop < min) {
+    o.scrollTop = min;
+  }  
+  
+  if (o.scrollTop > max) {
+    o.scrollTop = max;
+  }
+}
 
 const highlight = html => {
   const chev = x => `<span class="color:$blue40;">${x}</span>`;
@@ -136,6 +149,17 @@ export default function CodeEditor({ className, script, onPublish }) {
 
   const html = play(script, step);
 
+  const codeArea = useRef();
+
+  useEffect(() => {
+    if (codeArea.current) {
+      const cursor = codeArea.current.querySelector(".cursor");
+      if (cursor) {
+        scrollIfNeeded(codeArea.current, cursor);
+      }
+    }
+  }, [html]);
+
   useEffect(() => {
     if (step < 0 || script.steps[step]?.publish) {
       onPublish(html.replace("|", ""));
@@ -210,11 +234,13 @@ export default function CodeEditor({ className, script, onPublish }) {
         padding:$len16;
         position:relative;
       `}>
-        <div className={`
-          position:absolute;
-          inset:0;
-          overflow:auto;
-        `}>
+        <div
+          ref={codeArea}
+          className={`
+            position:absolute;
+            inset:0;
+            overflow:auto;
+          `}>
           <pre className="margin:0;">
             <code className="font:$code;" dangerouslySetInnerHTML={{
               __html: highlight(mapLines(x => `  ${x}  `, html)) + "\n&nbsp;"
