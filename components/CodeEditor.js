@@ -5,7 +5,7 @@ const highlight = html => {
   const ochev = chev("&lt;");
   const cchev = chev("&gt;");
   const tag = x => `<span class="color:$blue40;">${x}</span>`;
-  return html
+  const highlighted = html
     .replace(
       /<([a-z][a-z0-9]*)([^>]*)>|<\/([a-z][a-z0-9]*)>/g,
       (_, open, attrs, close) =>
@@ -21,8 +21,19 @@ const highlight = html => {
                 }"</span>`
               ) +
             cchev 
-    )
-    .replace("|", `<span class="position:relative;"><span class="position:absolute; inset:0; width:0.125em; height:1em; background:white;"></span></span>`);
+    );
+  const lines = highlighted.split("\n");
+  let cursorLine = null;
+  for (let i = 0; i < lines.length; i++) {
+    if (~lines[i].indexOf("|")) {
+      lines[i] =
+          `<span class="width:100%; display:inline-block; background:$gray90;">${lines[i].replace(
+            "|",
+            `<span class="cursor position:relative;"><span class="position:absolute; inset:0; width:0.125em; height:1em; background:white;"></span></span>`,
+          )}</span>`;
+    }
+  }
+  return lines.join("\n");
 };
 
 const mapLines = (f, str) => str.split("\n").map(f).join("\n");
