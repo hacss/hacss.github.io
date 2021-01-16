@@ -30,7 +30,7 @@ const highlight = html => {
                 (_, name, value) => `<span class="color:$blue20;">${
                   name
                 }=</span><span class="color:$orange10;">"${
-                  value
+                  value.replace(/\n/g, `</span>\n<span class="color:$orange10;">`)
                 }"</span>`
               ) +
             cchev 
