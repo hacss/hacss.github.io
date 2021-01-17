@@ -1,4 +1,5 @@
 exports.plugins = [
+  "@hail2u/css-mqpacker",
   "autoprefixer",
   "postcss-axis",
   [
