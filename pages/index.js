@@ -90,7 +90,7 @@ export default function Home() {
         </div>
         <div className="flex:1; @lg{flex:1} margin:$len16;">
           <CodeEditor
-            className="height:100%; min-height:$len384; @sm{min-height:$len256}"
+            className="height:100%; min-height:$len256; @lg{min-height:$len512}"
             script={cutTheBS}
             onPublish={setCutTheBSPreview} />
         </div>

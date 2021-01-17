@@ -82,8 +82,13 @@ export const steps = [
   ...Array(8).fill({ type: "down" }),
   ...insertString("\n      text-align:center;"),
   ...insertString("\n      @lg{text-align:left}"),
+  ...Array(3).fill({ type: "up" }),
+  { type: "delete", publish: true },
+  { type: "insert", character: "}" },
+  ...Array(20).fill({ type: "left" }),
+  ...insertString("@lg{"),
+  ...Array(21).fill({ type: "right" }),
+  ...insertString("\n      margin-bottom:$len16;!"),
 ];
 
-/*
-padding:$len32;
-*/
+// @lg{margin-bottom:$len8}!

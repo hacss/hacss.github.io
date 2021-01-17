@@ -27,7 +27,7 @@ const scrollIfNeeded = (o, i) => {
       }
       else {
         o.scrollTop -= 1;
-        requestAnimationFrame(() => down(d - 1));
+        requestAnimationFrame(() => up(d - 1));
       }
     };
     up(above + 48);
