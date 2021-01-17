@@ -72,18 +72,25 @@ export default function Home() {
       <div className={`
         margin-y:$len32;
         display:flex;
-        @sm{flex-direction:column-reverse}
+        flex-direction:column-reverse;
+        @lg{flex-direction:row}
         padding:$len16;
         background:$gray10;
         border-radius:$md;
         box-shadow:$inner;
       `}>
-        <div className="flex:1; margin:$len16; display:flex; align-items:center;">
-          <div dangerouslySetInnerHTML={{ __html: cutTheBSPreview }} />
+        <div className={`
+          flex:1;
+          margin:$len16;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+        `}>
+          <div className="max-width:$len512;" dangerouslySetInnerHTML={{ __html: cutTheBSPreview }} />
         </div>
-        <div className="flex:1; margin:$len16;">
+        <div className="flex:1; @lg{flex:1} margin:$len16;">
           <CodeEditor
-            className="height:100%; min-height:$len512; @sm{min-height:$len256}"
+            className="height:100%; min-height:$len384; @sm{min-height:$len256}"
             script={cutTheBS}
             onPublish={setCutTheBSPreview} />
         </div>

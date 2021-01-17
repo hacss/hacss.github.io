@@ -79,6 +79,9 @@ export const steps = [
   ...insertString("\n      margin:0__auto;"),
   ...insertString("\n      @lg{border-radius:0}"),
   ...insertString("\n      border-radius:$sm;"),
+  ...Array(8).fill({ type: "down" }),
+  ...insertString("\n      text-align:center;"),
+  ...insertString("\n      @lg{text-align:left}"),
 ];
 
 /*

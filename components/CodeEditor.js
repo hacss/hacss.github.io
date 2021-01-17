@@ -1,15 +1,36 @@
 import { useEffect, useRef, useState } from "react";
 
 const scrollIfNeeded = (o, i) => {
-  const min = i.offsetTop - o.clientHeight + i.offsetHeight;
-  const max = i.offsetTop - i.offsetHeight;
+  const below = Math.max(0, i.offsetTop + i.offsetHeight - (o.clientHeight + o.scrollTop));
+  if (below) {
+    o._scrollTimer && clearTimeout(o._scrollTimer);
+    const down = d => {
+      if (d < 1) {
+        o.scrollTop += 1;
+        o._scrollTimer = null;
+      }
+      else {
+        o.scrollTop += 1;
+        requestAnimationFrame(() => down(d - 1));
+      }
+    };
+    down(below + 48);
+  }
 
-  if (o.scrollTop < min) {
-    o.scrollTop = min;
-  }  
-  
-  if (o.scrollTop > max) {
-    o.scrollTop = max;
+  const above = Math.max(0, o.scrollTop - i.offsetTop);
+  if (above) {
+    o._scrollTimer && clearTimeout(o._scrollTimer);
+    const up = d => {
+      if (d < 1) {
+        o.scrollTop -= 1;
+        o._scrollTimer = null;
+      }
+      else {
+        o.scrollTop -= 1;
+        requestAnimationFrame(() => down(d - 1));
+      }
+    };
+    up(above + 48);
   }
 }
 
@@ -165,6 +186,12 @@ export default function CodeEditor({ className, script, onPublish }) {
       onPublish(html.replace("|", ""));
     }
   }, [onPublish, script, step]);
+
+  useEffect(() => {
+    if (!~step && codeArea.current) {
+      codeArea.current.scrollTop = 0;
+    }
+  }, [step]);
 
   return (
     <div className={`${className || ""} display:flex; flex-direction:column;`}>
