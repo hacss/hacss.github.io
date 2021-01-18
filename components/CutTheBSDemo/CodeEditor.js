@@ -212,6 +212,14 @@ export default function CodeEditor({ className, script, onPublish }) {
         height:$len32;
         background:$gray90;
       `} />
+      <div className={`
+        position:absolute;
+        top:$len32;
+        right:0;
+        left:0;
+        height:$len8;
+        background:linear-gradient(#{$gray95},transparent);
+      `} />
       <button
         className={`
           position:absolute;
