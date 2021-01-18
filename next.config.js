@@ -14,9 +14,9 @@ module.exports = {
             {
               loader: "val-loader",
               options: {
-                sources:
-                  ["components", "demos", "pages", "utils"]
-                    .map(x => `./${x}/**/*.js`)
+                sources: ["components", "pages", "utils"].map(
+                  x => `./${x}/**/*.js`
+                ),
               },
             },
           ],

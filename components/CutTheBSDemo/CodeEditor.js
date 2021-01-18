@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import baseHighlight from "../utils/highlight";
+import baseHighlight from "../../utils/highlight";
 
 const speed = 4;
 

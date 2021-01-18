@@ -1,6 +1,5 @@
 import { useState } from "react";
-import CodeEditor from "../components/CodeEditor";
-import * as cutTheBS from "../demos/cutTheBS";
+import CutTheBSDemo from "../components/CutTheBSDemo";
 
 const Feature = ({ children, heading }) => (
   <div className="margin-y:$len24;">
@@ -24,7 +23,6 @@ const Feature = ({ children, heading }) => (
 );
 
 export default function Home() {
-  const [cutTheBSPreview, setCutTheBSPreview] = useState(cutTheBS.html);
   return (
     <div className={`
       padding:$len32;
@@ -90,31 +88,8 @@ export default function Home() {
           <path d="M14,4 l-5,5 v-4 h-9 v-2 h9 v-4" fill="currentColor" />
         </svg>
       </a>
-      <div className={`
-        margin-y:$len64;
-        display:flex;
-        flex-direction:column-reverse;
-        @lg{flex-direction:row}
-        padding:$len16;
-        background:$gray10;
-        border-radius:$md;
-        box-shadow:$inner;
-      `}>
-        <div className={`
-          flex:1;
-          margin:$len16;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-        `}>
-          <div className="max-width:$len512;" dangerouslySetInnerHTML={{ __html: cutTheBSPreview }} />
-        </div>
-        <div className="flex:1; @lg{flex:1} margin:$len16;">
-          <CodeEditor
-            className="height:100%; min-height:$len256; @lg{min-height:$len512}"
-            script={cutTheBS}
-            onPublish={setCutTheBSPreview} />
-        </div>
+      <div className="padding-y:$len64;">
+        <CutTheBSDemo />
       </div>
       <h2 className="margin:0; text-align:center; color:$gray95; font:$h2;">
         Inline styles are back
