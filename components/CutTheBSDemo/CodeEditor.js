@@ -188,7 +188,7 @@ export default function CodeEditor({ className, script, onPublish }) {
       border-bottom-width:0;
       border-style:solid;
       border-color:$gray60;
-      box-shadow:inset__0__#{$len16}__#{$len16}__#{$gray80};
+      overflow:hidden;
     `}>
       <div
         ref={codeArea}
@@ -197,17 +197,21 @@ export default function CodeEditor({ className, script, onPublish }) {
           inset:0;
           top:$len32;!
           overflow:auto;
-          border-color:$gray90;
-          border-style:solid;
-          border-width:0;
-          border-top-width:$len1;!
         `}>
-        <pre className="margin:0;">
+        <pre className="margin:0; margin-top:$len8;!">
           <code className="font:$code;" dangerouslySetInnerHTML={{
             __html: highlight(mapLines(x => `  ${x}  `, html)) + "\n&nbsp;"
           }} />
         </pre>
       </div>
+      <div className={`
+        position:absolute;
+        top:0;
+        right:0;
+        left:0;
+        height:$len32;
+        background:$gray90;
+      `} />
       <button
         className={`
           position:absolute;
