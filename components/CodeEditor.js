@@ -1,17 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 
+const speed = 4;
+
 const scrollIfNeeded = (o, i) => {
   const below = Math.max(0, i.offsetTop + i.offsetHeight - (o.clientHeight + o.scrollTop));
   if (below) {
     o._scrollTimer && clearTimeout(o._scrollTimer);
     const down = d => {
-      if (d < 1) {
-        o.scrollTop += 1;
+      if (d < speed) {
+        o.scrollTop += speed;
         o._scrollTimer = null;
       }
       else {
         o.scrollTop += 1;
-        requestAnimationFrame(() => down(d - 1));
+        requestAnimationFrame(() => down(d - speed));
       }
     };
     down(below + 48);
@@ -22,12 +24,12 @@ const scrollIfNeeded = (o, i) => {
     o._scrollTimer && clearTimeout(o._scrollTimer);
     const up = d => {
       if (d < 1) {
-        o.scrollTop -= 1;
+        o.scrollTop -= speed;
         o._scrollTimer = null;
       }
       else {
-        o.scrollTop -= 1;
-        requestAnimationFrame(() => up(d - 1));
+        o.scrollTop -= speed;
+        requestAnimationFrame(() => up(d - speed));
       }
     };
     up(above + 48);
@@ -163,7 +165,7 @@ export default function CodeEditor({ className, script, onPublish }) {
 
   useEffect(() => {
     if (script.steps.length && step < script.steps.length - 1) {
-      const t = setTimeout(() => setStep(step + 1), 200);
+      const t = setTimeout(() => setStep(step + 1), (200 / speed));
       return () => clearTimeout(t);
     }
   }, [script, setStep, step]);
