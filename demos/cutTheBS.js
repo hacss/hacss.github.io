@@ -24,7 +24,7 @@ export const html = `
       native CSS. It&apos;s no longer necessary to
       burn valuable development time learning a
       complicated system of utility classes only to
-      find out later that the system didn&apos;t
+      discover later that the system didn&apos;t
       anticipate all of your needs.
     </p>
   </div>
