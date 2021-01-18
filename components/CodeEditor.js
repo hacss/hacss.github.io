@@ -196,87 +196,84 @@ export default function CodeEditor({ className, script, onPublish }) {
   }, [step]);
 
   return (
-    <div className={`${className || ""} display:flex; flex-direction:column;`}>
-      <div className={`
-        background:linear-gradient(#{$gray80},#{$gray95});
-        padding-x:$len12;
-        padding-y:$len8;
-        border-top-radius:$md;
-        display:flex;
-        justify-content:flex-end;
-        border-top-width:$len2;
-        border-x-width:0;
-        border-bottom-width:0;
-        border-style:solid;
-        border-color:$gray60;
-      `}>
-        <button
-          className={`
-            appearance:none;
-            outline:0;
-            border:0;
-            margin:0;
-            padding:0;
-            width:$len20;
-            height:$len20;
-            border-radius:$full;
-            background:linear-gradient(#{$gray95},#{$gray30});
-            display:inline-flex;
-            align-items:center;
-            justify-content:center;
-            :focus{box-shadow:#{$outline-offset-gray70}}
-            :focus{background:linear-gradient(#{$gray80},#{$gray20})}
-          `}
-          onClick={() => { setStep(-1); }}>
-          <div className={`
-            border:0;
-            font-size:$len16;
-            width:1em;
-            height:1em;
-            box-shadow:inset__0__0.1em__0__0__#{$gray20},inset__0__-0.1em__0__0__#{$gray50};
-            background:linear-gradient(#{$gray60},#{$gray40});
-            color:$gray80;
-            border-radius:$full;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            position:relative;
-            ::after{content:''}
-            ::after{position:absolute}
-            ::after{inset:0}
-            ::after{border-radius:$full}
-            :hover{background:linear-gradient(#{$gray40},#{$gray20})}
-            :active>{box-shadow:inset__0__-0.1em__0__0__#{$gray20},inset__0__0.1em__0__0__#{$gray50}}
-          `}>
-            <svg className="width:0.75em; :active_{width:0.625em}" viewBox="0 0 16 16">
-              <circle cx="8" cy="9" r="6" fill="transparent" stroke="currentColor" strokeDasharray="20 7.69" />
-              <path fill="currentColor" d="M 4 3 l 4 -3 v 6" />
-            </svg>
-          </div>
-        </button>
+    <div className={`
+      ${className || ""}
+      position:relative;
+      background:$gray95;
+      color:$gray30;
+      border-radius:$md;
+      border-top-width:$len2;
+      border-x-width:0;
+      border-bottom-width:0;
+      border-style:solid;
+      border-color:$gray60;
+      box-shadow:inset__0__#{$len16}__#{$len16}__#{$gray80};
+    `}>
+      <div
+        ref={codeArea}
+        className={`
+          position:absolute;
+          inset:0;
+          top:$len32;!
+          overflow:auto;
+          border-color:$gray90;
+          border-style:solid;
+          border-width:0;
+          border-top-width:$len1;!
+        `}>
+        <pre className="margin:0;">
+          <code className="font:$code;" dangerouslySetInnerHTML={{
+            __html: highlight(mapLines(x => `  ${x}  `, html)) + "\n&nbsp;"
+          }} />
+        </pre>
       </div>
-      <div className={`
-        flex:1;
-        background:$gray95;
-        border-bottom-radius:$md;
-        color:$gray30;
-        padding:$len16;
-        position:relative;
-      `}>
-        <div
-          ref={codeArea}
-          className={`
-            position:absolute;
-            inset:0;
-            overflow:auto;
-          `}>
-          <pre className="margin:0;">
-            <code className="font:$code;" dangerouslySetInnerHTML={{
-              __html: highlight(mapLines(x => `  ${x}  `, html)) + "\n&nbsp;"
-            }} />
-          </pre>
+      <button
+        className={`
+          position:absolute;
+          right:$len8;
+          top:$len4;
+          appearance:none;
+          outline:0;
+          border:0;
+          margin:0;
+          padding:0;
+          width:$len20;
+          height:$len20;
+          border-radius:$full;
+          background:linear-gradient(#{$gray95},#{$gray30});
+          display:inline-flex;
+          align-items:center;
+          justify-content:center;
+          :focus{box-shadow:#{$outline-offset-gray70}}
+          :focus{background:linear-gradient(#{$gray80},#{$gray20})}
+        `}
+        onClick={() => { setStep(-1); }}>
+        <div className={`
+          border:0;
+          font-size:$len16;
+          width:1em;
+          height:1em;
+          box-shadow:inset__0__0.1em__0__0__#{$gray20},inset__0__-0.1em__0__0__#{$gray50};
+          background:linear-gradient(#{$gray60},#{$gray40});
+          color:$gray80;
+          border-radius:$full;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          position:relative;
+          ::after{content:''}
+          ::after{position:absolute}
+          ::after{inset:0}
+          ::after{border-radius:$full}
+          :hover{background:linear-gradient(#{$gray40},#{$gray20})}
+          :active>{box-shadow:inset__0__-0.1em__0__0__#{$gray20},inset__0__0.1em__0__0__#{$gray50}}
+        `}>
+          <svg className="width:0.75em; :active_{width:0.625em}" viewBox="0 0 16 16">
+            <circle cx="8" cy="9" r="6" fill="transparent" stroke="currentColor" strokeDasharray="20 7.69" />
+            <path fill="currentColor" d="M 4 3 l 4 -3 v 6" />
+          </svg>
         </div>
-      </div>
+      </button>
     </div>
   );
 }

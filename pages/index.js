@@ -117,7 +117,10 @@ export default function Home() {
         </div>
       </div>
       <h2 className="margin:0; text-align:center; color:$gray95; font:$h2;">
-        Inline styles are back <strong>with a ton of new tricks&hellip;</strong>
+        Inline styles are back
+        <br className="@sm{display:none} @lg{display:none}" />
+        <span className="@md{display:none}">{" "}</span>
+        <strong>with a ton of new tricks&hellip;</strong>
       </h2>
       <Feature heading="Static Variables" />
       <Feature heading="Media Queries" />
