@@ -2,6 +2,27 @@ import { useState } from "react";
 import CodeEditor from "../components/CodeEditor";
 import * as cutTheBS from "../demos/cutTheBS";
 
+const Feature = ({ children, heading }) => (
+  <div className="margin-y:$len24;">
+    <h3 className={`
+      margin-top:0;
+      margin-bottom:$len8;
+      font:$h4;
+      color:$green70;
+      display:flex;
+      align-items:center;
+    `}>
+      <svg className="margin-right:$len4;" height="24" viewBox="0 0 24 24" width="24">
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+          fill="currentColor" />
+      </svg>
+      {heading}
+    </h3>
+    {children}
+  </div>
+);
+
 export default function Home() {
   const [cutTheBSPreview, setCutTheBSPreview] = useState(cutTheBS.html);
   return (
@@ -70,7 +91,7 @@ export default function Home() {
         </svg>
       </a>
       <div className={`
-        margin-y:$len32;
+        margin-y:$len64;
         display:flex;
         flex-direction:column-reverse;
         @lg{flex-direction:row}
@@ -95,6 +116,15 @@ export default function Home() {
             onPublish={setCutTheBSPreview} />
         </div>
       </div>
+      <h2 className="margin:0; text-align:center; color:$gray95; font:$h2;">
+        Inline styles are back <strong>with a ton of new tricks&hellip;</strong>
+      </h2>
+      <Feature heading="Static Variables" />
+      <Feature heading="Media Queries" />
+      <Feature heading="Context" />
+      <Feature heading="Pseudo-classes" />
+      <Feature heading="Pseudo-elements" />
+      <Feature heading="Post-processing" />
     </div>
   );
 }
