@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import baseHighlight from "../utils/highlight";
 
 const speed = 4;
 
@@ -37,27 +38,7 @@ const scrollIfNeeded = (o, i) => {
 }
 
 const highlight = html => {
-  const chev = x => `<span class="color:$blue40;">${x}</span>`;
-  const ochev = chev("&lt;");
-  const cchev = chev("&gt;");
-  const tag = x => `<span class="color:$blue40;">${x}</span>`;
-  const highlighted = html
-    .replace(
-      /<([a-z][a-z0-9]*)([^>]*)>|<\/([a-z][a-z0-9]*)>/g,
-      (_, open, attrs, close) =>
-        close
-          ? ochev + tag("/" + close) + cchev
-          : ochev + tag(open) +
-              attrs.replace(
-                /([a-z][a-z]*)="([^"]*)"/gm,
-                (_, name, value) => `<span class="color:$blue20;">${
-                  name
-                }=</span><span class="color:$orange10;">"${
-                  value.replace(/\n/g, `</span>\n<span class="color:$orange10;">`)
-                }"</span>`
-              ) +
-            cchev 
-    );
+  const highlighted = baseHighlight(html, { cursor: true });
   const lines = highlighted.split("\n");
   let cursorLine = null;
   for (let i = 0; i < lines.length; i++) {
