@@ -37,9 +37,12 @@ function FontSizeDemo() {
   return (
     <div className={`
       display:flex;
+      flex-direction:column;
+      @lg{flex-direction:row}
       border-radius:$md;
       overflow:hidden;
-      height:$len96;
+      height:$len192;
+      @lg{height:$len96}
     `}>
       <pre className={`
         margin:0;
@@ -70,14 +73,15 @@ function FontSizeDemo() {
       </pre>
       <div
         className={`
-          box-shadow:$inner;
+          @lg{box-shadow:$inner}
           background:$gray10;
           color:$gray70;
-          padding:$len16;
           flex:1;
           display:flex;
           align-items:center;
           justify-content:center;
+          white-space:nowrap;
+          overflow:hidden;
         `}
         dangerouslySetInnerHTML={{ __html: initHTML.replace(initial, current) }} />
     </div>
