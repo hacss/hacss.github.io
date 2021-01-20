@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import highlight from "../../utils/highlight";
-import examples from "./examples";
+import highlight from "../utils/highlight";
 
 export default function StaticVariablesDemo() {
   return (
