@@ -1,5 +1,7 @@
 import { useState } from "react";
 import CutTheBSDemo from "../components/CutTheBSDemo";
+import StaticVariablesDemo from "../components/StaticVariablesDemo";
+import highlight from "../utils/highlight";
 
 const Feature = ({ children, heading }) => (
   <div className="margin-y:$len24;">
@@ -97,7 +99,9 @@ export default function Home() {
         <span className="@md{display:none}">{" "}</span>
         <strong>with a ton of new tricks&hellip;</strong>
       </h2>
-      <Feature heading="Static Variables" />
+      <Feature heading="Static Variables">
+        <StaticVariablesDemo />
+      </Feature>
       <Feature heading="Media Queries" />
       <Feature heading="Context" />
       <Feature heading="Pseudo-classes" />

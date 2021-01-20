@@ -50,7 +50,7 @@ const highlight = html => {
           )}</span>`;
     }
   }
-  return lines.join("\n");
+  return `<span class="font-size:0.1rem">${lines.join("\n")}<spam>`;
 };
 
 const mapLines = (f, str) => str.split("\n").map(f).join("\n");
@@ -198,7 +198,7 @@ export default function CodeEditor({ className, script, onPublish }) {
           top:$len32;!
           overflow:auto;
         `}>
-        <pre className="margin:0; margin-top:$len8;!">
+        <pre className="margin:0; margin-top:$len8;! font:inherit;">
           <code className="font:$code;" dangerouslySetInnerHTML={{
             __html: highlight(mapLines(x => `  ${x}  `, html)) + "\n&nbsp;"
           }} />
