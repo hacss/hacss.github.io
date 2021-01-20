@@ -12,10 +12,10 @@ function FontSizeDemo() {
 
   const initial = "$h1";
   const initHTML =
-    `<span class="font:${initial}; line-height:1;!">Inline Superpowers</span>`;
+    `<span class="font:${initial}; line-height:1;!">\n  Inline Superpowers\n</span>`;
 
   const [current, previous] =
-    useSteps(Array.from(Array(6).keys()).map(x => `$h${6-x}`), 4000);
+    useSteps(Array.from(Array(6).keys()).map(x => `$h${6-x}`), 2000);
 
   const [codeArea, setCodeArea] = useState(null);
   useEffect(() => {
@@ -91,6 +91,6 @@ function useSteps(steps, t = 500) {
       setStep(step >= steps.length - 1 ? 0 : step + 1);
     }, t);
     return () => clearTimeout(timeout);
-  }, [length, t, step, setStep]);
+  }, [steps, t, step, setStep]);
   return [steps[step], steps[step ? step - 1 : steps.length - 1]];
 }
