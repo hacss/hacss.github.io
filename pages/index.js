@@ -2,6 +2,7 @@ import { useState } from "react";
 import ContextDemo from "../components/ContextDemo";
 import CutTheBSDemo from "../components/CutTheBSDemo";
 import MediaQueriesDemo from "../components/MediaQueriesDemo";
+import PseudoClassesDemo from "../components/PseudoClassesDemo";
 import StaticVariablesDemo from "../components/StaticVariablesDemo";
 import highlight from "../utils/highlight";
 
@@ -110,7 +111,9 @@ export default function Home() {
       <Feature heading="Context">
         <ContextDemo />
       </Feature>
-      <Feature heading="Pseudo-classes" />
+      <Feature heading="Pseudo-classes">
+        <PseudoClassesDemo />
+      </Feature>
       <Feature heading="Pseudo-elements" />
       <Feature heading="Post-processing" />
     </div>
