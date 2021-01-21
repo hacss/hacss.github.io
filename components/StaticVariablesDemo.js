@@ -45,7 +45,7 @@ export default function StaticVariablesDemo() {
         )
       }}
       leftRef={setCodeArea}
-      right={{ __html: initHTML.replace(initial, current) }} />
+      right={{ __html: `<div class="display:flex; align-items:center; height:$len96; @lg{height:auto}">${initHTML.replace(initial, current)}</div>` }} />
   );
 }
 
