@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ContextDemo from "../components/ContextDemo";
 import CutTheBSDemo from "../components/CutTheBSDemo";
+import MediaQueriesDemo from "../components/MediaQueriesDemo";
 import StaticVariablesDemo from "../components/StaticVariablesDemo";
 import highlight from "../utils/highlight";
 
@@ -103,7 +104,9 @@ export default function Home() {
       <Feature heading="Static Variables">
         <StaticVariablesDemo />
       </Feature>
-      <Feature heading="Media Queries" />
+      <Feature heading="Media Queries">
+        <MediaQueriesDemo />
+      </Feature>
       <Feature heading="Context">
         <ContextDemo />
       </Feature>

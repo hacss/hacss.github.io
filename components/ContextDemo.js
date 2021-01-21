@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import HomePageDemo from "./HomePageDemo";
 import highlight from "../utils/highlight";
 
