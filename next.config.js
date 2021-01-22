@@ -1,3 +1,5 @@
+const { variables: { len16 } } = require("./hacss.config.js");
+
 module.exports = {
   webpack: (config, options) => ({
     ...config,
@@ -11,6 +13,13 @@ module.exports = {
             "style-loader",
             { loader: "css-loader", options: { url: false } },
             "postcss-loader",
+            {
+              loader: "string-replace-loader",
+              options: {
+                search: /^./,
+                replace: x => `@lost gutter ${len16};${x}`,
+              },
+            },
             {
               loader: "val-loader",
               options: {

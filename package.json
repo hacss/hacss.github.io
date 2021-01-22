@@ -15,6 +15,7 @@
     "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker#v8.0.1",
     "autoprefixer": "^10.1.0",
     "css-loader": "^5.0.1",
+    "lost": "^8.3.1",
     "next": "10.0.4",
     "postcss": "^8.2.2",
     "postcss-axis": "^0.1.2",
@@ -24,6 +25,7 @@
     "postcss-short-border-radius": "^3.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "string-replace-loader": "^3.0.1",
     "style-loader": "^2.0.0",
     "val-loader": "^2.1.2"
   },

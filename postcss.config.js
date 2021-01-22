@@ -1,6 +1,7 @@
 exports.plugins = [
   "@hail2u/css-mqpacker",
   "autoprefixer",
+  "lost",
   "postcss-axis",
   [
     "postcss-font-magician",

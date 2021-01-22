@@ -2,16 +2,17 @@ import { useState } from "react";
 import ContextDemo from "../components/ContextDemo";
 import CutTheBSDemo from "../components/CutTheBSDemo";
 import MediaQueriesDemo from "../components/MediaQueriesDemo";
+import PostProcessingDemo from "../components/PostProcessingDemo";
 import PseudoClassesDemo from "../components/PseudoClassesDemo";
 import PseudoElementsDemo from "../components/PseudoElementsDemo";
 import StaticVariablesDemo from "../components/StaticVariablesDemo";
 import highlight from "../utils/highlight";
 
 const Feature = ({ children, heading }) => (
-  <div className="margin-y:$len24;">
+  <div className="margin-y:$len48;">
     <h3 className={`
       margin-top:0;
-      margin-bottom:$len8;
+      margin-bottom:$len16;
       font:$h4;
       color:$green70;
       display:flex;
@@ -118,7 +119,9 @@ export default function Home() {
       <Feature heading="Pseudo-elements">
         <PseudoElementsDemo />
       </Feature>
-      <Feature heading="Post-processing" />
+      <Feature heading="Post-processing">
+        <PostProcessingDemo />
+      </Feature>
     </div>
   );
 }
