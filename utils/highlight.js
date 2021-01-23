@@ -12,14 +12,17 @@ const highlight = (html, opts = {}) => {
           : ochev + tag(open) +
               attrs.replace(
                 new RegExp(
-                  `([a-z]([a-z\-${opts.cursor ? "|": ""}]+)?)="([^"]*)"`,
+                  `([a-z]([a-z\-${opts.cursor ? "|": ""}]+)?)(="([^"]*)")?`,
                   "gm",
                 ),
-                (_, name, __, value) => `<span class="color:$blue20;">${
-                  name
-                }=</span><span class="color:$orange10;">"${
-                  value.replace(/\n/g, `</span>\n<span class="color:$orange10;">`)
-                }"</span>`
+                (_, name, __, ___, value) => {
+                  const v = value
+                    ? `=</span><span class="color:$orange10;">"${
+                      value ? value.replace(/\n/g, `</span>\n<span class="color:$orange10;">`) : ""
+                      }"`
+                    : "";
+                  return `<span class="color:$blue20;">${name}${v}</span>`;
+                }
               ) +
             cchev 
     );
