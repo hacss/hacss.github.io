@@ -8,7 +8,7 @@ export default function StaticVariablesDemo() {
   useEffect(() => {
     if (container.current) {
       container.current.classList.remove("triggered");
-      const t = setTimeout(() => container.current.classList.add("triggered"), 2500);
+      const t = setTimeout(() => container.current.classList.add("triggered"), 1000);
       return () => { clearTimeout(t); };
     }
   }, [container, current]);
@@ -17,14 +17,14 @@ export default function StaticVariablesDemo() {
       <div className="height:$len256; @lg{height:$len128} overflow:hidden;" ref={container}>
         <div className={`
           .triggered>{opacity:0}
-          .triggered>{transition:opacity__2.5s}
+          .triggered>{transition:opacity__1s}
         `}>
           {previous}
         </div>
         <div className={`
           transform:translateY(0%);
           .triggered>{transform:translateY(-100%)}
-          .triggered>{transition:transform__2.5s}
+          .triggered>{transition:transform__1s}
         `}>
           {current}
         </div>
