@@ -1,11 +1,37 @@
-export default function HomePageDemo({ left, leftRef, right }) {
+export default function HomePageDemo(props) {
+  return (
+    <HomePageDemoOuter>
+      <HomePageDemoInner {...props} />
+    </HomePageDemoOuter>
+  );
+}
+
+export function HomePageDemoOuter({ children }) {
+  return (
+    <div className={`
+      position:relative;
+      border-radius:$md;
+      overflow:hidden;
+      ::after{content:''}
+      ::after{position:absolute}
+      ::after{top:0}
+      ::after{right:0}
+      ::after{left:0}
+      ::after{height:$len16}
+      ::after{border-radius:$full}
+      ::after{box-shadow:$inner}
+    `}>
+      {children}
+    </div>
+  );
+}
+
+export function HomePageDemoInner({ left, leftRef, right }) {
   return (
     <div className={`
       width:100%;
       height:$len256;
       @lg{height:$len128}
-      border-radius:$md;
-      overflow:hidden;
       position:relative;
     `}>
       <pre className={`
@@ -18,7 +44,6 @@ export default function HomePageDemo({ left, leftRef, right }) {
         @lg{right:50%}
         margin:0;
         font:inherit;
-        box-shadow:$inner;
         background:$gray90;
         padding:$len16;
         overflow:auto;
@@ -38,7 +63,6 @@ export default function HomePageDemo({ left, leftRef, right }) {
           left:0;
           height:$len128;
           @lg{left:50%}
-          @lg{box-shadow:$inner}
           background:$gray10;
           color:$gray70;
           font:$body1;
