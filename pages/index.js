@@ -8,11 +8,11 @@ import PseudoElementsDemo from "../components/PseudoElementsDemo";
 import StaticVariablesDemo from "../components/StaticVariablesDemo";
 import highlight from "../utils/highlight";
 
-const Feature = ({ children, heading }) => (
+const Feature = ({ children, heading, synopsis }) => (
   <div className="margin-y:$len48;">
     <h3 className={`
       margin-top:0;
-      margin-bottom:$len16;
+      margin-bottom:$len8;
       font:$h4;
       color:$green70;
       display:flex;
@@ -25,6 +25,11 @@ const Feature = ({ children, heading }) => (
       </svg>
       {heading}
     </h3>
+    {synopsis && (
+      <p className="margin-top:0; margin-bottom:$len16; font:$body1; color:$gray95;">
+        {synopsis}
+      </p>
+    )}
     {children}
   </div>
 );
@@ -104,22 +109,97 @@ export default function Home() {
         <span className="@md{display:none}">{" "}</span>
         <strong>with a ton of new tricks&hellip;</strong>
       </h2>
-      <Feature heading="Static Variables">
+      <Feature
+        heading="Static Variables"
+        synopsis={
+          <>
+            Easily propagate design tokens such as color palette, spacing
+            presets, and typography through "static variables". References to
+            these named constants are resolved at build time, offering wider
+            browser compatibility than CSS variables. (CSS variables still work
+            too!)
+          </>
+        }>
         <StaticVariablesDemo />
       </Feature>
-      <Feature heading="Media Queries">
+      <Feature
+        heading="Media Queries"
+        synopsis={
+          <>
+            Create responsive style rules without the context switch of an
+            external style sheet. Define media queries in your Hacss
+            configuration and reference them by a simple alias.
+          </>
+        }>
         <MediaQueriesDemo />
       </Feature>
-      <Feature heading="Context">
+      <Feature
+        heading="Context"
+        synopsis={
+          <>
+            Apply a style conditionally based on the existence and/or state of
+            an ancestor, parent, adjacent sibling, or general sibling.
+          </>
+        }>
         <ContextDemo />
       </Feature>
-      <Feature heading="Pseudo-classes">
+      <Feature
+        heading="Pseudo-classes"
+        synopsis={
+          <>
+            Conditionally apply a style rule using virtually any combination of
+            pseudo-classes available in native CSS. While atomic CSS frameworks
+            often provide basic states like hover, focus, active, and disabled,
+            Hacss is the only comparable option that provides access to{" "}
+            <span className="font-family:$mono;">:nth-child</span>{" and "}
+            <span className="font-family:$mono;">:not</span> selectors, among
+            many others.
+          </>
+        }>
         <PseudoClassesDemo />
       </Feature>
-      <Feature heading="Pseudo-elements">
+      <Feature
+        heading="Pseudo-elements"
+        synopsis={
+          <>
+            Use pseudo-elements to target specific parts of an element or to
+            create presentational elements that exist outside of the DOM tree.
+          </>
+        }>
         <PseudoElementsDemo />
       </Feature>
-      <Feature heading="Post-processing">
+      <Feature
+        heading="Post-processing"
+        synopsis={
+          <>
+            Transform the static style sheet produced by Hacss with{" "}
+            <a
+              href="https://postcss.org/"
+              target="_blank"
+              className={`
+                color:$blue70;
+                :hover{color:$blue50}
+                :focus{color:$red70}
+                :active{color:$red50}
+              `}>
+              PostCSS
+            </a>, whose
+            various{" "}
+            <a
+              href="https://postcss.parts/"
+              target="_blank"
+              className={`
+                color:$blue70;
+                :hover{color:$blue50}
+                :focus{color:$red70}
+                :active{color:$red50}
+              `}>
+              plugins
+            </a>{" "}
+            offer new CSS features, performance optimizations, compatibility
+            fixes, and much more.
+          </>
+        }>
         <PostProcessingDemo />
       </Feature>
     </div>
