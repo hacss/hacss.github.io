@@ -1,19 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import baseHighlight from "../../utils/highlight";
 
-const speed = 4;
+const speed = 2;
 
 const scrollIfNeeded = (o, i) => {
   const below = Math.max(0, i.offsetTop + i.offsetHeight - (o.clientHeight + o.scrollTop));
   if (below) {
-    o._scrollTimer && clearTimeout(o._scrollTimer);
     const down = d => {
       if (d < speed) {
-        o.scrollTop += speed;
-        o._scrollTimer = null;
+        o.scrollTop += d;
       }
       else {
-        o.scrollTop += 1;
+        o.scrollTop += speed;
         requestAnimationFrame(() => down(d - speed));
       }
     };
@@ -22,14 +20,12 @@ const scrollIfNeeded = (o, i) => {
 
   const above = Math.max(0, o.scrollTop - i.offsetTop);
   if (above) {
-    o._scrollTimer && clearTimeout(o._scrollTimer);
     const up = d => {
-      if (d < 1) {
-        o.scrollTop -= speed;
-        o._scrollTimer = null;
+      if (d < speed) {
+        o.scrollTop -= Math.min(o.scrollTop, d);
       }
       else {
-        o.scrollTop -= speed;
+        o.scrollTop -= Math.min(o.scrollTop, speed);
         requestAnimationFrame(() => up(d - speed));
       }
     };
@@ -197,6 +193,7 @@ export default function CodeEditor({ className, script, onPublish }) {
           inset:0;
           top:$len32;!
           overflow:auto;
+          overscroll-behavior:none;
         `}>
         <pre className="margin:0; margin-top:$len8;! font:inherit;">
           <code className="font:$code;" dangerouslySetInnerHTML={{
