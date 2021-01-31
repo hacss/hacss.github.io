@@ -1,6 +1,7 @@
 import "@hacss/build";
 
 import { useEffect } from "react";
+import { MenuState } from "../state/Menu";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -11,7 +12,9 @@ export default function App({ Component, pageProps }) {
 
   return (
     <div className="position:absolute; inset:0;">
-      <Component {...pageProps} />
+      <MenuState>
+        <Component {...pageProps} />
+      </MenuState>
     </div>
   );
 }
