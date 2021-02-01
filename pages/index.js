@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 import ContextDemo from "../components/ContextDemo";
 import CutTheBSDemo from "../components/CutTheBSDemo";
 import MediaQueriesDemo from "../components/MediaQueriesDemo";
@@ -74,9 +75,8 @@ export default function Home() {
         </code>.
         Hacss generates a style sheet for you at build time.
       </p>
-      <a
-        href="#"
-        className={`
+      <Link href="/docs">
+        <a className={`
           border:none;
           appearance:none;
           outline:none;
@@ -95,11 +95,12 @@ export default function Home() {
           :focus{box-shadow:#{$outline-offset-gray05},#{$outline-ring-gray90}}
           :focus:hover{box-shadow:#{$outline-offset-gray05},#{$outline-ring-gray80}}
         `}>
-        <span className="font-size:1.25em;">Get started</span>
-        <svg viewBox="0 0 14 9" className="width:1.25em; margin-left:0.625em;">
-          <path d="M14,4 l-5,5 v-4 h-9 v-2 h9 v-4" fill="currentColor" />
-        </svg>
-      </a>
+          <span className="font-size:1.25em;">Get started</span>
+          <svg viewBox="0 0 14 9" className="width:1.25em; margin-left:0.625em;">
+            <path d="M14,4 l-5,5 v-4 h-9 v-2 h9 v-4" fill="currentColor" />
+          </svg>
+        </a>
+      </Link>
       <div className="padding-y:$len64;">
         <CutTheBSDemo />
       </div>
