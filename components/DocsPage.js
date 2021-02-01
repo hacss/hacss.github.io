@@ -26,6 +26,7 @@ export default function DocsPage({ children }) {
         `}>
           <Link href="/">
             <a className={`
+              link
               appearance:none;
               outline:none;
               border:none;
@@ -44,12 +45,12 @@ export default function DocsPage({ children }) {
               `}>
                 <defs>
                   <linearGradient id="logoB" x1="0" x2="0" y1="0" y2="100%">
-                    <stop offset="62.5%" className="stop-color:$gray10;"></stop>
-                    <stop offset="62.5%" className="stop-color:$gray30;"></stop>
+                    <stop offset="62.5%" className="stop-color:$gray10; .link:hover_{stop-color:$blue10} .link:active_{stop-color:$red10} transition-property:stop-color; transition-duration:250ms;"></stop>
+                    <stop offset="62.5%" className="stop-color:$gray30; .link:hover_{stop-color:$blue30} .link:active_{stop-color:$red30} transition-property:stop-color; transition-duration:250ms;"></stop>
                   </linearGradient>
                   <linearGradient id="logoA" x1="0" x2="0" y1="0" y2="100%">
-                    <stop offset="50%" className="stop-color:$gray10;"></stop>
-                    <stop offset="50%" className="stop-color:$gray30;"></stop>
+                    <stop offset="50%" className="stop-color:$gray10; .link:hover_{stop-color:$blue10} .link:active_{stop-color:$red10} transition-property:stop-color; transition-duration:250ms;"></stop>
+                    <stop offset="50%" className="stop-color:$gray30; .link:hover_{stop-color:$blue30} .link:active_{stop-color:$red30} transition-property:stop-color; transition-duration:250ms;"></stop>
                   </linearGradient>
                 </defs>
                 <path
@@ -110,8 +111,8 @@ export default function DocsPage({ children }) {
                       padding-y:$len4;
                       text-decoration:none;
                       color:$gray20;
-                      :hover{color:$blue10}
-                      :active{color:$red10}!
+                      :hover{color:$blue20}
+                      :active{color:$red20}!
                     `}>
                       {label}
                     </a>
