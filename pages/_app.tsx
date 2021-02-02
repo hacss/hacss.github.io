@@ -1,9 +1,12 @@
-import "@hacss/build";
+require( "@hacss/build");
 
-import { useEffect } from "react";
+import { AppProps } from "next/app";
+import { useRouter } from "next/router";
+import { FC, useEffect } from "react";
+import DocsPage from "../components/DocsPage";
 import { MenuState } from "../state/Menu";
 
-export default function App({ Component, pageProps }) {
+const App: FC<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {
     const bg = "background:white;";
     document.body.classList.add(bg);
@@ -13,8 +16,14 @@ export default function App({ Component, pageProps }) {
   return (
     <div className="position:absolute; inset:0;">
       <MenuState>
-        <Component {...pageProps} />
+        {
+          useRouter().pathname.startsWith("/docs")
+          ? (<DocsPage><Component {...pageProps} /></DocsPage>)
+          : (<Component {...pageProps} />)
+        }
       </MenuState>
     </div>
   );
 }
+
+export default App;

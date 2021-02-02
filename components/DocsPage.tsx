@@ -3,6 +3,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useMenuState } from "../state/Menu";
 
+const pages = [
+  ["/fundamentals", "Fundamentals"],
+  ["/installation", "Installation"],
+  ["/cli", "Command-line interface"],
+  ["/webpack", "Webpack"]
+];
+
 export default function DocsPage({ children }) {
   const [open, setOpen] = useMenuState();
   const { pathname } = useRouter();
@@ -82,11 +89,7 @@ export default function DocsPage({ children }) {
           text-align:left;
         `}>
           {
-            [
-              ["/installation", "Installation"],
-              ["/cli", "Command-line interface"],
-              ["/webpack", "Webpack"]
-            ]
+            pages
               .map(([href, label]) => [`/docs${href}`, label])
               .map(([ href, label ]) => {
                 if (href === pathname) {

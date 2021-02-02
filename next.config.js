@@ -1,7 +1,7 @@
 const { variables: { len16 } } = require("./hacss.config.js");
 
-module.exports = {
-  pageExtensions: ["js", "jsx", "tsx"],
+module.exports = require("@next/mdx")({ extension: /\.mdx$/ })({
+  pageExtensions: ["js", "jsx", "mdx", "tsx"],
   webpack: config => ({
     ...config,
     module: {
@@ -34,4 +34,4 @@ module.exports = {
       ],
     },
   }),
-};
+});
