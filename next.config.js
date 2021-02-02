@@ -1,7 +1,8 @@
 const { variables: { len16 } } = require("./hacss.config.js");
 
 module.exports = {
-  webpack: (config, options) => ({
+  pageExtensions: ["js", "jsx", "tsx"],
+  webpack: config => ({
     ...config,
     module: {
       ...config.module,
@@ -23,8 +24,8 @@ module.exports = {
             {
               loader: "val-loader",
               options: {
-                sources: ["components", "pages", "utils"].map(
-                  x => `./${x}/**/*.js`
+                sources: ["components", "pages"].map(
+                  x => `./${x}/**/*.tsx`
                 ),
               },
             },
