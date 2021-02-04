@@ -4,7 +4,6 @@ import { FC, useEffect, useState } from "react";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import DocsApp from "./docs/_app";
-import { MenuState, useMenuState } from "../state/Menu";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -18,21 +17,19 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <div className="position:absolute; inset:0;">
-      <MenuState>
-        {
-          pathname.startsWith("/docs")
-          ? (
-              <DocsApp
-                pathname={pathname.substring(5)}
-                sidebarState={sidebarState}
-                onSidebarOpen={openSidebar}
-                onSidebarClose={closeSidebar}>
-                <Component {...pageProps} />
-              </DocsApp>
-            )
-          : (<Component {...pageProps} />)
-        }
-      </MenuState>
+      {
+        pathname.startsWith("/docs")
+        ? (
+            <DocsApp
+              pathname={pathname.substring(5)}
+              sidebarState={sidebarState}
+              onSidebarOpen={openSidebar}
+              onSidebarClose={closeSidebar}>
+              <Component {...pageProps} />
+            </DocsApp>
+          )
+        : (<Component {...pageProps} />)
+      }
     </div>
   );
 }
