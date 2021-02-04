@@ -1,7 +1,5 @@
-import { useState } from "react";
+import { FC } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useMenuState } from "../state/Menu";
 
 const pages = [
   ["/fundamentals", "Fundamentals"],
@@ -10,14 +8,19 @@ const pages = [
   ["/webpack", "Webpack"]
 ];
 
-export default function DocsPage({ children }) {
-  const [open, setOpen] = useMenuState();
-  const { pathname } = useRouter();
+const DocsApp
+: FC<{
+    pathname: string;
+    sidebarState: "open" | "closed";
+    onSidebarOpen: () => any;
+    onSidebarClose: () => any;
+  }>
+= ({ pathname, sidebarState, onSidebarOpen, onSidebarClose, children }) => {
   return (
     <div className="display:flex; height:100%;">
       <header className={`
         sidebar
-        ${open ? "open" : ""}
+        ${sidebarState}
         background:$gray90;
         transition-property:background;
         transition-duration:250ms;
@@ -90,7 +93,7 @@ export default function DocsPage({ children }) {
         `}>
           {
             pages
-              .map(([href, label]) => [`/docs${href}`, label])
+              .map(([href, label]) => [`.${href}`, label])
               .map(([ href, label ]) => {
                 if (href === pathname) {
                   return (
@@ -125,7 +128,7 @@ export default function DocsPage({ children }) {
           }
         </nav>
         <button
-          onClick={() => { setOpen(!open); }}
+          onClick={() => { sidebarState === "closed" ? onSidebarOpen() : onSidebarClose(); }}
           className={`
             appearance:none;
             outline:none;
@@ -149,7 +152,7 @@ export default function DocsPage({ children }) {
           `}>
           <svg viewBox="0 0 24 24" className="width:$len24;">
             <path d={
-              open
+              sidebarState === "open"
               ? "M3 18h13v-2H3v2zm0-5h10v-2H3v2zm0-7v2h13V6H3zm18 9.59L17.42 12 21 8.41 19.59 7l-5 5 5 5L21 15.59z"
               : "M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
             } className="fill:currentColor;" />
@@ -165,3 +168,5 @@ export default function DocsPage({ children }) {
     </div>
   );
 }
+
+export default DocsApp;
