@@ -67,7 +67,7 @@ const useSidebarState = (): ["open" | "closed", () => void, () => void] => {
 type UnionToIntersection<U> = 
   (U extends any ? (k: U)=>void : never) extends ((k: infer I)=>void) ? I : never;
 
-type MarkdownComponents<K = ComponentType> = UnionToIntersection<K extends ComponentType ? Record<K, FC<any>> : {}>;
+type MarkdownComponents<K = ComponentType> = UnionToIntersection<K extends ComponentType ? Record<K, FC<React.HTMLAttributes<HTMLElement>>> : {}>;
 
 const markdownComponents: Partial<MarkdownComponents> = {
   h1: ({ children }) => (
