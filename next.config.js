@@ -24,8 +24,8 @@ module.exports = require("@next/mdx")({ extension: /\.mdx$/ })({
             {
               loader: "val-loader",
               options: {
-                sources: ["components", "pages"].map(
-                  x => `./${x}/**/*.tsx`
+                sources: ["components", "pages", "utils"].map(
+                  x => `./${x}/**/*.(ts|tsx)`
                 ),
               },
             },

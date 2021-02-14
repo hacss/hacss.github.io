@@ -93,7 +93,7 @@ const DocsApp
         `}>
           {
             pages
-              .map(([href, label]) => [`.${href}`, label])
+              .map(([href, label]) => [`/docs${href}`, label])
               .map(([ href, label ]) => {
                 if (href === pathname) {
                   return (

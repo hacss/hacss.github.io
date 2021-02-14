@@ -70,14 +70,26 @@ type UnionToIntersection<U> =
 type MarkdownComponents<K = ComponentType> = UnionToIntersection<K extends ComponentType ? Record<K, FC<React.HTMLAttributes<HTMLElement>>> : {}>;
 
 const markdownComponents: Partial<MarkdownComponents> = {
-  h1: ({ children }) => (
-    <h1 className="font:$h1; margin-y:$len8;">{children}</h1>
+  h1: ({ children, className, ...props }) => (
+    <h1
+      {...props}
+      className={`${className || ""} font:$h1; margin-y:$len8;`}>
+      {children}
+    </h1>
   ),
-  h2: ({ children }) => (
-    <h2 className="font:$h2; margin-y:$len8;">{children}</h2>
+  h2: ({ children, className, ...props }) => (
+    <h2
+      {...props}
+      className={`${className || ""} font:$h2; margin-y:$len8;`}>
+      {children}
+    </h2>
   ),
-  h3: ({ children }) => (
-    <h3 className="font:$h3; margin-y:$len8;">{children}</h3>
+  h3: ({ children, className, ...props }) => (
+    <h3
+      {...props}
+      className={`${className || ""} font:$h3; margin-y:$len8;`}>
+      {children}
+    </h3>
   ),
   a: ({ children, className, ...props }) => (
     <a
@@ -90,5 +102,12 @@ const markdownComponents: Partial<MarkdownComponents> = {
       {...props}>
       {children}
     </a>
-  )
+  ),
+  inlineCode: ({ children, className, ...props }) => (
+    <code
+      {...props}
+      className={`${className || ""} font:$code; transform:translateY(-20px);`}>
+      {children}
+    </code>
+  ),
 };

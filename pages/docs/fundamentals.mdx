@@ -1,13 +1,29 @@
-# Fundamentals
-## What you need to know about Hacss
+import Article from "../../components/Article";
 
-----------
+<Article
+  title="Fundamentals"
+  subtitle="What you need to know about Hacss">
 
-### CSS in HTML
-Every professional web developer is familiar with inline styles. Most prefer to
-limit their use to trivial prototyping exercises only, subscribing to the notion
-that markup and presentation styles address separate concerns and should not be
-mixed in a production codebase. On the other hand, many find that, in practice,
-these often change together, making colocation a more efficient strategy aside
-from the
-[functional limitations of inline styles](https://stackoverflow.com/questions/131653/inline-style-to-act-as-hover-in-css).
+## CSS-in-HTML
+All professional web developers are familiar with inline styles. Most developers
+restrict their use to trivial prototyping exercises due to
+[functional limitations](https://stackoverflow.com/questions/131653/inline-style-to-act-as-hover-in-css)
+or belief in a separation of concerns between markup and presentation styles. On
+the other hand, newer architectures such as 
+[atomic CSS](https://css-tricks.com/lets-define-exactly-atomic-css/) and
+[CSS-in-JS](https://medium.com/dailyjs/what-is-actually-css-in-js-f2f529a2757)
+demonstrate that some developers prefer _colocation_ of markup and related style
+rules.
+
+Like these approaches, Hacss facilitates the colocation of markup and styles. It
+combines the strongest features of atomic CSS and CSS-in-JS while minimizing the
+downsides of each approach.
+
+Hacss works by embedding CSS syntax in class names. While these class names are
+meaningless to the browser, Hacss analyzes them at build time and generates a
+style sheet that contains the corresponding actual CSS.
+
+For example, the class name `color:red;` results in the style sheet
+`.color\:red\;{color:red;}`.
+
+</Article>
