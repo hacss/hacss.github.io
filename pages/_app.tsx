@@ -23,7 +23,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
           pathname.startsWith("/docs")
           ? (
               <DocsApp
-                pathname={pathname.substring(5)}
+                pathname={pathname}
                 sidebarState={sidebarState}
                 onSidebarOpen={openSidebar}
                 onSidebarClose={closeSidebar}>
@@ -90,6 +90,20 @@ const markdownComponents: Partial<MarkdownComponents> = {
       className={`${className || ""} font:$h3; margin-y:$len8;`}>
       {children}
     </h3>
+  ),
+  h4: ({ children, className, ...props }) => (
+    <h4
+      {...props}
+      className={`${className || ""} font:$h4; margin-y:$len8;`}>
+      {children}
+    </h4>
+  ),
+  h5: ({ children, className, ...props }) => (
+    <h5
+      {...props}
+      className={`${className || ""} font:$h5; margin-y:$len8;`}>
+      {children}
+    </h5>
   ),
   a: ({ children, className, ...props }) => (
     <a

@@ -19,11 +19,36 @@ Like these approaches, Hacss facilitates the colocation of markup and styles. It
 combines the strongest features of atomic CSS and CSS-in-JS while minimizing the
 downsides of each approach.
 
-Hacss works by embedding CSS syntax in class names. While these class names are
-meaningless to the browser, Hacss analyzes them at build time and generates a
-style sheet that contains the corresponding actual CSS.
+Hacss works by embedding CSS syntax within ordinary HTML classes. While the
+class names are meaningless to the browser, Hacss analyzes them at build time
+and generates a style sheet that contains the corresponding "actual" CSS. For
+example, the class name `color:red;` results in the style sheet
+`.color\:red\;{color:red;}`
 
-For example, the class name `color:red;` results in the style sheet
-`.color\:red\;{color:red;}`.
+## Constraints
+
+While CSS-in-HTML introduces fewer constraints than other approaches, some basic
+rules apply.
+
+#### Whitespace
+
+Whitespace cannot be used within a style rule because it is used to delimit HTML
+classes. The browser would simply not apply the intended style rule if it were
+allowed to contain spaces.
+
+##### What to do instead
+
+When spaces are required (which is not very often), double underscores may be
+used in declaration values, e.g. `box-shadow:0__0__0__1px__black;`
+
+#### Dynamic class names
+
+Style rules cannot be constructed dynamically using string concatenation,
+template literals, or otherwise. They must appear in the code as string literals
+in order to be detected and processed correctly.
+
+##### What to do instead
+
+Hacss provides its own syntax for variables and basic interpolation.
 
 </Article>
