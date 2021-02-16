@@ -162,6 +162,7 @@ const DocsApp
       <main className={`
         font:$body1;
         color:$gray95;
+        overflow-y:auto;
       `}>
         {children}
       </main>

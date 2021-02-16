@@ -73,35 +73,35 @@ const markdownComponents: Partial<MarkdownComponents> = {
   h1: ({ children, className, ...props }) => (
     <h1
       {...props}
-      className={`${className || ""} font:$h1; margin-y:$len8;`}>
+      className={`${className || ""} font:$h1; margin-y:$len16;`}>
       {children}
     </h1>
   ),
   h2: ({ children, className, ...props }) => (
     <h2
       {...props}
-      className={`${className || ""} font:$h2; margin-y:$len8;`}>
+      className={`${className || ""} font:$h2; margin-y:$len16;`}>
       {children}
     </h2>
   ),
   h3: ({ children, className, ...props }) => (
     <h3
       {...props}
-      className={`${className || ""} font:$h3; margin-y:$len8;`}>
+      className={`${className || ""} font:$h3; margin-y:$len16;`}>
       {children}
     </h3>
   ),
   h4: ({ children, className, ...props }) => (
     <h4
       {...props}
-      className={`${className || ""} font:$h4; margin-y:$len8;`}>
+      className={`${className || ""} font:$h4; margin-y:$len16;`}>
       {children}
     </h4>
   ),
   h5: ({ children, className, ...props }) => (
     <h5
       {...props}
-      className={`${className || ""} font:$h5; margin-y:$len8;`}>
+      className={`${className || ""} font:$h5; margin-y:$len16;`}>
       {children}
     </h5>
   ),

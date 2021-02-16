@@ -4,7 +4,7 @@ import Article from "../../components/Article";
   title="Fundamentals"
   subtitle="What you need to know about Hacss">
 
-## CSS-in-HTML
+### CSS-in-HTML
 All professional web developers are familiar with inline styles. Most developers
 restrict their use to trivial prototyping exercises due to
 [functional limitations](https://stackoverflow.com/questions/131653/inline-style-to-act-as-hover-in-css)
@@ -25,7 +25,40 @@ and generates a style sheet that contains the corresponding "actual" CSS. For
 example, the class name `color:red;` results in the style sheet
 `.color\:red\;{color:red;}`
 
-## Constraints
+### Advantages
+
+#### Versus inline styles
+
+Inline styles would be a good option if they were more capable. CSS-in-HTML
+delivers a similar development experience with the additional capabilities that
+typically require a style sheet or JavaScript: pseudo-selectors, media queries,
+variables, and conditional style rules.
+
+#### Versus CSS-in-JS
+
+CSS-in-HTML may offer better performance in that it has no JavaScript runtime
+dependency. Instead, the work of generating a style sheet happens once at build
+time.
+
+It is also a more composable solution in that it can be easily used in other
+contexts, e.g. compile-to-JS languages or static web sites.
+
+#### Versus atomic CSS
+
+With a familiar syntax that translates directly to CSS, the CSS-in-HTML approach
+provides significant advantages over atomic CSS.
+
+First, the learning curve is greatly reduced because, unlike atomic CSS
+frameworks, there is no system of utility class names to learn. Instead, the
+class names mostly consist of the underlying CSS that one would write anyway.
+
+Perhaps more importantly, CSS-in-HTML is flexible in a way that no set of
+predefined classes can match. Hacss makes it possible to use advanced selectors
+where atomic CSS frameworks are typically limited to basic pseudo-classes like
+`:hover` and `:focus`. It also allows variables to be interpolated into style
+rules, which can address "edge-case" scenarios, e.g. `left:calc(50%+#{$spacing4});`
+
+### Constraints
 
 While CSS-in-HTML introduces fewer constraints than other approaches, some basic
 rules apply.
@@ -49,6 +82,10 @@ in order to be detected and processed correctly.
 
 ##### What to do instead
 
-Hacss provides its own syntax for variables and basic interpolation.
+Hacss provides its own syntax for variables and basic interpolation, and
+selectors can be used to apply styles conditionally. When these options are
+insufficient (such as when styling the width of an element as calculated in
+JavaScript), a native inline style is a reasonable solution and usually does not
+introduce any unintended side effects despite its high specificity.
 
 </Article>
