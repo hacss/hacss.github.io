@@ -13,35 +13,39 @@ the other hand, newer architectures such as
 [atomic CSS](https://css-tricks.com/lets-define-exactly-atomic-css/) and
 [CSS-in-JS](https://medium.com/dailyjs/what-is-actually-css-in-js-f2f529a2757)
 demonstrate that some developers prefer _colocation_ of markup and related style
-rules.
+information.
 
 Like these approaches, Hacss facilitates the colocation of markup and styles. It
 combines the strongest features of atomic CSS and CSS-in-JS while minimizing the
 downsides of each approach.
 
-Hacss works by embedding CSS syntax within ordinary HTML classes. While the
-class names are meaningless to the browser, Hacss analyzes them at build time
-and generates a style sheet that contains the corresponding "actual" CSS. For
-example, the class name `color:red;` results in the style sheet
-`.color\:red\;{color:red;}`
+Hacss works by embedding CSS syntax within ordinary HTML classes. While these
+self-describing class names are meaningless to the browser, Hacss analyzes them
+at build time and generates a style sheet that contains the corresponding
+"actual" CSS. For example, the class name `color:red;` results in the style
+sheet `.color\:red\;{color:red;}`
 
 ### Advantages
 
 #### Versus inline styles
 
-Inline styles would be a good option if they were more capable. CSS-in-HTML
-delivers a similar development experience with the additional capabilities that
-typically require a style sheet or JavaScript: pseudo-selectors, media queries,
-variables, and conditional style rules.
+CSS-in-HTML enhances the development experience of inline styles with additional
+capabilities that normally require external style sheets: selectors, variables
+(named constants), and media queries.
+
+
+Furthermore, CSS-in-HTML
+[may be faster](https://simonadcock.com/are-inline-styles-faster-than-atomic-css/)
+than native inline styles.
 
 #### Versus CSS-in-JS
 
-CSS-in-HTML may offer better performance in that it has no JavaScript runtime
-dependency. Instead, the work of generating a style sheet happens once at build
-time.
+CSS-in-HTML works without JavaScript (except at build time) and imposes fewer
+constraints upon your design by supporting a wide array of HTML templating
+languages, compile-to-JS languages, and application frameworks.
 
-It is also a more composable solution in that it can be easily used in other
-contexts, e.g. compile-to-JS languages or static web sites.
+Because all the work is done at build time, CSS-in-HTML also offers better
+performance.
 
 #### Versus atomic CSS
 

@@ -1,0 +1,59 @@
+import Article from "../../components/Article";
+import ShellCommand from "../../components/ShellCommand";
+
+<Article
+  title="Command-line interface"
+  subtitle="The quickest way to use Hacss">
+
+### Installation
+
+The command-line interface works well with any project and does not require any
+configuration or even a permanent installation. To try it out, you can start
+with
+[npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b):
+
+<ShellCommand>
+echo "color:red;" | npx hacss
+</ShellCommand>
+
+For better performance, you can install the
+[`@hacss/cli`](https://www.npmjs.com/package/@hacss/cli) package, which provides
+the `hacss` command:
+
+<ShellCommand>
+npm install -g @hacss/cli
+</ShellCommand>
+
+### Usage
+
+Once installed, you can run `hacss` to see available options.
+
+#### Configuration
+
+Configuration is optional. By default, Hacss will use the `hacss.config.js`
+module in the working directory if it exists. You can specify a different file
+path using the `--config` argument, e.g. `--config ./config/hacss.json`.
+
+#### Output
+
+By default, Hacss writes to the standard output, which can be useful for certain
+use cases, such as piping the result to PostCSS. However, Hacss can write its
+output directly to a file specified by an `--output` argument, e.g.
+`--output public/styles.css`.
+
+#### Sources
+
+The final argument Hacss requires is a
+[globbing pattern](https://github.com/sindresorhus/globby#globbing-patterns)
+that includes any code files that might contain style rules, for example
+`src/**/*.jsx`.
+
+#### Putting it together
+
+Here is an example of using the Hacss CLI with all of the available options:
+
+<ShellCommand>
+hacss --config config/hacss.js --output public/styles.css src/**/*.html
+</ShellCommand>
+
+</Article>
