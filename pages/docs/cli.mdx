@@ -5,6 +5,10 @@ import ShellCommand from "../../components/ShellCommand";
   title="Command-line interface"
   subtitle="A simple and quick way to start using Hacss">
 
+Perhaps the easiest method to use Hacss is through its command-line interface.
+This short guide will help you to install the Hacss CLI and show you how to use
+it.
+
 ### Installation
 
 The command-line interface works well with any project and does not require any
@@ -24,36 +28,38 @@ the `hacss` command:
 npm install -g @hacss/cli
 </ShellCommand>
 
+The remainder of this guide assumes a permanent installation.
+
 ### Usage
 
-Once installed, you can run `hacss` to see available options.
+You can run the hacss command with no arguments at any time in order to see the
+available options described below.
 
-#### Configuration
+```bash
+hacss [--config <config-file>] [--output <output-file>] <sources>
+```
 
-Configuration is optional. By default, Hacss will use the `hacss.config.js`
-module in the working directory if it exists. You can specify a different file
-path using the `--config` argument, e.g. `--config ./config/hacss.json`
+#### Arguments
 
-#### Output
+`[--config &lt;config-file&gt;]`
 
-By default, Hacss writes to the standard output, which can be useful for certain
-use cases, such as piping the result to PostCSS. However, Hacss can write its
-output directly to a file specified by an `--output` argument, e.g.
-`--output public/styles.css`
+When a `--config` argument is specified, the configuration file specified by the
+`&lt;config-file&gt;` path will be used. When not specified, `hacss.config.js`
+will be used if it exists. While it is not strictly necessary to have a
+configuration file, you may want to review the configuration guide to understand
+when you might want to use one.
 
-#### Sources
+`[--output &lt;output-file&gt;]`
 
-The final argument Hacss requires is a
-[globbing pattern](https://github.com/sindresorhus/globby#globbing-patterns)
-that includes any code files that might contain style rules, for example
-`src/**/*.jsx`
+When an `--output` argument is specified, the generated CSS output will be
+written to the `&gt;output-file&lt;` path. When not specified, the CSS output
+will be written to the standard output.
 
-#### Putting it together
+`&lt;sources&gt;`
 
-Here is an example of using the Hacss CLI with all of the available options:
-
-<ShellCommand>
-hacss --config config/hacss.js --output public/styles.css src/**/*.html
-</ShellCommand>
+The [globby](https://www.npmjs.com/package/globby) pattern specified here will
+be used to search for source files containing CSS classes that should be
+included in the generated style sheet. You can also specify a series of glob
+patterns.
 
 </Article>

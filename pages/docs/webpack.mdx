@@ -1,0 +1,82 @@
+import Article from "../../components/Article";
+import ShellCommand from "../../components/ShellCommand";
+
+<Article
+  title="Webpack"
+  subtitle="Integrate Hacss with your build process">
+
+Hacss is a bit different than other CSS tools (e.g. preprocessors) that you may
+have used with Webpack in the past. With Hacss, you don't simply author a style
+sheet in a compile-to-CSS language; rather, the style sheet is entirely
+generated.
+
+While your Webpack configuration will continue to leverage
+[css-loader](https://github.com/webpack-contrib/css-loader) and
+[style-loader](https://github.com/webpack-contrib/style-loader),
+you will also use the lesser-known
+[val-loader](https://github.com/webpack-contrib/val-loader)
+to generate a CSS module dynamically using Hacss.
+
+### Installation
+
+If you have not done so already, install the required packages:
+
+<ShellCommand>
+npm install -D val-loader css-loader style-loader @hacss/build
+</ShellCommand>
+
+### Webpack Configuration
+
+Two small changes in the Webpack configuration (i.e. `webpack.config.js` are
+necessary to enable Hacss.
+
+#### Entry
+
+The first change required is to insert an additional
+[entry point](https://webpack.js.org/concepts/entry-points/). This likely means
+changing the existing `entry` value from a string to an array and adding
+`@hacss/build`:
+
+```javascript
+module.exports = {
+  entry: ["./src/main.js", "@hacss/build"]
+};
+```
+
+#### Rule
+
+The next step is to create a
+[rule](https://webpack.js.org/configuration/module/#rule) that specifies how to
+load the `@hacss/build` module you referenced in the `entry` array.
+
+As a starting point, you can use the rule configuration below, setting the
+`sources` option in the `val-loader` configuration to a glob pattern that
+captures all source files containing CSS classes that should be included in the
+generated style sheet (e.g. HTML templates and/or UI component modules).
+
+```javascript
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /@hacss\/build/,
+        use: [
+          "style-loader",
+          "css-loader",
+          { loader: "val-loader", options: { sources: "src/*.js" } },
+        ]
+      }
+    ]
+  }
+};
+```
+
+### Next Steps
+
+A generated style sheet will now be added to the page automatically. At this
+point, you can add a `hacss.config.js` file alongside `webpack.config.js` if
+necessary; or you can specify an additional `val-loader` option config which
+contains the path to your Hacss configuration file. See the configuration guide
+for more details.
+
+</Article>
