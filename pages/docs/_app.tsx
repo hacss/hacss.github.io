@@ -3,7 +3,6 @@ import Link from "next/link";
 
 const pages = [
   ["/fundamentals", "Fundamentals"],
-  ["/installation", "Installation"],
   ["/cli", "Command-line interface"],
   ["/webpack", "Webpack"]
 ];
