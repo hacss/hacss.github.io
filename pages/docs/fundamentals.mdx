@@ -73,8 +73,6 @@ Whitespace cannot be used within a style rule because it is used to delimit HTML
 classes. The browser would simply not apply the intended style rule if it were
 allowed to contain spaces.
 
-##### What to do instead
-
 When spaces are required (which is not very often), double underscores may be
 used in declaration values, e.g. `box-shadow:0__0__0__1px__black;`
 
@@ -83,8 +81,6 @@ used in declaration values, e.g. `box-shadow:0__0__0__1px__black;`
 Style rules cannot be constructed dynamically using string concatenation,
 template literals, or otherwise. They must appear in the code as string literals
 in order to be detected and processed correctly.
-
-##### What to do instead
 
 Hacss provides its own syntax for variables and basic interpolation, and
 selectors can be used to apply styles conditionally. When these options are
