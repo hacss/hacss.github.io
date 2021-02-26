@@ -160,6 +160,7 @@ const DocsApp
         </button>
       </header>
       <main className={`
+        flex:1;
         font:$body1;
         color:$gray95;
         overflow-y:auto;

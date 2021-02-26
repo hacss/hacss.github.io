@@ -3,7 +3,7 @@ import ShellCommand from "../../components/ShellCommand";
 
 <Article
   title="Command-line interface"
-  subtitle="The quickest way to use Hacss">
+  subtitle="A simple and quick way to start using Hacss">
 
 ### Installation
 
@@ -32,21 +32,21 @@ Once installed, you can run `hacss` to see available options.
 
 Configuration is optional. By default, Hacss will use the `hacss.config.js`
 module in the working directory if it exists. You can specify a different file
-path using the `--config` argument, e.g. `--config ./config/hacss.json`.
+path using the `--config` argument, e.g. `--config ./config/hacss.json`
 
 #### Output
 
 By default, Hacss writes to the standard output, which can be useful for certain
 use cases, such as piping the result to PostCSS. However, Hacss can write its
 output directly to a file specified by an `--output` argument, e.g.
-`--output public/styles.css`.
+`--output public/styles.css`
 
 #### Sources
 
 The final argument Hacss requires is a
 [globbing pattern](https://github.com/sindresorhus/globby#globbing-patterns)
 that includes any code files that might contain style rules, for example
-`src/**/*.jsx`.
+`src/**/*.jsx`
 
 #### Putting it together
 
