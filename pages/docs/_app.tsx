@@ -2,6 +2,7 @@ import { FC } from "react";
 import Link from "next/link";
 
 const pages = [
+  ["", "Getting Started"],
   ["/fundamentals", "Fundamentals"],
   ["/configuration", "Configuration"],
   ["/cli", "Command-line interface"],
