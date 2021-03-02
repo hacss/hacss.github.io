@@ -6,7 +6,8 @@ const pages = [
   ["/configuration", "Configuration"],
   ["/cli", "Command-line interface"],
   ["/webpack", "Webpack"],
-  ["/api", "API"]
+  ["/api", "API"],
+  ["/style-guide", "Style Guide"]
 ];
 
 const DocsApp
