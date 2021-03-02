@@ -120,7 +120,7 @@ const markdownComponents: Partial<MarkdownComponents> = {
   inlineCode: ({ children, className, ...props }) => (
     <code
       {...props}
-      className={`${className || ""} font:$code; transform:translateY(-20px);`}>
+      className={`${className || ""} font-family:$mono; font-size:0.875em; display:inline-block; transform:translateY(-0.0625rem);`}>
       {children}
     </code>
   ),

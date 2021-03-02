@@ -1,0 +1,56 @@
+import Article from "../../components/Article";
+
+<Article
+  title="Configuration"
+  subtitle="Use variables and media queries throughout your site">
+
+This guide explains how to configure Hacss to support variables
+(i.e. named constants) and at-scopes (e.g. media queries).
+
+### Configuration Module
+
+Both the [CLI](./cli) and the [Webpack integration](./webpack) will look for a
+`hacss.config.js` file in the working directory (i.e. the project root). You can
+specify an alternate configuration file path by using the explicit `config`
+option. See the CLI and Webpack guides for more information.
+
+The configuration module must export an object, which can contain either or both
+of the keys `atScopes` and `variables`.
+
+#### Variables
+
+This is a map of variables that can be used in style rules. A rule
+`:hover{color:$red500}`, for example, requires a corresponding key `red500` in
+the `variables` map.
+
+You can also define variables for specific properties. For example, you may want
+a variable `small` to have a different value depending on the CSS property where
+it is used: Properties like `box-shadow`, `font-size`, and `border-radius` might
+all have some notion of a "small" variant. To define a variable for a specific
+property, simply nest it within another map as shown in the configuration
+example below.
+
+### Configuration Example
+
+```javascript
+exports.variables = {
+  red500: "#c33",
+  "box-shadow": {
+    small: "0 2px 2px #0003"
+  },
+  "font-size": {
+    small: "12px"
+  },
+  "border-radius": {
+    small: "2px"
+  }
+};
+
+exports.atScopes = {
+  small: "media only screen and (max-width: 599px)",
+  medium: "media only screen and (min-width: 600px) and (max-width: 1199px)",
+  large: "media only screen and (min-width: 1200px)",
+};
+```
+
+</Article>

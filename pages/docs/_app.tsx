@@ -3,8 +3,10 @@ import Link from "next/link";
 
 const pages = [
   ["/fundamentals", "Fundamentals"],
+  ["/configuration", "Configuration"],
   ["/cli", "Command-line interface"],
-  ["/webpack", "Webpack"]
+  ["/webpack", "Webpack"],
+  ["/api", "API"]
 ];
 
 const DocsApp

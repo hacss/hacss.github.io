@@ -1,0 +1,26 @@
+import Article from "../../components/Article";
+import ShellCommand from "../../components/ShellCommand";
+
+<Article
+  title="API"
+  subtitle="Use Hacss programmatically">
+
+In addition to CLI and Webpack options, Hacss offers a simple API for advanced
+use cases.
+
+```javascript
+const hacss = require("@hacss/core");
+```
+
+### `hacss(code, [config])`
+Generates a style sheet from the specified code.
+
+`code {String}` The code containing style classes that Hacss should analyze
+
+`config {Object}` The configuration object as documented in the configuration guide
+
+return: `String` The generated style sheet
+
+throws: `Error`
+
+</Article>
