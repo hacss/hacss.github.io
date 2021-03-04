@@ -2,7 +2,7 @@ import { useState } from "react";
 import CodeEditor from "./CodeEditor";
 import * as script from "./script";
 
-export default function CutTheBSDemo() {
+const CutTheBSDemo: FC<{ children?: undefined }> = () => {
   const [html, setHtml] = useState(script.html);
   return (
     <div className={`
@@ -34,3 +34,5 @@ export default function CutTheBSDemo() {
     </div>
   );
 };
+
+export default CutTheBSDemo;

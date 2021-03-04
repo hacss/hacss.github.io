@@ -35,17 +35,23 @@ export const row = 0;
 
 export const col = 0;
 
-const publishFirst = (o, i, { length }) => ({ ...o, publish: !i });
-const publishLast = (o, i, { length }) => ({ ...o, publish: i === length - 1 });
+export type Step = ({
+  type: "up" | "right" | "down" | "left" | "show" | "hide" | "delete"
+} | {
+  type: "insert";
+  character: string;
+}) & { publish?: boolean };
 
-const insertString = s =>
+const publishLast = (o: Step, i: number, { length }: Array<Step>): Step => ({ ...o, publish: i === length - 1 });
+
+const insertString = (s: string) =>
   Array
     .from(s)
     .map(character => ({
       type: "insert",
       character,
     }))
-    .map(publishLast);
+    .map((a, b, c) => publishLast(a as any, b, c as any));
 
 export const steps = [
   { type: "show" },

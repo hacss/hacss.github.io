@@ -1,14 +1,16 @@
+import { FC } from "react";
 import { useEffect, useRef, useState } from "react";
 import { HomePageDemoOuter, HomePageDemoInner } from "./HomePageDemo";
 import highlight from "../utils/highlight";
 
-export default function StaticVariablesDemo() {
+const StaticVariablesDemo: FC<{ children?: undefined }> = () => {
   const [current, previous] = useSteps([<FontDemo />, <ColorDemo />], 30000);
-  const container = useRef();
+  const container = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (container.current) {
-      container.current.classList.remove("triggered");
-      const t = setTimeout(() => container.current.classList.add("triggered"), 1000);
+    const el = container.current;
+    if (el) {
+      el.classList.remove("triggered");
+      const t = setTimeout(() => el.classList.add("triggered"), 1000);
       return () => { clearTimeout(t); };
     }
   }, [container, current]);
@@ -33,7 +35,7 @@ export default function StaticVariablesDemo() {
   );
 }
 
-export function ColorDemo() {
+function ColorDemo() {
   /*
   color:$red95;
   color:$red90;
@@ -59,7 +61,7 @@ export function ColorDemo() {
   const initHTML =
     `<span class="color:${initial};">\n  Awesome!\n</span>`;
 
-  const [current, previous] =
+  const [current] =
     useSteps([
       "$red95",
       "$red90",
@@ -81,7 +83,7 @@ export function ColorDemo() {
       "$blue50",
     ], 1500);
 
-  const [codeArea, setCodeArea] = useState(null);
+  const [codeArea, setCodeArea] = useState<Element | null>(null);
   useEffect(() => {
     if (codeArea) {
       const target = codeArea.querySelector(".target");
@@ -118,17 +120,17 @@ export function ColorDemo() {
   );
 };
 
-export function FontDemo() {
+const FontDemo: FC<{ children?: undefined }> = () => {
   // font:$h1; font:$h2; font:$h3; font:$h4; font:$h5; font:$h6;
 
   const initial = "$h1";
   const initHTML =
     `<span class="font:${initial}; line-height:1;!">\n  Awesome!\n</span>`;
 
-  const [current, previous] =
+  const [current] =
     useSteps(Array.from(Array(6).keys()).map(x => `$h${6-x}`), 2000);
 
-  const [codeArea, setCodeArea] = useState(null);
+  const [codeArea, setCodeArea] = useState<HTMLElement | null>(null);
   useEffect(() => {
     if (codeArea) {
       const target = codeArea.querySelector(".target");
@@ -165,7 +167,7 @@ export function FontDemo() {
   );
 }
 
-function useSteps(steps, t = 500) {
+const useSteps = <A extends unknown>(steps: Array<A>, t = 500): [A, A] => {
   const [step, setStep] = useState(0);
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -174,4 +176,6 @@ function useSteps(steps, t = 500) {
     return () => clearTimeout(timeout);
   }, [steps, t, step, setStep]);
   return [steps[step], steps[step ? step - 1 : steps.length - 1]];
-}
+};
+
+export default StaticVariablesDemo;
