@@ -143,10 +143,11 @@ const play = (demo: Demo, x: number) => {
 
 const CodeEditor: FC<{
   className: string;
+  paused?: boolean;
   script: Demo;
   onPublish: (html: string) => void;
 }> =
-  ({ className, script, onPublish }) => {
+  ({ className, paused, script, onPublish }) => {
     const [step, setStep] = useState(-1);
 
     useEffect(() => {
@@ -154,11 +155,13 @@ const CodeEditor: FC<{
     }, [script, setStep]);
 
     useEffect(() => {
-      if (script.steps.length && step < script.steps.length - 1) {
-        const t = setTimeout(() => setStep(step + 1), (200 / speed));
+      if (!paused && script.steps.length && step < script.steps.length - 1) {
+        const t = setTimeout(() => {
+          setStep(step + 1);
+        }, 200 / speed);
         return () => clearTimeout(t);
       }
-    }, [script, setStep, step]);
+    }, [paused, script, setStep, step]);
 
     const html = play(script, step);
 
@@ -206,7 +209,6 @@ const CodeEditor: FC<{
             inset:0;
             top:$len32;!
             overflow:auto;
-            overscroll-behavior:none;
           `}>
           <pre className="margin:0; margin-top:$len8;! font:inherit;">
             <code className="font:$code;" dangerouslySetInnerHTML={{
