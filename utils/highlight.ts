@@ -1,8 +1,8 @@
-const highlight = (html, opts = {}) => {
-  const chev = x => `<span class="color:$blue40;">${x}</span>`;
+const highlight = (html: string, opts = { cursor: false }) => {
+  const chev = (x: string) => `<span class="color:$blue40;">${x}</span>`;
   const ochev = chev("&lt;");
   const cchev = chev("&gt;");
-  const tag = x => `<span class="color:$blue40;">${x}</span>`;
+  const tag = (x: string) => `<span class="color:$blue40;">${x}</span>`;
   return html
     .replace(
       /<([a-z][a-z0-9]*)([^>]*)>|<\/([a-z][a-z0-9]*)>/g,
@@ -15,7 +15,7 @@ const highlight = (html, opts = {}) => {
                   `([a-z]([a-z\-${opts.cursor ? "|": ""}]+)?)(="([^"]*)")?`,
                   "gm",
                 ),
-                (_, name, __, ___, value) => {
+                (_: any, name: string, __: any, ___: any, value: string) => {
                   const v = value
                     ? `=</span><span class="color:$orange10;">"${
                       value ? value.replace(/\n/g, `</span>\n<span class="color:$orange10;">`) : ""

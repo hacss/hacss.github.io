@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, ReactNode } from "react";
 import Link from "next/link";
 import ContextDemo from "../components/ContextDemo";
 import CutTheBSDemo from "../components/CutTheBSDemo";
@@ -7,9 +7,8 @@ import PostProcessingDemo from "../components/PostProcessingDemo";
 import PseudoClassesDemo from "../components/PseudoClassesDemo";
 import PseudoElementsDemo from "../components/PseudoElementsDemo";
 import StaticVariablesDemo from "../components/StaticVariablesDemo";
-import highlight from "../utils/highlight";
 
-const Feature = ({ children, heading, synopsis }) => (
+const Feature: FC<{ heading: ReactNode, synopsis: ReactNode }> = ({ children, heading, synopsis }) => (
   <div className="margin-y:$len48;">
     <h3 className={`
       margin-top:0;
