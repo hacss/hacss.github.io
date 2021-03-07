@@ -53,6 +53,7 @@ A context describes the element's relationship to another element in the DOM
 tree. It consists of a class list followed by a combinator.
 
 ##### Available combinators
+
 * Ancestor: `_`
 * Parent: `>`
 * Adjacent sibling: `+`
@@ -82,5 +83,32 @@ A pseudo-element consists of `::`, followed by lowercase letters and hyphens.
 Examples of pseudo-elements include:
 * `::after`
 * `::placeholder`
+
+### At-scopes
+
+At-scopes consist of `@` followed by lowercase letters and hyphens. You can use
+them for
+[media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) and
+[feature queries](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports).
+Each at-scope must be added to your [Hacss configuration](/docs/configuration).
+Note that the `@` character is omitted within configuration.
+
+### Variables
+
+Variables consist of `$` followed by lowercase letters and hyphens. You can use
+variables as CSS values or even interpolate them into other values. For example:
+* `color:$red500;`
+* `left:calc(50%+#{$len4});`
+
+Variables must be included in your [Hacss configuration](/docs/configuration).
+Note that the `$` character is omitted wthin configuration.
+
+### Next steps
+
+For additional detail about syntax, consult the
+[parser source](https://github.com/hacss/core/blob/master/src/Parser.purs) and
+[corresponding tests](https://github.com/hacss/core/blob/master/test/Parser.purs).
+You may also want to proceed to the [configuration guide](/docs/configuration)
+for more information about how to use at-scopes and variables.
 
 </Article>
