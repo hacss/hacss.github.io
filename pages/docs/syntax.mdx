@@ -1,0 +1,86 @@
+import Article from "../../components/Article";
+
+<Article
+  title="Syntax"
+  subtitle="How to use Hacss within your code">
+
+Hacss uses a style rule syntax resembling CSS embedded within HTML classes. For
+the most part, your existing CSS knowledge still applies. However, the use of
+statically-analyzed HTML classes introduces some minor, but important
+constraints:
+
+1. Whitespace is strictly forbidden. Since some CSS values (e.g.
+   [box shadows](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow))
+   require whitespace, you can use a pair of underscores in place of a space
+   character.
+
+2. Dynamically-generated class names are not supported because Hacss generates
+   the style sheet at build time. In practice, this is not much of a limitation,
+   particularly if you make good use of selectors.
+
+3. Hacss supports a large subset, but not all, of CSS. This guide will help you
+   to understand which features are supported.
+
+### Rules
+
+A rule can include:
+* declarations only, e.g. `background:red;color:white;`
+* a selector, e.g. `.err{background:red;color:white}`
+* an at-scope, e.g. `@sm{padding:0}`
+* a combination of a selector and an at-scope, e.g. `@sm{.err{width:100%}}`
+
+Note that declarations are always separated by semicolons. A rule consisting
+_only_ of declarations is also terminated by a semicolon; however, the trailing
+semicolon must be omitted for a rule that includes a selector and/or at-scope
+because the closing curly brace tells Hacss where the declarations end.
+
+### Selectors
+
+Selectors are actually useful within inline styles because they allow you to
+activate various style rules conditionally, similar to what might otherwise be
+accomplished with JavaScript or an external style sheet. They can also be used
+to create pseudo-elements, which can sometimes optimize your markup for
+accessibility or performance.
+
+Selectors can include:
+* a context
+* a class list
+* a pseudo-element
+
+#### Context
+
+A context describes the element's relationship to another element in the DOM
+tree. It consists of a class list followed by a combinator.
+
+##### Available combinators
+* Ancestor: `_`
+* Parent: `>`
+* Adjacent sibling: `+`
+* General sibling: `~`
+
+#### Class List
+
+A class list consists of a series of named classes followed by a series of
+pseudo-classes.
+
+Named classes begin with a `.` and consist of lowercase letters and hyphens.
+
+Pseudo-classes begin with a `:` and consist of either:
+* lowercase letters and hyphens
+* `not(classes)` where `classes` is a class list
+* `nth-child(expr)`, `nth-last-child(expr)`, `nth-last-of-type(expr)`, or
+  `nth-of-type(expr)`, where `expr` is a formula like `even`, `odd`, `2n+1`,
+  etc.
+* `lang(code)`, where `code` is a standard language code like `en`, `en-US`,
+  etc.
+
+Named classes and pseudo-classes are each optional components of a class list.
+
+#### Pseudo-element
+
+A pseudo-element consists of `::`, followed by lowercase letters and hyphens.
+Examples of pseudo-elements include:
+* `::after`
+* `::placeholder`
+
+</Article>

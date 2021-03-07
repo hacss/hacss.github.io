@@ -4,6 +4,7 @@ import Link from "next/link";
 const pages = [
   ["", "Getting Started"],
   ["/fundamentals", "Fundamentals"],
+  ["/syntax", "Syntax"],
   ["/configuration", "Configuration"],
   ["/cli", "Command-line interface"],
   ["/webpack", "Webpack"],
