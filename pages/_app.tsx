@@ -2,6 +2,7 @@ require( "@hacss/build");
 
 import { FC, useEffect, useState } from "react";
 import { AppProps } from "next/app";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { ComponentType, MDXProvider } from "@mdx-js/react";
 import DocsApp from "./docs/_app";
@@ -67,20 +68,22 @@ const useSidebarState = (): ["open" | "closed", () => void, () => void] => {
 type UnionToIntersection<U> = 
   (U extends any ? (k: U)=>void : never) extends ((k: infer I)=>void) ? I : never;
 
-type MarkdownComponents<K = ComponentType> = UnionToIntersection<K extends ComponentType ? Record<K, FC<React.HTMLAttributes<HTMLElement>>> : {}>;
+type MarkdownComponents<K = ComponentType> = UnionToIntersection<K extends ComponentType ? Record<K, FC<React.HTMLAttributes<HTMLElement> & any>> : {}>;
 
 const markdownComponents: Partial<MarkdownComponents> = {
-  a: ({ children, className, ...props }) => (
-    <a
-      className={`
-        ${className || ""}
-        color:$blue80;
-        :hover{color:$blue60}
-        :active{color:$red60}!
-      `}
-      {...props}>
-      {children}
-    </a>
+  a: ({ children, className, href, ...props }) => (
+    <Link href={href}>
+      <a
+        className={`
+          ${className || ""}
+          color:$blue80;
+          :hover{color:$blue60}
+          :active{color:$red60}!
+        `}
+        {...props}>
+        {children}
+      </a>
+    </Link>
   ),
   h1: ({ children, className, ...props }) => (
     <h1

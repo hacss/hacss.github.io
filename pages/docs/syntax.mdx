@@ -11,12 +11,12 @@ constraints:
 
 1. Whitespace is strictly forbidden. Since some CSS values (e.g.
    [box shadows](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow))
-   require whitespace, you can use a pair of underscores in place of a space
-   character.
+   require whitespace, you can use a pair of underscores (`__`) in place of a
+   space character.
 
 2. Dynamically-generated class names are not supported because Hacss generates
    the style sheet at build time. In practice, this is not much of a limitation,
-   particularly if you make good use of selectors.
+   particularly if you make good use of selectors, described below.
 
 3. Hacss supports a large subset, but not all, of CSS. This guide will help you
    to understand which features are supported.
@@ -32,7 +32,7 @@ A rule can include:
 Note that declarations are always separated by semicolons. A rule consisting
 _only_ of declarations is also terminated by a semicolon; however, the trailing
 semicolon must be omitted for a rule that includes a selector and/or at-scope
-because the closing curly brace tells Hacss where the declarations end.
+because the closing curly brace thereof tells Hacss where the declarations end.
 
 ### Selectors
 
