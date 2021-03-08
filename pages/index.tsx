@@ -2,6 +2,7 @@ import { FC, ReactNode } from "react";
 import Link from "next/link";
 import ContextDemo from "../components/ContextDemo";
 import CutTheBSDemo from "../components/CutTheBSDemo";
+import Head from "../components/Head";
 import MediaQueriesDemo from "../components/MediaQueriesDemo";
 import PostProcessingDemo from "../components/PostProcessingDemo";
 import PseudoClassesDemo from "../components/PseudoClassesDemo";
@@ -34,8 +35,9 @@ const Feature: FC<{ heading: ReactNode, synopsis: ReactNode }> = ({ children, he
   </div>
 );
 
-export default function Home() {
-  return (
+const Home: FC<{ children?: undefined }> = () => (
+  <>
+    <Head />
     <div className={`
       padding:$len32;
       @lg{padding:$len128}
@@ -203,5 +205,7 @@ export default function Home() {
         <PostProcessingDemo />
       </Feature>
     </div>
-  );
-}
+  </>
+);
+
+export default Home;
