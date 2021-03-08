@@ -1,8 +1,9 @@
 const { variables: { len16 } } = require("./hacss.config.js");
+const { loader: extractCssLoader } = require("next/dist/build/webpack/plugins/mini-css-extract-plugin.js").default;
 
 module.exports = require("@next/mdx")({ extension: /\.mdx$/ })({
   pageExtensions: ["js", "jsx", "mdx", "tsx"],
-  webpack: config => ({
+  webpack: (config, { dev }) => ({
     ...config,
     module: {
       ...config.module,
@@ -11,7 +12,7 @@ module.exports = require("@next/mdx")({ extension: /\.mdx$/ })({
         {
           test: /@hacss\/build/,
           use: [
-            "style-loader",
+            dev ? "style-loader" : extractCssLoader,
             { loader: "css-loader", options: { url: false } },
             "postcss-loader",
             {
