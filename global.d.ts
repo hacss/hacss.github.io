@@ -35,3 +35,7 @@ declare module '@mdx-js/react' {
   }
   export class MDXProvider extends React.Component<MDXProviderProps> {}
 }
+
+declare module "@hacss/shortcuts" {
+  export default () => any;
+}
