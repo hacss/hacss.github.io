@@ -5,7 +5,7 @@ export const html = `
 ">
   <div>
     <div class="
-      background-image:url('grinder.jpg');
+      background-image:url('/grinder.jpg');
       background-position:center;
       background-size:cover;
       width:$len128;
