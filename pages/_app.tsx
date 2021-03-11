@@ -85,6 +85,11 @@ const markdownComponents: Partial<MarkdownComponents> = {
       </a>
     </Link>
   ),
+  code: ({ children, className, ...props }) => (
+    <code {...props} className={`${className || ""} font:inherit;`}>
+      {children}
+    </code>
+  ),
   h1: ({ children, className, ...props }) => (
     <h1
       {...props}
@@ -127,5 +132,8 @@ const markdownComponents: Partial<MarkdownComponents> = {
       className={`${className || ""} font-family:$mono; font-size:0.875em; display:inline-block; transform:translateY(-0.0625rem);`}>
       {children}
     </code>
+  ),
+  pre: ({ children, className, ...props }) => (
+    <pre {...props} className={`${className || ""} font:$code; margin:0;`}>{children}</pre>
   ),
 };

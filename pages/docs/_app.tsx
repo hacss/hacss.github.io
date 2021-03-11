@@ -9,7 +9,8 @@ const pages = [
   ["/cli", "Command-line interface"],
   ["/webpack", "Webpack"],
   ["/api", "API"],
-  ["/style-guide", "Style Guide"]
+  ["/style-guide", "Style Guide"],
+  ["/shortcuts", "Shortcuts"]
 ];
 
 const DocsApp

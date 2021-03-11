@@ -1,0 +1,84 @@
+import Article from "../../components/Article";
+import ShellCommand from "../../components/ShellCommand";
+import ShortcutBorders from "../../components/ShortcutBorders";
+import ShortcutColors from "../../components/ShortcutColors";
+import ShortcutFonts from "../../components/ShortcutFonts";
+import ShortcutLengths from "../../components/ShortcutLengths";
+
+<Article
+  title="Shortcuts"
+  subtitle="Build your site faster with Hacss Shortcuts">
+
+With the optional Shortcuts package, you can immediately focus on building your
+site without creating a Hacss configuration or worrying about the lower-level 
+units of your design. The Shortcuts package provides a configuration that is
+ready to use or extend, complete with a color palette, fonts, spacing presets,
+shadows, and more.
+
+### Installation
+
+To get started, install the
+[@hacss/shortcuts](https://www.npmjs.com/package/@hacss/shortcuts) package:
+
+<ShellCommand>
+  npm install @hacss/shortcuts
+</ShellCommand>
+
+Then create a `hacss.config.js` file that exports a configuration from
+`@hacss/shortcuts`:
+
+```javascript
+const shortcuts = require("@hacss/shortcuts");
+module.exports = shortcuts();
+```
+
+### Usage
+
+The Shortcuts package is just an ordinary Hacss configuration and includes a
+number of breakpoints and variables. Review the [syntax](./syntax) and
+[configuration](./configuration) guides for more information.
+
+### Available Shortcuts
+
+#### Colors
+
+The included color palette includes several base color options, each with a full
+range of shades and tints. It offers both flexibility and consistency by
+providing numerous options but not too many.
+
+<ShortcutColors />
+
+<div className="height:$len16;"></div>
+
+#### Lengths
+
+These length abstractions improve the consistency of your layout by providing a
+finite set of options for padding, margins, and other length properties. They
+also allow you to think in terms of pixels while actually mapping to relative
+units behind the scenes: For example, `$len16` has an underlying value of `1rem`.
+
+<ShortcutLengths />
+
+<div className="height:$len16;"></div>
+
+#### Borders
+
+Like the length shortcuts, border widths are limited in number and aliased in
+terms of pixels, so choosing the right border width for your use case requires
+little effort.
+
+<ShortcutBorders />
+
+<div className="height:$len16;"></div>
+
+#### Typography
+
+Use these variables with the
+[font](https://developer.mozilla.org/en-US/docs/Web/CSS/font) shorthand property.
+Not only is this more convenient than setting constituent properties
+individually, but also it improves typographical consistency throughout your
+site. If you need to override a constituent property, you can always use a rule
+priority as explained in the [syntax guide](./syntax).
+<ShortcutFonts />
+
+</Article>

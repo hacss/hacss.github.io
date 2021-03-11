@@ -111,6 +111,21 @@ variables as CSS values or even interpolate them into other values. For example:
 Variables must be included in your [Hacss configuration](/docs/configuration).
 Note that the `$` character is omitted wthin configuration.
 
+### Priority
+
+Hacss places at-scope rules at the end of the generated style sheet; but, beyond
+that, it offers no rule ordering guarantees. You should use
+[specificity](https://www.w3.org/TR/selectors-3/#specificity) instead to
+prioritize rules.
+
+Sometimes two rules have the same specificity by default, and it is necessary to
+increase the specificity of one of them. For example, `:hover{color:blue}` and
+`:active{color:red}` have the same specificity, but you might want the red color
+to be applied when both selectors match.
+
+To increase the specificity of any rule, simply attach an exclamation point to
+the end, e.g. `:active{color:red}!` or `display:none;!`
+
 ### Next steps
 
 For additional detail about syntax, consult the
