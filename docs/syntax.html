@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><title>Hacss: Syntax</title><meta name="viewport" content="initial-scale=1.0, width=device-width"/><meta property="og:title" content="Hacss: Syntax"/><meta property="og:description" content="How to use Hacss within your code"/><meta property="og:image" content="https://repository-images.githubusercontent.com/234330718/b398e100-8722-11ea-9a02-712ad5e77447"/><meta property="og:url" content="https://hacss.io/docs/syntax"/><meta name="twitter:card" content="summary_large_image"/><meta name="next-head-count" content="8"/><link rel="preload" href="/_next/static/css/9187beec476605624e4c.css" as="style"/><link rel="stylesheet" href="/_next/static/css/9187beec476605624e4c.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/_next/static/chunks/main-7d1613afc8c8f43cb50f.js" as="script"/><link rel="preload" href="/_next/static/chunks/webpack-95c2b224bccf352ee870.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework.daa7383ad2ab2e6757c1.js" as="script"/><link rel="preload" href="/_next/static/chunks/commons.9b549cceddc4472f1953.js" as="script"/><link rel="preload" href="/_next/static/chunks/82134fb66e92a3e7c48cbf2b5881681794bf25fd.453f2557c9f06e4e2165.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/_app-c61c7aaa6749011b9b5a.js" as="script"/><link rel="preload" href="/_next/static/chunks/a6e4a9f00c495845cb674adbbdbd00d342662ebc.7360bbfd812ca3299ce7.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/docs/syntax-ee332bc0fd2a23ffd7d7.js" as="script"/></head><body><div id="__next"><div class="position:absolute; inset:0;"><div class="display:flex; height:100%;"><header class="
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><title>Hacss: Syntax</title><meta name="viewport" content="initial-scale=1.0, width=device-width"/><meta property="og:title" content="Hacss: Syntax"/><meta property="og:description" content="How to use Hacss within your code"/><meta property="og:image" content="https://repository-images.githubusercontent.com/234330718/b398e100-8722-11ea-9a02-712ad5e77447"/><meta property="og:url" content="https://hacss.io/docs/syntax"/><meta name="twitter:card" content="summary_large_image"/><meta name="next-head-count" content="8"/><link rel="preload" href="/_next/static/css/4dfa625962bcdc599bb8.css" as="style"/><link rel="stylesheet" href="/_next/static/css/4dfa625962bcdc599bb8.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/_next/static/chunks/main-7d1613afc8c8f43cb50f.js" as="script"/><link rel="preload" href="/_next/static/chunks/webpack-95c2b224bccf352ee870.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework.daa7383ad2ab2e6757c1.js" as="script"/><link rel="preload" href="/_next/static/chunks/commons.9b549cceddc4472f1953.js" as="script"/><link rel="preload" href="/_next/static/chunks/82134fb66e92a3e7c48cbf2b5881681794bf25fd.f7fa3c9316b1dc7cbab7.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/_app-2631f3c5479480597da2.js" as="script"/><link rel="preload" href="/_next/static/chunks/9014d987dc103c690c8a89ba03a6f08e6430441a.7360bbfd812ca3299ce7.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/docs/syntax-b140c3bda1459f219516.js" as="script"/></head><body><div id="__next"><div class="position:absolute; inset:0;"><div class="display:flex; height:100%;"><header class="
         sidebar
         closed
         background:$gray90;
@@ -95,7 +95,14 @@
                       color:$gray20;
                       :hover{color:$blue20}
                       :active{color:$red20}!
-                    " href="/docs/style-guide">Style Guide</a></nav><button class="
+                    " href="/docs/style-guide">Style Guide</a><a class="
+                      padding-x:$len16;
+                      padding-y:$len4;
+                      text-decoration:none;
+                      color:$gray20;
+                      :hover{color:$blue20}
+                      :active{color:$red20}!
+                    " href="/docs/shortcuts">Shortcuts</a></nav><button class="
             appearance:none;
             outline:none;
             border:0;
@@ -180,7 +187,20 @@ variables as CSS values or even interpolate them into other values. For example:
           :hover{color:$blue60}
           :active{color:$red60}!
         " href="/docs/configuration">Hacss configuration</a>.
-Note that the <code class=" font-family:$mono; font-size:0.875em; display:inline-block; transform:translateY(-0.0625rem);">$</code> character is omitted wthin configuration.</p><h3 class=" font:$h3; margin-y:$len16;">Next steps</h3><p>For additional detail about syntax, consult the
+Note that the <code class=" font-family:$mono; font-size:0.875em; display:inline-block; transform:translateY(-0.0625rem);">$</code> character is omitted wthin configuration.</p><h3 class=" font:$h3; margin-y:$len16;">Priority</h3><p>Hacss places at-scope rules at the end of the generated style sheet; but, beyond
+that, it offers no rule ordering guarantees. You should use
+<a class="
+          
+          color:$blue80;
+          :hover{color:$blue60}
+          :active{color:$red60}!
+        " href="https://www.w3.org/TR/selectors-3/#specificity">specificity</a> instead to
+prioritize rules.</p><p>Sometimes two rules have the same specificity by default, and it is necessary to
+increase the specificity of one of them. For example, <code class=" font-family:$mono; font-size:0.875em; display:inline-block; transform:translateY(-0.0625rem);">:hover{color:blue}</code> and
+<code class=" font-family:$mono; font-size:0.875em; display:inline-block; transform:translateY(-0.0625rem);">:active{color:red}</code> have the same specificity, but you might want the red color
+to be applied when both selectors match.</p><p>To increase the specificity of any rule, simply attach an exclamation point to
+the end, e.g. <code class=" font-family:$mono; font-size:0.875em; display:inline-block; transform:translateY(-0.0625rem);">:active{color:red}!</code> or <code class=" font-family:$mono; font-size:0.875em; display:inline-block; transform:translateY(-0.0625rem);">display:none;!</code></p><p>You can also increase the specificity as needed by adding more exclamation
+points, e.g. <code class=" font-family:$mono; font-size:0.875em; display:inline-block; transform:translateY(-0.0625rem);">display:none;!!</code></p><h3 class=" font:$h3; margin-y:$len16;">Next steps</h3><p>For additional detail about syntax, consult the
 <a class="
           
           color:$blue80;
@@ -199,4 +219,4 @@ You may also want to proceed to the <a class="
           :hover{color:$blue60}
           :active{color:$red60}!
         " href="/docs/configuration">configuration guide</a>
-for more information about how to use at-scopes and variables.</p></div></main></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/docs/syntax","query":{},"buildId":"jyb1YNMctkmLCwUvrVWnL","nextExport":true,"autoExport":true,"isFallback":false}</script><script nomodule="" src="/_next/static/chunks/polyfills-016998d612b101b8b0fc.js"></script><script src="/_next/static/chunks/main-7d1613afc8c8f43cb50f.js" async=""></script><script src="/_next/static/chunks/webpack-95c2b224bccf352ee870.js" async=""></script><script src="/_next/static/chunks/framework.daa7383ad2ab2e6757c1.js" async=""></script><script src="/_next/static/chunks/commons.9b549cceddc4472f1953.js" async=""></script><script src="/_next/static/chunks/82134fb66e92a3e7c48cbf2b5881681794bf25fd.453f2557c9f06e4e2165.js" async=""></script><script src="/_next/static/chunks/pages/_app-c61c7aaa6749011b9b5a.js" async=""></script><script src="/_next/static/chunks/a6e4a9f00c495845cb674adbbdbd00d342662ebc.7360bbfd812ca3299ce7.js" async=""></script><script src="/_next/static/chunks/pages/docs/syntax-ee332bc0fd2a23ffd7d7.js" async=""></script><script src="/_next/static/jyb1YNMctkmLCwUvrVWnL/_buildManifest.js" async=""></script><script src="/_next/static/jyb1YNMctkmLCwUvrVWnL/_ssgManifest.js" async=""></script></body></html>
+for more information about how to use at-scopes and variables.</p></div></main></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/docs/syntax","query":{},"buildId":"kQFOzOVXdrf4CUCfZlQd5","nextExport":true,"autoExport":true,"isFallback":false}</script><script nomodule="" src="/_next/static/chunks/polyfills-c404d6afeb7944ba47a6.js"></script><script src="/_next/static/chunks/main-7d1613afc8c8f43cb50f.js" async=""></script><script src="/_next/static/chunks/webpack-95c2b224bccf352ee870.js" async=""></script><script src="/_next/static/chunks/framework.daa7383ad2ab2e6757c1.js" async=""></script><script src="/_next/static/chunks/commons.9b549cceddc4472f1953.js" async=""></script><script src="/_next/static/chunks/82134fb66e92a3e7c48cbf2b5881681794bf25fd.f7fa3c9316b1dc7cbab7.js" async=""></script><script src="/_next/static/chunks/pages/_app-2631f3c5479480597da2.js" async=""></script><script src="/_next/static/chunks/9014d987dc103c690c8a89ba03a6f08e6430441a.7360bbfd812ca3299ce7.js" async=""></script><script src="/_next/static/chunks/pages/docs/syntax-b140c3bda1459f219516.js" async=""></script><script src="/_next/static/kQFOzOVXdrf4CUCfZlQd5/_buildManifest.js" async=""></script><script src="/_next/static/kQFOzOVXdrf4CUCfZlQd5/_ssgManifest.js" async=""></script></body></html>
