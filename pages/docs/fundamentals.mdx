@@ -2,9 +2,8 @@ import Article from "../../components/Article";
 
 <Article
   title="Fundamentals"
-  subtitle="What you need to know about Hacss">
+  subtitle="A few basics about Hacss">
 
-### CSS-in-HTML
 All professional web developers are familiar with inline styles. Most developers
 restrict their use to trivial prototyping exercises due to
 [functional limitations](https://stackoverflow.com/questions/131653/inline-style-to-act-as-hover-in-css)
@@ -19,11 +18,18 @@ Like these approaches, Hacss facilitates the colocation of markup and styles. It
 combines the strongest features of atomic CSS and CSS-in-JS while minimizing the
 downsides of each approach.
 
+### CSS-in-HTML
+
 Hacss works by embedding CSS syntax within ordinary HTML classes. While these
 self-describing class names are meaningless to the browser, Hacss analyzes them
 at build time and generates a style sheet that contains the corresponding
 "actual" CSS. For example, the class name `color:red;` results in the style
 sheet `.color\:red\;{color:red;}`
+
+Hacss can find your style rule classes within HTML templates, JavaScript
+modules, or other code files that render HTML: It is essentially
+language-agnostic. You'll just need to provide Hacss with the location of these
+source files.
 
 ### Advantages
 
