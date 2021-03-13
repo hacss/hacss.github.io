@@ -20,9 +20,11 @@ const Page: FC<{
         height:0;
         margin-y:$len16;
       `} />
-      <MDXProvider components={markdownComponents}>
-        {children}
-      </MDXProvider>
+      <section>
+        <MDXProvider components={markdownComponents}>
+          {children}
+        </MDXProvider>
+      </section>
     </div>
   </>
 );

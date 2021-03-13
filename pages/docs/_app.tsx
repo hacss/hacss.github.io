@@ -1,5 +1,6 @@
-import { FC } from "react";
+import { FC, useEffect, useRef } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const pages = [
   ["", "Getting Started"],
@@ -21,6 +22,21 @@ const DocsApp
     onSidebarClose: () => any;
   }>
 = ({ pathname, sidebarState, onSidebarOpen, onSidebarClose, children }) => {
+  const main = useRef<Element>(null);
+
+  const router = useRouter().events;
+  useEffect(() => {
+    const listener = () => {
+      const { current } = main;
+      if (current !== null) {
+        current.scrollTop = 0;
+      }
+    };
+    router.on("routeChangeComplete", listener);
+    return () => {
+      router.off("routeChangeComplete", listener);
+    };
+  }, [router]);
   return (
     <div className="display:flex; height:100%;">
       <header className={`
@@ -164,12 +180,14 @@ const DocsApp
           </svg>
         </button>
       </header>
-      <main className={`
-        flex:1;
-        font:$body1;
-        color:$gray95;
-        overflow-y:auto;
-      `}>
+      <main
+        ref={main}
+        className={`
+          flex:1;
+          font:$body1;
+          color:$gray95;
+          overflow:auto;
+        `}>
         {children}
       </main>
     </div>
