@@ -29,13 +29,13 @@ A rule can include:
 * a combination of a selector and an at-scope, e.g. `@sm{.err{width:100%}}`
 
 Note that declarations are always separated by semicolons. A rule consisting
-_only_ of declarations is also terminated by a semicolon; however, the trailing
-semicolon must be omitted for a rule that includes a selector and/or at-scope
-because the closing curly brace thereof tells Hacss where the declarations end.
+_only_ of declarations is also terminated by a semicolon. However, for a rule
+that includes a selector and/or at-scope, the trailing semicolon must be
+omitted.
 
 ### Selectors
 
-Selectors are actually useful within inline styles because they allow you to
+Selectors are surprisingly useful within inline styles because they allow you to
 activate various style rules conditionally, similar to what might otherwise be
 accomplished with JavaScript or an external style sheet. They can also be used
 to create pseudo-elements, which can sometimes optimize your markup for
@@ -46,12 +46,13 @@ Selectors can include:
 * a class list
 * a pseudo-element
 
+Each of these selector components is optional.
+
 #### Context
 
 A context describes the element's relationship to another element in the DOM
-tree. It consists of a class list followed by a combinator.
-
-##### Available combinators
+tree. It consists of a class list (described below) followed by one of the
+following combinators:
 
 * Ancestor: `_`
 * Parent: `>`
@@ -63,16 +64,29 @@ tree. It consists of a class list followed by a combinator.
 A class list consists of a series of named classes followed by a series of
 pseudo-classes.
 
-Named classes begin with a `.` and consist of lowercase letters and hyphens.
+##### Named Class
 
-Pseudo-classes begin with a `:` and consist of either:
-* lowercase letters and hyphens
-* `not(classes)` where `classes` is a class list
-* `nth-child(expr)`, `nth-last-child(expr)`, `nth-last-of-type(expr)`, or
-  `nth-of-type(expr)`, where `expr` is a formula like `even`, `odd`, `2n+1`,
+A named class consists of a dot followed by lowercase letters and hyphens.
+Examples of named classes include:
+* `.error`
+* `.focus-group`
+
+##### Pseudo-class
+
+A pseudo-class consists of a colon generally followed by a series of lowercase
+letters and hyphens. For example:
+
+* `:hover`
+* `:focus-within`
+* `:-ms-placeholder`
+
+Hacss also supports a few more advanced pseudo-classes:
+
+* `:not(<classes>)`, where `<classes>` is a class list
+* `:nth-child(<expr>)`, where `<expr>` is a formula like `2n+1`, `even`, `odd`,
   etc.
-* `lang(code)`, where `code` is a standard language code like `en`, `en-US`,
-  etc.
+* `:lang(<code>)`, where `<code>` is a standard language code like `en`,
+  `en-US`, etc.
 
 Named classes and pseudo-classes are each optional components of a class list.
 
@@ -80,10 +94,12 @@ Named classes and pseudo-classes are each optional components of a class list.
 
 A pseudo-element consists of `::`, followed by lowercase letters and hyphens.
 Examples of pseudo-elements include:
+
 * `::after`
 * `::placeholder`
+* `::-webkit-slider-thumb`
 
-#### Selector examples
+#### Selector rule examples
 
 * `.err{color:red}`
 * `:nth-child(odd){background:$gray50}`
@@ -91,24 +107,26 @@ Examples of pseudo-elements include:
 * `:checked~{text-decoration:line-through}`
 * `::placeholder{color:$gray50}`
 
-### At-scopes
+### At-scope
 
-At-scopes consist of `@` followed by lowercase letters and hyphens. You can use
-them for
+An at-scopes consists of an at sign followed by lowercase letters and hyphens.
+You can use them for
 [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) and
 [feature queries](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports).
-Each at-scope must be added to your [Hacss configuration](/docs/configuration).
-Note that the `@` character is omitted within configuration.
+Each at-scope must be added to your [Hacss configuration](./configuration). Note
+that the at sign is omitted within configuration.
 
-### Variables
+### Variable
 
-Variables consist of `$` followed by lowercase letters and hyphens. You can use
-variables as CSS values or even interpolate them into other values. For example:
+A variable consists of a dollar sign followed by lowercase letters and hyphens.
+You can use variables as CSS values or even interpolate them into other values.
+For example:
+
 * `color:$red500;`
 * `left:calc(50%+#{$len4});`
 
-Variables must be included in your [Hacss configuration](/docs/configuration).
-Note that the `$` character is omitted wthin configuration.
+Variables must be included in your [Hacss configuration](./configuration).
+Note that the dollar sign is omitted wthin configuration.
 
 ### Priority
 
@@ -128,12 +146,10 @@ the end, e.g. `:active{color:red}!` or `display:none;!`
 You can also increase the specificity as needed by adding more exclamation
 points, e.g. `display:none;!!`
 
-### Next steps
-
-For additional detail about syntax, consult the
-[parser source](https://github.com/hacss/core/blob/master/src/Parser.purs) and
-[corresponding tests](https://github.com/hacss/core/blob/master/test/Parser.purs).
-You may also want to proceed to the [configuration guide](/docs/configuration)
-for more information about how to use at-scopes and variables.
+The exclamation point may remind you a bit of
+[the !important exception](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity#the_!important_exception),
+generally regarded as a bad practice. Fortunately, Hacss' notion of _priority_
+incrementally increases specificity rather than relying on the brute force of an
+`!important` exception.
 
 </Article>
