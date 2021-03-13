@@ -19,7 +19,7 @@ information.
 The configuration module must export an object, which can contain either or both
 of the keys `atScopes` and `variables`.
 
-# Variables
+# `variables`
 
 This is a map of variables that can be used in style rules. A rule
 `:hover{color:$red500}`, for example, requires a corresponding key `red500` in
@@ -32,7 +32,7 @@ all have some notion of a "small" variant. To define a variable for a specific
 property, simply nest it within another map as shown in the configuration
 example below.
 
-## Variable Configuration Example
+## Example
 
 ```javascript
 exports.variables = {
@@ -49,13 +49,13 @@ exports.variables = {
 };
 ```
 
-# At-scopes
+# `atScopes`
 
 This is a map of at-scopes that can be used in style rules. A rule
 `@small{padding:0}`, for example, requires a corresponding key `small` in the
 `atScopes` map.
 
-## At-scope Configuration Example
+## Example
 
 ```javascript
 exports.atScopes = {

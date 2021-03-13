@@ -76,7 +76,7 @@ const markdownComponents: Record<string, (x: any) => any> = {
   inlineCode: ({ children, className, ...props }) => (
     <code
       {...props}
-      className={`${className || ""} font-family:$mono; font-size:0.875em; display:inline-block; transform:translateY(-0.0625rem);`}>
+      className={`${className || ""} font-family:$mono; font-size:0.875em; vertical-align:0.0625em;`}>
       {children}
     </code>
   ),

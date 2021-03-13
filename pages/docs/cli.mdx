@@ -41,7 +41,7 @@ hacss [--config <config-file>] [--output <output-file>] <sources>
 
 ## Arguments
 
-`[--config <config-file>]`
+### `[--config <config-file>]`
 
 When a `--config` argument is specified, the configuration file specified by the
 `<config-file>` path will be used. When not specified, `hacss.config.js`
@@ -49,15 +49,15 @@ will be used if it exists. While it is not strictly necessary to have a
 configuration file, you may want to review the configuration guide to understand
 when you might want to use one.
 
-`[--output <output-file>]`
+### `[--output <output-file>]`
 
 When an `--output` argument is specified, the generated CSS output will be
-written to the `>output-file<` path. When not specified, the CSS output
+written to the `<output-file>` path. When not specified, the CSS output
 will be written to the standard output.
 
-`<sources>`
+### `<sources>`
 
-The [globby](https://www.npmjs.com/package/globby) pattern specified here will
+The [`globby`](https://www.npmjs.com/package/globby) pattern specified here will
 be used to search for source files containing CSS classes that should be
 included in the generated style sheet. You can also specify a series of glob
 patterns.
