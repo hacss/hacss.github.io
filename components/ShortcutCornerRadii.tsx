@@ -11,9 +11,8 @@ const ShortcutCornerRadii: FC<{ children?: undefined }> = () => (
       borderRadii.map(([key, borderRadius]: [any, any]) => (
         <div
           className={`
-            border-width:$len1;
-            border-style:solid;
-            border-color:$gray70;
+            background:$gray70;
+            color:$gray05;
             display:inline-block;
             font:$code;
             padding:$len16;
