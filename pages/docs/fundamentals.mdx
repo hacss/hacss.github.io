@@ -30,8 +30,10 @@ sheet `.color\:red\;{color:red;}`
 #### Versus inline styles
 
 CSS-in-HTML enhances the development experience of inline styles with additional
-capabilities that normally require external style sheets: selectors, variables
-(named constants), and media queries.
+capabilities that normally require external style sheets:
+* selectors
+* variables (named constants)
+* media queries
 
 
 Furthermore, CSS-in-HTML
@@ -41,7 +43,7 @@ than native inline styles.
 #### Versus CSS-in-JS
 
 CSS-in-HTML works without JavaScript (except at build time) and imposes fewer
-constraints upon your design by supporting a wide array of HTML templating
+constraints upon your architecture by supporting a wide array of HTML templating
 languages, compile-to-JS languages, and application frameworks.
 
 Because all the work is done at build time, CSS-in-HTML also offers better
@@ -73,8 +75,9 @@ Whitespace cannot be used within a style rule because it is used to delimit HTML
 classes. The browser would simply not apply the intended style rule if it were
 allowed to contain spaces.
 
-When spaces are required (which is not very often), double underscores may be
-used in declaration values, e.g. `box-shadow:0__0__0__1px__black;`
+When spaces are strictly required (which is actually not often), double
+underscores may be used in declaration values, e.g.
+`box-shadow:0__0__0__1px__black;`
 
 #### Dynamic class names
 
