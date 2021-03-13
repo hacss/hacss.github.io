@@ -1,7 +1,9 @@
 import Article from "../../components/Article";
 import ShellCommand from "../../components/ShellCommand";
 import ShortcutBorders from "../../components/ShortcutBorders";
+import ShortcutBoxShadows from "../../components/ShortcutBoxShadows";
 import ShortcutColors from "../../components/ShortcutColors";
+import ShortcutCornerRadii from "../../components/ShortcutCornerRadii";
 import ShortcutFonts from "../../components/ShortcutFonts";
 import ShortcutLengths from "../../components/ShortcutLengths";
 
@@ -18,7 +20,7 @@ shadows, and more.
 # Installation
 
 To get started, install the
-[@hacss/shortcuts](https://www.npmjs.com/package/@hacss/shortcuts) package:
+[`@hacss/shortcuts`](https://www.npmjs.com/package/@hacss/shortcuts) package:
 
 <ShellCommand>
   npm install @hacss/shortcuts
@@ -34,17 +36,17 @@ module.exports = shortcuts();
 
 # Usage
 
-The Shortcuts package is just an ordinary Hacss configuration and includes a
-number of breakpoints and variables. Review the [syntax](./syntax) and
-[configuration](./configuration) guides for more information.
+The Shortcuts package is essentially just an ordinary Hacss configuration and
+includes a number of breakpoints and variables. Review the [syntax](./syntax)
+and [configuration](./configuration) guides for more information.
 
 # Available Shortcuts
 
 ## Colors
 
-The included color palette includes several base color options, each with a full
-range of shades and tints. It offers both flexibility and consistency by
-providing numerous options but not too many.
+The color palette includes several base colors, each with a full range of shades
+and tints. It provides a number of options that is small enough to promote
+consistency throughout your site yet large enough to satisfy most use cases.
 
 <ShortcutColors />
 
@@ -61,6 +63,28 @@ units behind the scenes: For example, `$len16` has an underlying value of `1rem`
 
 <div className="height:$len16;"></div>
 
+## Typography
+
+Use these variables with the
+[`font`](https://developer.mozilla.org/en-US/docs/Web/CSS/font) shorthand
+property. Not only is this more convenient than setting constituent properties
+individually, but also it improves typographical consistency throughout your
+site. If you need to override a constituent property, you can always use a rule
+priority as explained in the [syntax guide](./syntax).
+
+<ShortcutFonts />
+
+<div className="height:$len16;"></div>
+
+## Box Shadows
+
+These work with the `box-shadow` property and can be used to emphasize an
+element by adding elevation.
+
+<ShortcutBoxShadows />
+
+<div className="height:$len16;"></div>
+
 ## Borders
 
 Like the length shortcuts, border widths are limited in number and aliased in
@@ -71,14 +95,12 @@ little effort.
 
 <div className="height:$len16;"></div>
 
-## Typography
+## Corner Radii
 
-Use these variables with the
-[font](https://developer.mozilla.org/en-US/docs/Web/CSS/font) shorthand property.
-Not only is this more convenient than setting constituent properties
-individually, but also it improves typographical consistency throughout your
-site. If you need to override a constituent property, you can always use a rule
-priority as explained in the [syntax guide](./syntax).
-<ShortcutFonts />
+The corner radius variables work with the `border-radius` property and its
+various constituent properties (`border-top-left-radius`,
+`border-top-right-radius`, etc.)
+
+<ShortcutCornerRadii />
 
 </Article>

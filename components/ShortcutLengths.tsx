@@ -30,11 +30,9 @@ const ShortcutLengths: FC<{ children?: undefined }> = () => {
         lengths.map(([k, width]: [string, any]) => (
           <div key={k} className="len .len+{margin-top:$len8} display:flex;">
             <div className="font:$code; width:$len64;">${k}</div>
-            <div className="width:$len512;">
-              <div
-                className="height:$len16; background:$gray70;"
-                style={{ width: `calc(${width}*${ratio})` }} />
-            </div>
+            <div
+              className="height:$len16; background:$gray70;"
+              style={{ width: `calc(${width}*${ratio})` }} />
           </div>
         ))
       }
