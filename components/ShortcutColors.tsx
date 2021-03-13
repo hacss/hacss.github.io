@@ -27,10 +27,10 @@ const colors = Object.values(
 );
 
 const ShortcutColors: FC<{ children?: undefined }> = () => (
-  <>
+  <div>
     {
       colors.map((group: any, i) => (
-        <div key={i} className="group .group+{margin-top:$len16}">
+        <div key={i} className=":first-child{margin-top:-#{$len16}}">
           {
             group.map(([k, background]: [string, string]) => (
               <div
@@ -39,6 +39,7 @@ const ShortcutColors: FC<{ children?: undefined }> = () => (
                   display:inline-block;
                   text-align:center;
                   padding-x:$len2;
+                  margin-top:$len16;
                 `}>
                 <div
                   className="width:$len80; height:$len40; border-radius:$sm;"
@@ -50,7 +51,7 @@ const ShortcutColors: FC<{ children?: undefined }> = () => (
         </div>
       ))
     }
-  </>
+  </div>
 );
 
 export default ShortcutColors;
