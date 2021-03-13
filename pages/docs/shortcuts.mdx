@@ -15,7 +15,7 @@ units of your design. The Shortcuts package provides a configuration that is
 ready to use or extend, complete with a color palette, fonts, spacing presets,
 shadows, and more.
 
-### Installation
+# Installation
 
 To get started, install the
 [@hacss/shortcuts](https://www.npmjs.com/package/@hacss/shortcuts) package:
@@ -32,15 +32,15 @@ const shortcuts = require("@hacss/shortcuts");
 module.exports = shortcuts();
 ```
 
-### Usage
+# Usage
 
 The Shortcuts package is just an ordinary Hacss configuration and includes a
 number of breakpoints and variables. Review the [syntax](./syntax) and
 [configuration](./configuration) guides for more information.
 
-### Available Shortcuts
+# Available Shortcuts
 
-#### Colors
+## Colors
 
 The included color palette includes several base color options, each with a full
 range of shades and tints. It offers both flexibility and consistency by
@@ -50,7 +50,7 @@ providing numerous options but not too many.
 
 <div className="height:$len16;"></div>
 
-#### Lengths
+## Lengths
 
 These length abstractions improve the consistency of your layout by providing a
 finite set of options for padding, margins, and other length properties. They
@@ -61,7 +61,7 @@ units behind the scenes: For example, `$len16` has an underlying value of `1rem`
 
 <div className="height:$len16;"></div>
 
-#### Borders
+## Borders
 
 Like the length shortcuts, border widths are limited in number and aliased in
 terms of pixels, so choosing the right border width for your use case requires
@@ -71,7 +71,7 @@ little effort.
 
 <div className="height:$len16;"></div>
 
-#### Typography
+## Typography
 
 Use these variables with the
 [font](https://developer.mozilla.org/en-US/docs/Web/CSS/font) shorthand property.

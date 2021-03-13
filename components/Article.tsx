@@ -1,4 +1,7 @@
+import React from "react";
 import { FC } from "react";
+import Link from "next/link";
+import { MDXProvider } from "@mdx-js/react";
 import Head from "./Head";
 
 const Page: FC<{
@@ -17,9 +20,65 @@ const Page: FC<{
         height:0;
         margin-y:$len16;
       `} />
-      {children}
+      <MDXProvider components={markdownComponents}>
+        {children}
+      </MDXProvider>
     </div>
   </>
 );
 
 export default Page;
+
+const markdownComponents: Record<string, (x: any) => any> = {
+  a: ({ children, className, href, ...props }) => (
+    <Link href={href}>
+      <a
+        className={`
+          ${className || ""}
+          color:$blue80;
+          :hover{color:$blue60}
+          :active{color:$red60}!
+        `}
+        {...props}>
+        {children}
+      </a>
+    </Link>
+  ),
+  code: ({ children, className, ...props }) => (
+    <code {...props} className={`${className || ""} font:inherit;`}>
+      {children}
+    </code>
+  ),
+  h1: ({ children, className, ...props }) => (
+    <h3
+      {...props}
+      className={`${className || ""} font:$h3; margin-y:$len16;`}>
+      {children}
+    </h3>
+  ),
+  h2: ({ children, className, ...props }) => (
+    <h4
+      {...props}
+      className={`${className || ""} font:$h4; margin-y:$len16;`}>
+      {children}
+    </h4>
+  ),
+  h3: ({ children, className, ...props }) => (
+    <h5
+      {...props}
+      className={`${className || ""} font:$h5; margin-y:$len16;`}>
+      {children}
+    </h5>
+  ),
+  hr: () => (<div className="height:0; border-width:$len1; border-style:solid; border-color:$gray10;" />),
+  inlineCode: ({ children, className, ...props }) => (
+    <code
+      {...props}
+      className={`${className || ""} font-family:$mono; font-size:0.875em; display:inline-block; transform:translateY(-0.0625rem);`}>
+      {children}
+    </code>
+  ),
+  pre: ({ children, className, ...props }) => (
+    <pre {...props} className={`${className || ""} font:$code; margin:0;`}>{children}</pre>
+  ),
+};

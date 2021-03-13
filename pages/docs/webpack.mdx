@@ -17,7 +17,7 @@ you will also use the lesser-known
 [val-loader](https://github.com/webpack-contrib/val-loader)
 to generate a CSS module dynamically using Hacss.
 
-### Installation
+# Installation
 
 If you have not done so already, install the required packages:
 
@@ -25,12 +25,12 @@ If you have not done so already, install the required packages:
 npm install -D val-loader css-loader style-loader @hacss/build
 </ShellCommand>
 
-### Webpack Configuration
+# Webpack Configuration
 
 Two small changes in the Webpack configuration (i.e. `webpack.config.js` are
 necessary to enable Hacss.
 
-#### Entry
+## Entry
 
 The first change required is to insert an additional
 [entry point](https://webpack.js.org/concepts/entry-points/). This likely means
@@ -43,7 +43,7 @@ module.exports = {
 };
 ```
 
-#### Rule
+## Rule
 
 The next step is to create a
 [rule](https://webpack.js.org/configuration/module/#rule) that specifies how to
@@ -71,7 +71,7 @@ module.exports = {
 };
 ```
 
-### Next Steps
+# Conclusion
 
 A generated style sheet will now be added to the page automatically. At this
 point, you can add a `hacss.config.js` file alongside `webpack.config.js` if

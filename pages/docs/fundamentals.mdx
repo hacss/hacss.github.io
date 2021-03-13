@@ -18,7 +18,7 @@ Like these approaches, Hacss facilitates the colocation of markup and styles. It
 combines the strongest features of atomic CSS and CSS-in-JS while minimizing the
 downsides of each approach.
 
-### CSS-in-HTML
+# CSS-in-HTML
 
 Hacss works by embedding CSS syntax within ordinary HTML classes. While these
 self-describing class names are meaningless to the browser, Hacss analyzes them
@@ -31,9 +31,9 @@ modules, or other code files that render HTML: It is essentially
 language-agnostic. You'll just need to provide Hacss with the location of these
 source files.
 
-### Advantages
+# Advantages
 
-#### Versus inline styles
+## Versus inline styles
 
 CSS-in-HTML enhances the development experience of inline styles with additional
 capabilities that normally require external style sheets:
@@ -46,7 +46,7 @@ Furthermore, CSS-in-HTML
 [may be faster](https://simonadcock.com/are-inline-styles-faster-than-atomic-css/)
 than native inline styles.
 
-#### Versus CSS-in-JS
+## Versus CSS-in-JS
 
 CSS-in-HTML works without JavaScript (except at build time) and imposes fewer
 constraints upon your architecture by supporting a wide array of HTML templating
@@ -55,7 +55,7 @@ languages, compile-to-JS languages, and application frameworks.
 Because all the work is done at build time, CSS-in-HTML also offers better
 performance.
 
-#### Versus atomic CSS
+## Versus atomic CSS
 
 With a familiar syntax that translates directly to CSS, the CSS-in-HTML approach
 provides significant advantages over atomic CSS.
@@ -70,12 +70,12 @@ where atomic CSS frameworks are typically limited to basic pseudo-classes like
 `:hover` and `:focus`. It also allows variables to be interpolated into style
 rules, which can address "edge-case" scenarios, e.g. `left:calc(50%+#{$spacing4});`
 
-### Constraints
+# Constraints
 
 While CSS-in-HTML introduces fewer constraints than other approaches, some basic
 rules apply.
 
-#### Whitespace
+## Whitespace
 
 Whitespace cannot be used within a style rule because it is used to delimit HTML
 classes. The browser would simply not apply the intended style rule if it were
@@ -85,7 +85,7 @@ When spaces are strictly required (which is actually not often), double
 underscores may be used in declaration values, e.g.
 `box-shadow:0__0__0__1px__black;`
 
-#### Dynamic class names
+## Dynamic class names
 
 Style rules cannot be constructed dynamically using string concatenation,
 template literals, or otherwise. They must appear in the code as string literals

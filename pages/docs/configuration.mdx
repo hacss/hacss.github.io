@@ -8,7 +8,7 @@ As outlined in the [syntax guide](./syntax), Hacss supports variables (i.e.
 named constants) and at-scopes (e.g. media queries). These features require a
 small amount of configuration.
 
-### Configuration Module
+# Configuration Module
 
 Both the [CLI](./cli) and the [Webpack integration](./webpack) will look for a
 `hacss.config.js` file in the working directory (i.e. the project root). You can
@@ -19,7 +19,7 @@ information.
 The configuration module must export an object, which can contain either or both
 of the keys `atScopes` and `variables`.
 
-### Variables
+# Variables
 
 This is a map of variables that can be used in style rules. A rule
 `:hover{color:$red500}`, for example, requires a corresponding key `red500` in
@@ -32,7 +32,7 @@ all have some notion of a "small" variant. To define a variable for a specific
 property, simply nest it within another map as shown in the configuration
 example below.
 
-#### Variable Configuration Example
+## Variable Configuration Example
 
 ```javascript
 exports.variables = {
@@ -49,13 +49,13 @@ exports.variables = {
 };
 ```
 
-### At-scopes
+# At-scopes
 
 This is a map of at-scopes that can be used in style rules. A rule
 `@small{padding:0}`, for example, requires a corresponding key `small` in the
 `atScopes` map.
 
-#### At-scope Configuration Example
+## At-scope Configuration Example
 
 ```javascript
 exports.atScopes = {

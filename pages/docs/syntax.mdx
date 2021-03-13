@@ -33,7 +33,7 @@ _only_ of declarations is also terminated by a semicolon. However, for a rule
 that includes a selector and/or at-scope, the trailing semicolon must be
 omitted.
 
-### Selectors
+# Selectors
 
 Selectors are surprisingly useful within inline styles because they allow you to
 activate various style rules conditionally, similar to what might otherwise be
@@ -48,7 +48,7 @@ Selectors can include:
 
 Each of these selector components is optional.
 
-#### Context
+## Context
 
 A context describes the element's relationship to another element in the DOM
 tree. It consists of a class list (described below) followed by one of the
@@ -59,19 +59,19 @@ following combinators:
 * Adjacent sibling: `+`
 * General sibling: `~`
 
-#### Class List
+## Class List
 
 A class list consists of a series of named classes followed by a series of
 pseudo-classes.
 
-##### Named Class
+### Named Class
 
 A named class consists of a dot followed by lowercase letters and hyphens.
 Examples of named classes include:
 * `.error`
 * `.focus-group`
 
-##### Pseudo-class
+### Pseudo-class
 
 A pseudo-class consists of a colon generally followed by a series of lowercase
 letters and hyphens. For example:
@@ -90,7 +90,7 @@ Hacss also supports a few more advanced pseudo-classes:
 
 Named classes and pseudo-classes are each optional components of a class list.
 
-#### Pseudo-element
+## Pseudo-element
 
 A pseudo-element consists of `::`, followed by lowercase letters and hyphens.
 Examples of pseudo-elements include:
@@ -99,7 +99,7 @@ Examples of pseudo-elements include:
 * `::placeholder`
 * `::-webkit-slider-thumb`
 
-#### Selector rule examples
+## Selector rule examples
 
 * `.err{color:red}`
 * `:nth-child(odd){background:$gray50}`
@@ -107,7 +107,7 @@ Examples of pseudo-elements include:
 * `:checked~{text-decoration:line-through}`
 * `::placeholder{color:$gray50}`
 
-### At-scope
+# At-scope
 
 An at-scopes consists of an at sign followed by lowercase letters and hyphens.
 You can use them for
@@ -116,7 +116,7 @@ You can use them for
 Each at-scope must be added to your [Hacss configuration](./configuration). Note
 that the at sign is omitted within configuration.
 
-### Variable
+# Variable
 
 A variable consists of a dollar sign followed by lowercase letters and hyphens.
 You can use variables as CSS values or even interpolate them into other values.
@@ -128,7 +128,7 @@ For example:
 Variables must be included in your [Hacss configuration](./configuration).
 Note that the dollar sign is omitted wthin configuration.
 
-### Priority
+# Priority
 
 Hacss places at-scope rules at the end of the generated style sheet; but, beyond
 that, it offers no rule ordering guarantees. You should use
