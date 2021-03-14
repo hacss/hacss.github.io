@@ -14,7 +14,7 @@ const Article: FC<{
     <div
       className="padding-x:$len64; padding-y:$len32; max-width:60rem; box-sizing:border-box;"
       style={{ minWidth: `${useContext(Viewport) - 70}px` }}>
-      <h1 className="font:$h1; margin:0;">{title}{useContext(Viewport) - 70}</h1>
+      <h1 className="font:$h1; margin:0;">{title}</h1>
       {subtitle && (<h2 className="font:$h2; margin:0; color:$gray70;">{subtitle}</h2>)}
       <hr className={`
         border-width:$len1;
