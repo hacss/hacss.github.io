@@ -14,7 +14,7 @@ const Article: FC<{
     <>
       <Head subtitle={title} description={subtitle} />
       <div
-        className="padding-x:$len64; padding-y:$len32; max-width:60rem; box-sizing:border-box;"
+        className="padding-x:$len64; padding-y:$len32; max-width:68rem; box-sizing:border-box;"
         style={viewport < 600 ? { minWidth: `${viewport - 70}px` } : {}}>
         <h1 className="font:$h1; margin:0;">{title}</h1>
         {subtitle && (<h2 className="font:$h2; margin:0; color:$gray70;">{subtitle}</h2>)}
