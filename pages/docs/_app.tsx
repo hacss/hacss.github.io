@@ -188,7 +188,7 @@ const DocsApp
           color:$gray95;
           overflow:auto;
         `}>
-        <div className="min-width:$len512;">{children}</div>
+        {children}
       </main>
     </div>
   );
