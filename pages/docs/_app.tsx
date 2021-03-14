@@ -22,7 +22,7 @@ const DocsApp
     onSidebarClose: () => any;
   }>
 = ({ pathname, sidebarState, onSidebarOpen, onSidebarClose, children }) => {
-  const main = useRef<Element>(null);
+  const main = useRef<HTMLElement>(null);
 
   const router = useRouter().events;
   useEffect(() => {
