@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const Viewport = createContext<number>(window.innerWidth);
+const Viewport = createContext<number>(0);
 
 export default Viewport;

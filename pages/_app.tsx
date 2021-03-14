@@ -40,7 +40,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
 export default App;
 
 const useViewportWidth = () => {
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  const [viewportWidth, setViewportWidth] = useState(0);
   useEffect(() => {
     const listener = () => setViewportWidth(window.innerWidth);
     window.addEventListener("resize", listener);
