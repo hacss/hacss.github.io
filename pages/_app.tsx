@@ -4,6 +4,7 @@ import { FC, useEffect, useState } from "react";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import DocsApp from "./docs/_app";
+import Viewport from "../context/Viewport";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -16,25 +17,37 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
   const [sidebarState, openSidebar, closeSidebar] = useSidebarState();
 
   return (
-    <div className="position:absolute; inset:0;">
-      {
-        pathname.startsWith("/docs")
-        ? (
-            <DocsApp
-              pathname={pathname}
-              sidebarState={sidebarState}
-              onSidebarOpen={openSidebar}
-              onSidebarClose={closeSidebar}>
-              <Component {...pageProps} />
-            </DocsApp>
-          )
-        : (<Component {...pageProps} />)
-      }
-    </div>
+    <Viewport.Provider value={useViewportWidth()}>
+      <div className="position:absolute; inset:0;">
+        {
+          pathname.startsWith("/docs")
+          ? (
+              <DocsApp
+                pathname={pathname}
+                sidebarState={sidebarState}
+                onSidebarOpen={openSidebar}
+                onSidebarClose={closeSidebar}>
+                <Component {...pageProps} />
+              </DocsApp>
+            )
+          : (<Component {...pageProps} />)
+        }
+      </div>
+    </Viewport.Provider>
   );
 }
 
 export default App;
+
+const useViewportWidth = () => {
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const listener = () => setViewportWidth(window.innerWidth);
+    window.addEventListener("resize", listener);
+    return () => { window.removeEventListener("resize", listener); };
+  }, []);
+  return viewportWidth;
+};
 
 const useSidebarState = (): ["open" | "closed", () => void, () => void] => {
   const [open, setOpen] = useState(false);

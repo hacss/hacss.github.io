@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FC } from "react";
 import Link from "next/link";
 import { MDXProvider } from "@mdx-js/react";
 import Head from "./Head";
+import Viewport from "../context/Viewport";
 
-const Page: FC<{
+const Article: FC<{
   title: string;
   subtitle?: string;
 }> = ({ children, title, subtitle }) => (
   <>
     <Head subtitle={title} description={subtitle} />
-    <div className="padding-x:$len64; padding-y:$len32; max-width:60rem;">
-      <h1 className="font:$h1; margin:0;">{title}</h1>
+    <div
+      className="padding-x:$len64; padding-y:$len32; max-width:60rem; box-sizing:border-box;"
+      style={{ minWidth: `${useContext(Viewport) - 70}px` }}>
+      <h1 className="font:$h1; margin:0;">{title}{useContext(Viewport) - 70}</h1>
       {subtitle && (<h2 className="font:$h2; margin:0; color:$gray70;">{subtitle}</h2>)}
       <hr className={`
         border-width:$len1;
@@ -29,7 +32,7 @@ const Page: FC<{
   </>
 );
 
-export default Page;
+export default Article;
 
 const markdownComponents: Record<string, (x: any) => any> = {
   a: ({ children, className, href, ...props }) => (
