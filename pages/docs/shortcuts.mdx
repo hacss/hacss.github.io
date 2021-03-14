@@ -5,6 +5,7 @@ import ShortcutBoxShadows from "../../components/ShortcutBoxShadows";
 import ShortcutColors from "../../components/ShortcutColors";
 import ShortcutCornerRadii from "../../components/ShortcutCornerRadii";
 import ShortcutFonts from "../../components/ShortcutFonts";
+import ShortcutFocusOutlines from "../../components/ShortcutFocusOutlines";
 import ShortcutLengths from "../../components/ShortcutLengths";
 
 <Article
@@ -102,5 +103,22 @@ various constituent properties (`border-top-left-radius`,
 `border-top-right-radius`, etc.)
 
 <ShortcutCornerRadii />
+
+<div className="height:$len16;"></div>
+
+## Focus Outlines
+
+Custom focus outlines are often achieved with the
+[`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
+property. The Shortcuts package offers a large set of outline box shadows based
+on its color palette.
+
+Before applying these, you should suppress the browser's default outline using
+an `outline:$none;` class. The `$none` variable provides a transparent outline
+rather than removing it completely, providing a better experience in Windows
+High Contrast Mode as explained
+[here](https://sarahmhigley.com/writing/whcm-quick-tips/).
+
+<ShortcutFocusOutlines />
 
 </Article>

@@ -19,7 +19,7 @@ const ShortcutCornerRadii: FC<{ children?: undefined }> = () => (
             :not(:first-child){margin-left:$len8}
           `}
           style={{ borderRadius }}>
-          {key}
+          ${key}
         </div>
       ))
     }

@@ -12,6 +12,7 @@ const ShortcutBoxShadows: FC<{ children?: undefined }> = () => (
     {
       shadows.map(([key, boxShadow]: [any, any]) => (
         <div
+          key={key}
           className={`
             padding:$len16;
             display:inline-block;
@@ -19,7 +20,7 @@ const ShortcutBoxShadows: FC<{ children?: undefined }> = () => (
             background:#fff;
           `}
           style={{ boxShadow }}>
-          {key}
+          ${key}
         </div>
       ))
     }
