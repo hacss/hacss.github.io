@@ -8,29 +8,32 @@ import Viewport from "../context/Viewport";
 const Article: FC<{
   title: string;
   subtitle?: string;
-}> = ({ children, title, subtitle }) => (
-  <>
-    <Head subtitle={title} description={subtitle} />
-    <div
-      className="padding-x:$len64; padding-y:$len32; max-width:60rem; box-sizing:border-box;"
-      style={{ minWidth: `${useContext(Viewport) - 70}px` }}>
-      <h1 className="font:$h1; margin:0;">{title}</h1>
-      {subtitle && (<h2 className="font:$h2; margin:0; color:$gray70;">{subtitle}</h2>)}
-      <hr className={`
-        border-width:$len1;
-        border-style:solid;
-        border-color:$gray10;
-        height:0;
-        margin-y:$len16;
-      `} />
-      <section>
-        <MDXProvider components={markdownComponents}>
-          {children}
-        </MDXProvider>
-      </section>
-    </div>
-  </>
-);
+}> = ({ children, title, subtitle }) => {
+  const viewport = useContext(Viewport);
+  return (
+    <>
+      <Head subtitle={title} description={subtitle} />
+      <div
+        className="padding-x:$len64; padding-y:$len32; max-width:60rem; box-sizing:border-box;"
+        style={viewport < 600 ? { minWidth: `${viewport - 70}px` } : {}}>
+        <h1 className="font:$h1; margin:0;">{title}</h1>
+        {subtitle && (<h2 className="font:$h2; margin:0; color:$gray70;">{subtitle}</h2>)}
+        <hr className={`
+          border-width:$len1;
+          border-style:solid;
+          border-color:$gray10;
+          height:0;
+          margin-y:$len16;
+        `} />
+        <section>
+          <MDXProvider components={markdownComponents}>
+            {children}
+          </MDXProvider>
+        </section>
+      </div>
+    </>
+  );
+};
 
 export default Article;
 
