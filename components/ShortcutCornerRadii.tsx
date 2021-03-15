@@ -6,7 +6,7 @@ const shortcuts = mkShortcuts();
 const borderRadii = Object.entries(shortcuts.variables["border-radius"]);
 
 const ShortcutCornerRadii: FC<{ children?: undefined }> = () => (
-  <div>
+  <div className="margin-top:-#{$len8};">
     {
       borderRadii.map(([key, borderRadius]: [any, any]) => (
         <div
@@ -16,7 +16,8 @@ const ShortcutCornerRadii: FC<{ children?: undefined }> = () => (
             display:inline-block;
             font:$code;
             padding:$len16;
-            :not(:first-child){margin-left:$len8}
+            margin-top:$len8;
+            :not(:last-child){margin-right:$len8}
           `}
           style={{ borderRadius }}>
           ${key}

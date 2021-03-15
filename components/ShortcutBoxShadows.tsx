@@ -8,7 +8,7 @@ const shadows = Object
   .filter(([key]) => /^[^outline]/.test(key));
 
 const ShortcutBoxShadows: FC<{ children?: undefined }> = () => (
-  <div>
+  <div className="margin-top:-#{$len32};">
     {
       shadows.map(([key, boxShadow]: [any, any]) => (
         <div
@@ -16,7 +16,8 @@ const ShortcutBoxShadows: FC<{ children?: undefined }> = () => (
           className={`
             padding:$len16;
             display:inline-block;
-            :not(:first-child){margin-left:$len32}
+            margin-top:$len32;
+            :not(:last-child){margin-right:$len32}
             background:#fff;
           `}
           style={{ boxShadow }}>
