@@ -5,7 +5,7 @@ const shortcuts = mkShortcuts();
 
 const shadows = Object
   .entries(shortcuts.variables["box-shadow"])
-  .filter(([key]) => /^[^outline]/.test(key));
+  .filter(([key]) => !/^outline/.test(key));
 
 const ShortcutBoxShadows: FC<{ children?: undefined }> = () => (
   <div className="margin-top:-#{$len32};">
