@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { FC } from "react";
 import Link from "next/link";
 import { MDXProvider } from "@mdx-js/react";
+import Highlight, { Language, defaultProps } from 'prism-react-renderer'
+import theme from "prism-react-renderer/themes/vsLight";
 import Head from "./Head";
 import Viewport from "../context/Viewport";
 
@@ -43,6 +45,30 @@ const Article: FC<{
 
 export default Article;
 
+const Code: FC<{ children: string, className: string }> = ({ children, className }) => {
+  const language = className.replace(/language-/, "") as Language;
+
+  return (
+    <Highlight
+      {...defaultProps}
+      theme={theme}
+      code={children.trim()}
+      language={language}>
+      {({className, style, tokens, getLineProps, getTokenProps}) => (
+        <div className={className} style={style}>
+          {tokens.map((line, i) => (
+            <div key={i} {...getLineProps({line, key: i})}>
+              {line.map((token, key) => (
+                <span key={key} {...getTokenProps({token, key})} />
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
+    </Highlight>
+  )
+};
+
 const markdownComponents: Record<string, (x: any) => any> = {
   a: ({ children, className, href, ...props }) => (
     <Link href={href}>
@@ -58,11 +84,14 @@ const markdownComponents: Record<string, (x: any) => any> = {
       </a>
     </Link>
   ),
+  code: Code,
+  /*
   code: ({ children, className, ...props }) => (
     <code {...props} className={`${className || ""} font:inherit;`}>
       {children}
     </code>
   ),
+  */
   h1: ({ children, className, ...props }) => (
     <h3
       {...props}

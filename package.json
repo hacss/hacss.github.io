@@ -25,6 +25,7 @@
     "postcss-inset": "^1.0.0",
     "postcss-loader": "^4.1.0",
     "postcss-short-border-radius": "^3.0.0",
+    "prism-react-renderer": "^1.2.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "string-replace-loader": "^3.0.1",
