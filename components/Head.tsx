@@ -12,6 +12,9 @@ const Head: FC<{ subtitle?: string, description?: string, children?: undefined }
       <meta property="og:image" content="https://repository-images.githubusercontent.com/234330718/b398e100-8722-11ea-9a02-712ad5e77447" />
       <meta property="og:url" content={`https://hacss.io${useRouter().pathname}`} />
       <meta name="twitter:card" content="summary_large_image" />
+      <link rel="icon" type="image/png" href="/favicon16.png" sizes="16x16" />
+      <link rel="icon" type="image/png" href="/favicon32.png" sizes="32x32" />
+      <link rel="icon" type="image/png" href="/favicon48.png" sizes="48x48" />
     </NextHead>
   );
 
