@@ -121,4 +121,35 @@ High Contrast Mode as explained
 
 <ShortcutFocusOutlines />
 
+<div className="height:$len16;"></div>
+
+# Customization
+
+You might have noticed earlier that the `@hacss/shortcuts` module exports a
+function that returns a Hacss configuration. This allows you to provide a custom
+color palette (upon which color and focus outline variables are based) and
+font family (upon which font variables are based). To do so, just pass an
+argument consisting of an object with keys `colors` and/or `fontFamily`.
+
+## `colors`
+
+The `colors` map will be included in the Hacss configuration such that each key
+will be available as a variable and will be used to generate focus outline
+variables. For example, given a key `red500`, the resulting configuration will
+include variables `$red500`, `$outline-sm-red500`, and `$outline-lg-red500`.
+
+Note that the default color palette above is provided when `colors` is not
+specified.
+
+## `fontFamily`
+
+The `fontFamily` value is used in font variables. You can provide a string to be
+used in all font variables; or, you can provide a map to change the font family
+of each font variable listed above.
+
+In the latter case, use each font variable name listed in the _Typography_
+section above, e.g. `body2`, as the keys for the map. You can also include a
+`default` key as a fallback in case you don't want to customize each font
+variable explicitly.
+
 </Article>
