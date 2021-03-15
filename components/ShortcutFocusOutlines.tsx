@@ -93,7 +93,8 @@ const ShortcutFocusOutlines: FC<{ children?: undefined }> = () => {
 
   return (
     <div className={`
-      width:$len448;
+      max-width:100%;
+      overflow-x:auto;
       display:inline-flex;
       flex-direction:column;
       align-items:stretch;
