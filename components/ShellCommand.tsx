@@ -1,4 +1,5 @@
 import { FC } from "react";
+import copy from "clipboard-copy";
 
 const ShellCommand: FC<{ children: string }> = ({ children }) => {
   return (
@@ -27,7 +28,8 @@ const ShellCommand: FC<{ children: string }> = ({ children }) => {
           :hover{color:$blue40}
           :active{color:$red30}!
           cursor:pointer;
-        `}>
+        `}
+        onClick={() => { copy(children); }}>
         <svg
           width="16"
           height="16"
