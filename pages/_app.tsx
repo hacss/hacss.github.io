@@ -5,6 +5,9 @@ import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import DocsApp from "./docs/_app";
 import Viewport from "../context/Viewport";
+import * as gtag from "../utils/gtag";
+
+const isProduction = process.env.NODE_ENV === "production";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -13,7 +16,19 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
     return () => document.body.classList.remove(bg);
   }, []);
 
-  const { pathname } = useRouter();
+  const router = useRouter(), { pathname } = router;
+
+  useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      /* invoke analytics function only for production */
+      if (isProduction) gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   const [sidebarState, openSidebar, closeSidebar] = useSidebarState();
 
   return (
