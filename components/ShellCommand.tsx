@@ -1,7 +1,7 @@
 import { FC } from "react";
 import copy from "clipboard-copy";
 
-const ShellCommand: FC<{ children: string }> = ({ children }) => {
+const ShellCommand: FC<{ children: string | string[] }> = ({ children }) => {
   return (
     <div className={`
       display:inline-flex;
@@ -29,7 +29,7 @@ const ShellCommand: FC<{ children: string }> = ({ children }) => {
           :active{color:$red30}!
           cursor:pointer;
         `}
-        onClick={() => { copy(children); }}>
+        onClick={() => { copy(children instanceof Array ? children.join("") : children); }}>
         <svg
           width="16"
           height="16"

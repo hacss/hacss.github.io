@@ -5,10 +5,11 @@ import ShellCommand from "../../components/ShellCommand";
 
 # Try it
 
-To get a small taste of what Hacss can do, you can try the CLI with no
-installation required using [`npx`](https://docs.npmjs.com/cli/v7/commands/npx):
+You can try the CLI with no installation required using
+[`npx`](https://docs.npmjs.com/cli/v7/commands/npx). Just provide a snippet of
+HTML containing a style rule, and a style sheet will be generated:
 
-<ShellCommand>echo ":hover{`{color:red}`}" | npx hacss</ShellCommand>
+<ShellCommand>echo "&lt;span class=\":hover{`{color:red}`}\"&gt;testing&lt;/span&gt;" | npx hacss</ShellCommand>
 
 # Basement
 
