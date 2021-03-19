@@ -13,8 +13,14 @@ const ShellCommand: FC<{ children: string | string[] }> = ({ children }) => {
       background:$gray05;
       color:$gray95;
       font:$code;
+      max-width:100%;
     `}>
-      <div className="padding:$len8;">
+      <div className={`
+        padding:$len8;
+        flex:1;
+        white-space:nowrap;
+        overflow-x:auto;
+      `}>
         {children}
       </div>
       <button
