@@ -10,11 +10,12 @@ import Viewport from "../context/Viewport";
 const Article: FC<{
   title: string;
   subtitle?: string;
-}> = ({ children, title, subtitle }) => {
+  previewImage?: string;
+}> = ({ children, title, subtitle, previewImage }) => {
   const viewport = useContext(Viewport);
   return (
     <>
-      <Head subtitle={title} description={subtitle} />
+      <Head subtitle={title} description={subtitle} previewImage={previewImage} />
       <div
         className={`
           padding-x:$len64;
