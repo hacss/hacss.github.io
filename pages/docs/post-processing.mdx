@@ -1,0 +1,70 @@
+import Article from "../../components/Article";
+import ShellCommand from "../../components/ShellCommand";
+
+<Article
+  title="Post-processing"
+  subtitle="Add more capabilities to Hacss with PostCSS plugins">
+
+The static style sheet that Hacss produces is fully compatible with
+[PostCSS](https://postcss.org), which makes it easy to add capabilities to Hacss
+using a large catalog of [PostCSS plugins](https://www.postcss.parts). While
+PostCSS plugins are often designed to ease the burden of authoring a style
+sheet, many of them remain useful and relevant even in the context of "inline
+styles". Below are a few ideas to get you started.
+
+To use these plugins with Hacss, start with the Hacss [CLI](./cli),
+[Webpack integration](./webpack), or [API](./api). Once Hacss is integrated into
+your build process, consult the
+[PostCSS setup](https://github.com/postcss/postcss#usage) as needed.
+Essentially, you will provide PostCSS the style sheet produced by Hacss the same
+as if you had authored the style sheet yourself manually.
+
+## [autoprefixer](https://github.com/postcss/autoprefixer)
+
+Autoprefixer is a popular utility that automatically adds vendor prefixes to
+your CSS as needed. For example, you can simply write `appearance:none;` in your
+code, and Autoprefixer will automatically add `-ms-appearance`,
+`-moz-appearance`, and various other vendor-prefixed versions to the Hacss
+output. Similarly, you can write `::placeholder{color:gray}`, and Autoprefixer
+will automatically create the vendor-prefixed versions, meaning that there is no
+need to write `::-ms-input-placeholder{color:gray}` for IE compatibility, for
+example.
+
+## [css-mqpacker](https://github.com/hail2u/node-css-mqpacker)
+
+This plugin offers a performance optimization that is highly recommended for
+non-trivial projects. Any two rules that use the same media query will be
+grouped together within a single media query block, reducing the size of your
+CSS output.
+
+## [axis](https://github.com/kinday/postcss-axis)
+
+The axis plugin supports additional shorthand properties not available natively
+in CSS, such as:
+* `padding-x`, expanded to `padding-left` and `padding-right`
+* `margin-y`, expanded to `margin-top` and `margin-bottom`
+* `border-x-color`, exapnded to `border-top-color` and `border-bottom-color`
+
+You can use these in Hacss rules just like you would use them in a style sheet,
+e.g. `border-x-width:1px;`.
+
+## [pxtorem](https://github.com/cuth/postcss-pxtorem)
+
+This plugin allows you to think in terms of pixels without losing the benefits
+of relative units. Write a rule like `width:512px;` and it will be rendered as
+`.width\:512px\;{width:32rem}`.
+
+You could also consider the [Shortcuts](./shortcuts) package which includes
+various length presets aliased in terms of pixels, but this might be an
+interesting option if you're not using Shortcuts for whatever reason.
+
+## [lost](https://github.com/peterramsing/lost)
+
+Grid system APIs usually exist as a system of CSS classes that you have to learn
+or preprocessor mixins that require you to use a specific preprocessor such as
+Sass or Less. LostGrid's API is somewhat unique in that it is based on special
+CSS properties that work with any preprocessor or, in our case, the style sheet
+output of Hacss. You can use a style rule like `lost-column:1/3;` and the
+LostGrid plugin will transform the resulting CSS automatically.
+
+</Article>

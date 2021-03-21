@@ -11,7 +11,8 @@ const pages = [
   ["/webpack", "Webpack"],
   ["/api", "API"],
   ["/style-guide", "Style Guide"],
-  ["/shortcuts", "Shortcuts"]
+  ["/shortcuts", "Shortcuts"],
+  ["/post-processing", "Post-processing"]
 ];
 
 const DocsApp

@@ -63,6 +63,7 @@ module.exports = {
         use: [
           "style-loader",
           "css-loader",
+          // "postcss-loader",
           { loader: "val-loader", options: { sources: "src/*.js" } },
         ]
       }
@@ -70,6 +71,14 @@ module.exports = {
   }
 };
 ```
+
+## PostCSS
+
+You might have noticed the commented `"postcss-loader"` line above. If you are
+interested in extending the capabilities of Hacss via PostCSS as described in
+[this guide](./post-processing), you can install the
+[`postcss-loader` package](https://www.npmjs.com/package/postcss-loader) and
+uncomment the line above. Otherwise, you can feel free to remove it altogether!
 
 # Conclusion
 

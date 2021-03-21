@@ -62,4 +62,14 @@ be used to search for source files containing CSS classes that should be
 included in the generated style sheet. You can also specify a series of glob
 patterns.
 
+## PostCSS
+
+If you would like to extend the capabilities of Hacss as described
+[here](./post-processing), you can pipe the output of Hacss to
+[PostCSS](https://postcss.org). For example:
+
+<ShellCommand>
+hacss src/**/*.jsx | postcss
+</ShellCommand>
+
 </Article>
