@@ -21,8 +21,9 @@ const DocsApp
     sidebarState: "open" | "closed";
     onSidebarOpen: () => any;
     onSidebarClose: () => any;
+    onSidebarLinkClick: () => any;
   }>
-= ({ pathname, sidebarState, onSidebarOpen, onSidebarClose, children }) => {
+= ({ pathname, sidebarState, onSidebarOpen, onSidebarClose, onSidebarLinkClick, children }) => {
   const main = useRef<HTMLElement>(null);
 
   const router = useRouter().events;
@@ -152,14 +153,16 @@ const DocsApp
 
                 return (
                   <Link key={href} href={href}>
-                    <a className={`
-                      padding-x:$len16;
-                      padding-y:$len4;
-                      text-decoration:none;
-                      color:$gray20;
-                      :hover{color:$blue20}
-                      :active{color:$red20}!
-                    `}>
+                    <a
+                      onClick={onSidebarLinkClick}
+                      className={`
+                        padding-x:$len16;
+                        padding-y:$len4;
+                        text-decoration:none;
+                        color:$gray20;
+                        :hover{color:$blue20}
+                        :active{color:$red20}!
+                      `}>
                       {label}
                     </a>
                   </Link>

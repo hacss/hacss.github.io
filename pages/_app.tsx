@@ -41,7 +41,12 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
                 pathname={pathname}
                 sidebarState={sidebarState}
                 onSidebarOpen={openSidebar}
-                onSidebarClose={closeSidebar}>
+                onSidebarClose={closeSidebar}
+                onSidebarLinkClick={() => {
+                  if (matchMedia("(max-width: 37.49999em)").matches) {
+                    closeSidebar();
+                  }
+                }}>
                 <Component {...pageProps} />
               </DocsApp>
             )
