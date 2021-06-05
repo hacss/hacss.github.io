@@ -20,7 +20,7 @@
     "css-loader": "^5.0.1",
     "lost": "^8.3.1",
     "next": "10.0.4",
-    "postcss": "^8.2.2",
+    "postcss": "^8.2.10",
     "postcss-axis": "^0.1.2",
     "postcss-font-magician": "^3.0.0",
     "postcss-inset": "^1.0.0",
