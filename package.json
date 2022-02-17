@@ -19,7 +19,7 @@
     "clipboard-copy": "^4.0.1",
     "css-loader": "^5.0.1",
     "lost": "^8.3.1",
-    "next": "11.1.0",
+    "next": "12.1.0",
     "postcss": "^8.2.10",
     "postcss-axis": "^0.1.2",
     "postcss-font-magician": "^3.0.0",
